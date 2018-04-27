@@ -1,0 +1,6 @@
+# Created by .ignore support plugin (hsz.mobi)
+inputs/core_lists/*
+inputs/fastq/*
+inputs/legacy_metadata/*
+inputs/legacy_profiles/*
+inputs/schemas/*
