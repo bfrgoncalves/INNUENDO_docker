@@ -35,6 +35,12 @@ then
     done
     echo "-- slurmdbd is now active ..."
 
+    echo "---> Adding QOS for chewBBACA ..."
+    {
+        exec gosu slurm sacctmgr -i add qos name=chewbbaca MaxJobs=1 &
+    } || {
+        echo "---> QOS for chewBBACA already exists..."
+    }
     echo "---> Updating INNUENDO Process Controller ..."
     exec gosu root git pull &
 

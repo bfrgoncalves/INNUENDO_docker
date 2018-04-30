@@ -150,8 +150,6 @@ RUN set -x \
 COPY slurm.conf /etc/slurm/slurm.conf
 COPY slurmdbd.conf /etc/slurm/slurmdbd.conf
 
-COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
-
 WORKDIR /Controller
 
 ####################### Install Singularity ####################################
@@ -166,6 +164,10 @@ RUN VERSION=2.4.5 && wget https://github.com/singularityware/singularity/release
                   && make install
 
 WORKDIR /Controller/INNUENDO_PROCESS_CONTROLLER
+
+RUN echo "BAH"
+
+COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 
 ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
 

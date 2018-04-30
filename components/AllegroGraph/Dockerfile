@@ -27,5 +27,8 @@ RUN agraph-6.0.2/install-agraph /Allegrograph/agraph --non-interactive \
 --super-user "innuendo" \
 --super-password "innuendo_allegro"
 
-#CMD ["/Allegrograph/agraph/bin/agraph-control", "--config",
-#"/Allegrograph/agraph/lib/agraph.cfg", "start"]
+# Copy entrypoint for allegrograph
+COPY docker-allegro-entrypoint.sh docker-allegro-entrypoint.sh
+RUN chmod +x docker-allegro-entrypoint.sh
+
+ENTRYPOINT ["/Allegrograph/docker-allegro-entrypoint.sh"]

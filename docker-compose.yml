@@ -12,14 +12,14 @@ services:
       - "10035:10035"
     depends_on:
       - frontend
-      - controller
+      #- controller
 
   # Service for the AllegroGraph
   allegro:
     build: ./components/AllegroGraph/
     expose:
       - "10035"
-    command: bash -c "/Allegrograph/agraph/bin/agraph-control --config /Allegrograph/agraph/lib/agraph.cfg start & tail -F /dev/null"
+    command: ["init_all"]
 
   # Service for the redis queue
   redis:
@@ -39,13 +39,22 @@ services:
       - user_data:/INNUENDO
       - ./inputs/fastq:/INNUENDO/ftp/files
       - singularity_cache:/mnt/singularity_cache
+      - /Users/bgoncalves/sandbox/repositories/INNUENDO_REST_API/app/static/css:/Frontend/INNUENDO_REST_API/app/static/css
+      - /Users/bgoncalves/sandbox/repositories/INNUENDO_REST_API/app/static/controllers:/Frontend/INNUENDO_REST_API/app/static/controllers
+      - /Users/bgoncalves/sandbox/repositories/INNUENDO_REST_API/app/static/img:/Frontend/INNUENDO_REST_API/app/static/img
+      - /Users/bgoncalves/sandbox/repositories/INNUENDO_REST_API/app/templates:/Frontend/INNUENDO_REST_API/app/templates
+      - /Users/bgoncalves/sandbox/repositories/INNUENDO_REST_API/app/static/fonts:/Frontend/INNUENDO_REST_API/app/static/fonts
+      - /Users/bgoncalves/sandbox/repositories/INNUENDO_REST_API/app/static/ico:/Frontend/INNUENDO_REST_API/app/static/ico
+      - /Users/bgoncalves/sandbox/repositories/INNUENDO_REST_API/app/static/html_components:/Frontend/INNUENDO_REST_API/app/static/html_components
+      - /Users/bgoncalves/sandbox/repositories/INNUENDO_REST_API/app/resources/postgres:/Frontend/INNUENDO_REST_API/app/resources/postgres
+      - /Users/bgoncalves/sandbox/repositories/INNUENDO_REST_API/app/api.py:/Frontend/INNUENDO_REST_API/app/api.py
     ports:
       - "5000:5000"
     depends_on:
       - allegro
-      - db_innuendo
-      - db_mlst
-    command: bash -c "git pull && /Frontend/INNUENDO_REST_API/run.py"
+      #- db_innuendo
+      #- db_mlst
+    command: ["init_all"]
 
   # DB for the INNUENDO application.
   db_innuendo:
@@ -85,7 +94,8 @@ services:
       - "3000"
     depends_on:
       - db_phyloviz
-    command: bash -c "git pull && redis-server & pm2 start app.js -i 1 && pm2 start queue_worker.js -i 1 && tail -F /dev/null"
+      - redis
+    command: ["init_all"]
 
   # Service for the INNUENDO frontend. Requires the config files for the
   # application and mapping of the fastq files. It also requires the slurm
@@ -96,6 +106,7 @@ services:
     container_name: slurmctld
     hostname: slurmctld
     privileged: true
+    tty: true
     volumes:
       - etc_munge:/etc/munge
       - etc_slurm:/etc/slurm

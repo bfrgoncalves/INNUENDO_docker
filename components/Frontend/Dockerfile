@@ -46,7 +46,7 @@ RUN npm install -g bower
 WORKDIR app/
 
 # Install bower dependencies
-RUN bower install --allow-root
+RUN bower install --allow-root && bower install bootstrap-select --allow-root
 
 # Install reports dependencies
 WORKDIR /Frontend/
@@ -58,6 +58,16 @@ RUN bower install --allow-root
 # Change to final directory
 WORKDIR /Frontend/INNUENDO_REST_API
 
-CMD ["/Frontend/INNUENDO_REST_API/manage.py", "db", "init", "--multidb"]
-CMD ["/Frontend/INNUENDO_REST_API/manage.py", "db", "migrate"]
-CMD ["/Frontend/INNUENDO_REST_API/manage.py", "db", "upgrade"]
+# Copy entrypoint for frontend
+COPY docker-frontend-entrypoint.sh docker-frontend-entrypoint.sh
+RUN chmod +x docker-frontend-entrypoint.sh
+
+# Copy allegro database builder to image
+COPY build_allegro.py build_allegro.py
+RUN chmod +x build_allegro.py
+
+# Copy allegro database structure
+COPY ngsonto2017_july_innuendo_latest.owl ngsonto2017_july_innuendo_latest.owl
+
+ENTRYPOINT ["/Frontend/INNUENDO_REST_API/docker-frontend-entrypoint.sh"]
+

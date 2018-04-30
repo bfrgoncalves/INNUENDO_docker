@@ -26,3 +26,10 @@ RUN npm install pm2 -g
 
 # Set final workdir
 WORKDIR /PHYLOVIZ/Online-PhyloViZ
+
+RUN echo "AQUi1"
+# Copy entrypoint for phyloviz
+COPY docker-phyloviz-entrypoint.sh docker-phyloviz-entrypoint.sh
+RUN chmod +x docker-phyloviz-entrypoint.sh
+
+ENTRYPOINT ["/PHYLOVIZ/Online-PhyloViZ/docker-phyloviz-entrypoint.sh"]

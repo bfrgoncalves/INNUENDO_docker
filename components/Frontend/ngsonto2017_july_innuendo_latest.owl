@@ -1,0 +1,2502 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/owl/owlapi/turtle#"
+     xml:base="http://www.semanticweb.org/owl/owlapi/turtle"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:oboOther="http://purl.obolibrary.org/obo/"
+     xmlns:ns1="http://edamontology.org/"
+     xmlns:edamontology="http://edamontology.org#"
+     xmlns:ns4="http://rdf.ebi.ac.uk/terms/biosd/"
+     xmlns:efo="http://www.ebi.ac.uk/efo/"
+     xmlns:ns6="http://rest.phyloviz.net/ontology#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:ns33="http://rdf.ebi.ac.uk/resource/biosamples/sample/"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:ns32="http://rest.phyloviz.net/"
+     xmlns:ns28="http://www.phyloviz.net/typon/ontology.owl#"
+     xmlns:ns27="http://www.phyloviz.net/typon/ontology.owl/resources/"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/ngsonto.owl">
+        <owl:imports rdf:resource="http://ifomis.uni-saarland.de/bfo/owl"/>
+        <dc:title xml:lang="en">NGSOnto</dc:title>
+        <dc:creator xml:lang="en">&quot;Mickael Silva&quot;</dc:creator>
+        <dc:creator xml:lang="en">João Carriço</dc:creator>
+        <rdfs:comment xml:lang="en">This ontology aims to describe and anotate all pipelines of a NGS process, starting from DNA extraction from an isolate to the assembled draft genome, allowing the reproducibility of the processes. nConstructed from BFO (Basic Formal Ontology), an upper level ontology (http://www.ifomis.org/bfo) and designed based on NCBI Sequence Read Archive (http://www.ncbi.nlm.nih.gov/sra) and EMBL-EBI European Nucleotide Archive (http://www.ebi.ac.uk/ena/) public data.</rdfs:comment>
+        <dc:format xml:lang="en">OWL</dc:format>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://edamontology.org#comment -->
+
+    <owl:AnnotationProperty rdf:about="http://edamontology.org#comment"/>
+    
+
+
+    <!-- http://edamontology.org#created_in -->
+
+    <owl:AnnotationProperty rdf:about="http://edamontology.org#created_in"/>
+    
+
+
+    <!-- http://edamontology.org#def -->
+
+    <owl:AnnotationProperty rdf:about="http://edamontology.org#def"/>
+    
+
+
+    <!-- http://edamontology.org#editor_note -->
+
+    <owl:AnnotationProperty rdf:about="http://edamontology.org#editor_note"/>
+    
+
+
+    <!-- http://edamontology.org#namespace -->
+
+    <owl:AnnotationProperty rdf:about="http://edamontology.org#namespace"/>
+    
+
+
+    <!-- http://edamontology.org#obsolete_alt_id -->
+
+    <owl:AnnotationProperty rdf:about="http://edamontology.org#obsolete_alt_id"/>
+    
+
+
+    <!-- http://edamontology.org#subset -->
+
+    <owl:AnnotationProperty rdf:about="http://edamontology.org#subset"/>
+    
+
+
+    <!-- http://edamontology.org#synonym -->
+
+    <owl:AnnotationProperty rdf:about="http://edamontology.org#synonym"/>
+    
+
+
+    <!-- http://edamontology.org/synonym -->
+
+    <owl:AnnotationProperty rdf:about="http://edamontology.org/synonym"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000111 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000111">
+        <oboOther:IAO_0000111 xml:lang="en">editor preferred label</oboOther:IAO_0000111>
+        <oboOther:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
+        <oboOther:IAO_0000115 xml:lang="en">The concise, meaningful, and human-friendly name for a class or property preferred by the ontology developers. (US-English)</oboOther:IAO_0000115>
+        <oboOther:IAO_0000117 xml:lang="en">PERSON:Daniel Schober</oboOther:IAO_0000117>
+        <oboOther:IAO_0000119 xml:lang="en">GROUP:OBI:&lt;http://purl.obolibrary.org/obo/obi&gt;</oboOther:IAO_0000119>
+        <rdfs:label xml:lang="en">editor preferred label</rdfs:label>
+        <rdfs:label>editor preferred term</rdfs:label>
+        <rdfs:label xml:lang="en">editor preferred term</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000112 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000112">
+        <oboOther:IAO_0000111 xml:lang="en">example of usage</oboOther:IAO_0000111>
+        <oboOther:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
+        <oboOther:IAO_0000115 xml:lang="en">A phrase describing how a class name should be used. May also include other kinds of examples that facilitate immediate understanding of a class semantics, such as widely known prototypical subclasses or instances of the class. Although essential for high level terms, examples for low level terms (e.g., Affymetrix HU133 array) are not</oboOther:IAO_0000115>
+        <oboOther:IAO_0000117 xml:lang="en">PERSON:Daniel Schober</oboOther:IAO_0000117>
+        <oboOther:IAO_0000119 xml:lang="en">GROUP:OBI:&lt;http://purl.obolibrary.org/obo/obi&gt;</oboOther:IAO_0000119>
+        <rdfs:label xml:lang="en">example of usage</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000114 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000114">
+        <oboOther:IAO_0000111 xml:lang="en">has curation status</oboOther:IAO_0000111>
+        <oboOther:IAO_0000117 xml:lang="en">PERSON:Alan Ruttenberg</oboOther:IAO_0000117>
+        <oboOther:IAO_0000117 xml:lang="en">PERSON:Bill Bug</oboOther:IAO_0000117>
+        <oboOther:IAO_0000117 xml:lang="en">PERSON:Melanie Courtot</oboOther:IAO_0000117>
+        <oboOther:IAO_0000119 xml:lang="en">OBI_0000281</oboOther:IAO_0000119>
+        <rdfs:label xml:lang="en">has curation status</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000115 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000115">
+        <oboOther:IAO_0000111>definition</oboOther:IAO_0000111>
+        <oboOther:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
+        <oboOther:IAO_0000115 xml:lang="en">The official OBI definition, explaining the meaning of a class or property. Shall be Aristotelian, formalized and normalized. Can be augmented with colloquial definitions.</oboOther:IAO_0000115>
+        <oboOther:IAO_0000115 xml:lang="en">The official definition, explaining the meaning of a class or property. Shall be Aristotelian, formalized and normalized. Can be augmented with colloquial definitions.</oboOther:IAO_0000115>
+        <oboOther:IAO_0000117 xml:lang="en">PERSON:Daniel Schober</oboOther:IAO_0000117>
+        <oboOther:IAO_0000119 xml:lang="en">GROUP:OBI:&lt;http://purl.obolibrary.org/obo/obi&gt;</oboOther:IAO_0000119>
+        <rdfs:label>definition</rdfs:label>
+        <rdfs:label xml:lang="en">definition</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">definition</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">textual definition</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000116 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000116">
+        <oboOther:IAO_0000111 xml:lang="en">editor note</oboOther:IAO_0000111>
+        <oboOther:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
+        <oboOther:IAO_0000115 xml:lang="en">An administrative note intended for its editor. It may not be included in the publication version of the ontology, so it should contain nothing necessary for end users to understand the ontology.</oboOther:IAO_0000115>
+        <oboOther:IAO_0000117 xml:lang="en">PERSON:Daniel Schober</oboOther:IAO_0000117>
+        <oboOther:IAO_0000119 xml:lang="en">GROUP:OBI:&lt;http://purl.obfoundry.org/obo/obi&gt;</oboOther:IAO_0000119>
+        <rdfs:label xml:lang="en">editor note</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000117 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000117">
+        <oboOther:IAO_0000111 xml:lang="en">term editor</oboOther:IAO_0000111>
+        <oboOther:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
+        <oboOther:IAO_0000115 xml:lang="en">Name of editor entering the term in the file. The term editor is a point of contact for information regarding the term. The term editor may be, but is not always, the author of the definition, which may have been worked upon by several people</oboOther:IAO_0000115>
+        <oboOther:IAO_0000116 xml:lang="en">20110707, MC: label update to term editor and definition modified accordingly. See http://code.google.com/p/information-artifact-ontology/issues/detail?id=115.</oboOther:IAO_0000116>
+        <oboOther:IAO_0000117 xml:lang="en">PERSON:Daniel Schober</oboOther:IAO_0000117>
+        <oboOther:IAO_0000119 xml:lang="en">GROUP:OBI:&lt;http://purl.obolibrary.org/obo/obi&gt;</oboOther:IAO_0000119>
+        <rdfs:label xml:lang="en">term editor</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000118 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000118">
+        <oboOther:IAO_0000111 xml:lang="en">alternative term</oboOther:IAO_0000111>
+        <oboOther:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000125"/>
+        <oboOther:IAO_0000115 xml:lang="en">An alternative name for a class or property which means the same thing as the preferred name (semantically equivalent)</oboOther:IAO_0000115>
+        <oboOther:IAO_0000117 xml:lang="en">PERSON:Daniel Schober</oboOther:IAO_0000117>
+        <oboOther:IAO_0000119 xml:lang="en">GROUP:OBI:&lt;http://purl.obolibrary.org/obo/obi&gt;</oboOther:IAO_0000119>
+        <rdfs:label xml:lang="en">alternative term</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000119 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000119">
+        <oboOther:IAO_0000111 xml:lang="en">definition source</oboOther:IAO_0000111>
+        <oboOther:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
+        <oboOther:IAO_0000115 xml:lang="en">formal citation, e.g. identifier in external database to indicate / attribute source(s) for the definition. Free text indicate / attribute source(s) for the definition. EXAMPLE: Author Name, URI, MeSH Term C04, PUBMED ID, Wiki uri on 31.01.2007</oboOther:IAO_0000115>
+        <oboOther:IAO_0000117 xml:lang="en">PERSON:Daniel Schober</oboOther:IAO_0000117>
+        <oboOther:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Discussion on obo-discuss mailing-list, see http://bit.ly/hgm99w</oboOther:IAO_0000119>
+        <oboOther:IAO_0000119 xml:lang="en">GROUP:OBI:&lt;http://purl.obolibrary.org/obo/obi&gt;</oboOther:IAO_0000119>
+        <rdfs:label xml:lang="en">definition source</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000232 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000232">
+        <oboOther:IAO_0000111 xml:lang="en">curator note</oboOther:IAO_0000111>
+        <oboOther:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
+        <oboOther:IAO_0000115 xml:lang="en">An administrative note of use for a curator but of no use for a user</oboOther:IAO_0000115>
+        <oboOther:IAO_0000117 xml:lang="en">PERSON:Alan Ruttenberg</oboOther:IAO_0000117>
+        <rdfs:label xml:lang="en">curator note</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000412 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000412">
+        <oboOther:IAO_0000111 xml:lang="en">imported from</oboOther:IAO_0000111>
+        <oboOther:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000125"/>
+        <oboOther:IAO_0000115 xml:lang="en">For external terms/classes, the ontology from which the term was imported</oboOther:IAO_0000115>
+        <oboOther:IAO_0000117 xml:lang="en">PERSON:Alan Ruttenberg</oboOther:IAO_0000117>
+        <oboOther:IAO_0000117 xml:lang="en">PERSON:Melanie Courtot</oboOther:IAO_0000117>
+        <oboOther:IAO_0000119 xml:lang="en">GROUP:OBI:&lt;http://purl.obolibrary.org/obo/obi&gt;</oboOther:IAO_0000119>
+        <rdfs:label xml:lang="en">imported from</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_id -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_id"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_subset -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_subset"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_xref -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_xref"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0001847 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/OBI_0001847">
+        <oboOther:IAO_0000111 xml:lang="en">ISA alternative term</oboOther:IAO_0000111>
+        <oboOther:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
+        <oboOther:IAO_0000115>An alternative term used by the ISA tools project (http://isa-tools.org).</oboOther:IAO_0000115>
+        <oboOther:IAO_0000117>Person: Alejandra Gonzalez-Beltran</oboOther:IAO_0000117>
+        <oboOther:IAO_0000117>Person: Philippe Rocca-Serra</oboOther:IAO_0000117>
+        <oboOther:IAO_0000119>ISA tools project (http://isa-tools.org)</oboOther:IAO_0000119>
+        <rdfs:label xml:lang="en">ISA alternative term</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000118"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/format -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/format"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/title -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title"/>
+    
+
+
+    <!-- http://www.ebi.ac.uk/efo/definition_editor -->
+
+    <owl:AnnotationProperty rdf:about="http://www.ebi.ac.uk/efo/definition_editor"/>
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#hasDefinition -->
+
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasDefinition"/>
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#hasExactSynonym -->
+
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#inSubset -->
+
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#inSubset"/>
+    
+
+
+    <!-- http://www.semanticweb.org/owl/owlapi/turtle#created_in -->
+
+    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/owl/owlapi/turtle#created_in"/>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#comment -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#comment"/>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#label -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#label"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral"/>
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#boolean -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#boolean"/>
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#int -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#int"/>
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#long -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#long"/>
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#string -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000051 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000051">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000066"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000471"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NGS_0000006"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000471"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <oboOther:IAO_0000111 xml:lang="en">has part</oboOther:IAO_0000111>
+        <oboOther:IAO_0000118 xml:lang="en">has_part</oboOther:IAO_0000118>
+        <oboOther:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+        <rdfs:label xml:lang="en">has part</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000087 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000087">
+        <rdfs:label xml:lang="en">has role</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NGS_0000015 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/NGS_0000015">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000066"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000471"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0400103"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://purl.org/dc/terms/Agent"/>
+        <oboOther:IAO_0000115 xml:lang="en">Possession relation between an agent and a study or pipeline.</oboOther:IAO_0000115>
+        <rdfs:label xml:lang="en">Belong To</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NGS_0000020 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/NGS_0000020">
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/NGS_0000072"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/OBI_0400103"/>
+        <rdfs:label xml:lang="en">Sequenced on</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NGS_0000022 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/NGS_0000022">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NGS_0000064"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NGS_0000069"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NGS_0000072"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://edamontology.org/data_2527"/>
+        <rdfs:label xml:lang="en">used Parameter</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NGS_0000023 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/NGS_0000023">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NGS_0000064"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NGS_0000069"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/IAO_0000010"/>
+        <rdfs:label xml:lang="en">used Software</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NGS_0000063 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/NGS_0000063">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NGS_0000064"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NGS_0000069"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/IAO_0000591"/>
+        <rdfs:label xml:lang="en">used function</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NGS_0000076 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/NGS_0000076">
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OBI_0000471"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/NGS_0000074"/>
+        <rdfs:label xml:lang="en">execute</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NGS_0000077 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/NGS_0000077">
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/NGS_0000075"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/OBI_0000272"/>
+        <rdfs:label xml:lang="en">has protocol</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NGS_0000078 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/NGS_0000078">
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OBI_0500000"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/NGS_0000075"/>
+        <rdfs:label xml:lang="en">has step</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NGS_0000079 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/NGS_0000079">
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/NGS_0000074"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/OBI_0500000"/>
+        <rdfs:label xml:lang="en">has workflow</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NGS_0000091 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/NGS_0000091">
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/NGS_0000006"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/OBI_0000272"/>
+        <rdfs:label>is a Run of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0001950 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/OBI_0001950">
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/OBI_0000011"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000245"/>
+                            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000968"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000087"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000202"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:range>
+        <oboOther:IAO_0000111 xml:lang="en">has performer</oboOther:IAO_0000111>
+        <oboOther:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
+        <oboOther:IAO_0000117 xml:lang="en">performer relation covers the need to report on who performed a planned processed. it has to cover processes done by People or Devices (such as a robot controlled by software  WF management system)</oboOther:IAO_0000117>
+        <oboOther:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+        <rdfs:label xml:lang="en">has performer</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0002224 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002224">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:label xml:lang="en">starts with</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0002230 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002230">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:label xml:lang="en">ends with</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0002233 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002233">
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/NGS_0000006"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/NGS_0000061"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002224"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002233"/>
+        </owl:propertyChainAxiom>
+        <oboOther:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000125"/>
+        <oboOther:IAO_0000115>p has input c if either: p has direct input c or p has indirect input c. See subrelations for definitions.</oboOther:IAO_0000115>
+        <oboOther:IAO_0000118>consumes</oboOther:IAO_0000118>
+        <oboOther:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ro.owl"/>
+        <rdfs:label xml:lang="en">has input</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0002234 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002234">
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/NGS_0000006"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/NGS_0000061"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002230"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002234"/>
+        </owl:propertyChainAxiom>
+        <oboOther:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000125"/>
+        <oboOther:IAO_0000115>p has output c if either: p has direct output c or p has output input c. See subrelations for definitions.</oboOther:IAO_0000115>
+        <oboOther:IAO_0000118>produces</oboOther:IAO_0000118>
+        <oboOther:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ro.owl"/>
+        <rdfs:label xml:lang="en">has output</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NGS_0000024 -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.obolibrary.org/obo/NGS_0000024">
+        <rdfs:label xml:lang="en">adaptor</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NGS_0000025 -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.obolibrary.org/obo/NGS_0000025">
+        <rdfs:label xml:lang="en">ammount DNA</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NGS_0000028 -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.obolibrary.org/obo/NGS_0000028">
+        <rdfs:label xml:lang="en">buffer</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NGS_0000030 -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.obolibrary.org/obo/NGS_0000030">
+        <rdfs:label xml:lang="en">end repair enzyme</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NGS_0000031 -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.obolibrary.org/obo/NGS_0000031">
+        <rdfs:label xml:lang="en">extraction method</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NGS_0000032 -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.obolibrary.org/obo/NGS_0000032">
+        <rdfs:label xml:lang="en">file</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NGS_0000033 -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.obolibrary.org/obo/NGS_0000033">
+        <rdfs:label xml:lang="en">file extension</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NGS_0000034 -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.obolibrary.org/obo/NGS_0000034">
+        <rdfs:label xml:lang="en">fragmentation method</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NGS_0000038 -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.obolibrary.org/obo/NGS_0000038">
+        <rdfs:label xml:lang="en">library type</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NGS_0000040 -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.obolibrary.org/obo/NGS_0000040">
+        <rdfs:label xml:lang="en">name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NGS_0000041 -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.obolibrary.org/obo/NGS_0000041">
+        <rdfs:label xml:lang="en">parameter designation</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NGS_0000042 -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.obolibrary.org/obo/NGS_0000042">
+        <rdfs:label xml:lang="en">parameter value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NGS_0000043 -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.obolibrary.org/obo/NGS_0000043">
+        <rdfs:label xml:lang="en">range of fragments size</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NGS_0000045 -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.obolibrary.org/obo/NGS_0000045">
+        <rdfs:label xml:lang="en">reference genome</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NGS_0000046 -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.obolibrary.org/obo/NGS_0000046">
+        <rdfs:label xml:lang="en">scaffolding</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NGS_0000047 -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.obolibrary.org/obo/NGS_0000047">
+        <rdfs:label xml:lang="en">script file</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NGS_0000048 -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.obolibrary.org/obo/NGS_0000048">
+        <rdfs:label xml:lang="en">script language</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NGS_0000049 -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.obolibrary.org/obo/NGS_0000049">
+        <rdfs:label xml:lang="en">sequence coverage</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NGS_0000051 -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.obolibrary.org/obo/NGS_0000051">
+        <rdfs:label xml:lang="en">size selector</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NGS_0000052 -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.obolibrary.org/obo/NGS_0000052">
+        <rdfs:label xml:lang="en">software version</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NGS_0000053 -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.obolibrary.org/obo/NGS_0000053">
+        <rdfs:label xml:lang="en">strategy</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NGS_0000054 -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.obolibrary.org/obo/NGS_0000054">
+        <rdfs:label xml:lang="en">study description</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NGS_0000055 -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.obolibrary.org/obo/NGS_0000055">
+        <rdfs:label xml:lang="en">study title</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NGS_0000056 -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.obolibrary.org/obo/NGS_0000056">
+        <rdfs:label xml:lang="en">study type</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NGS_0000057 -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.obolibrary.org/obo/NGS_0000057">
+        <rdfs:label xml:lang="en">tailing</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NGS_0000058 -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.obolibrary.org/obo/NGS_0000058">
+        <rdfs:label xml:lang="en">uri</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NGS_0000059 -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.obolibrary.org/obo/NGS_0000059">
+        <rdfs:label xml:lang="en">version</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NGS_0000080 -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.obolibrary.org/obo/NGS_0000080">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">date</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NGS_0000081 -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.obolibrary.org/obo/NGS_0000081">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">index</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NGS_0000084 -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.obolibrary.org/obo/NGS_0000084">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DNA Extraction kit name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NGS_0000085 -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.obolibrary.org/obo/NGS_0000085">
+        <rdfs:label>password</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NGS_0000086 -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.obolibrary.org/obo/NGS_0000086">
+        <rdfs:label xml:lang="en">Activation</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NGS_0000087 -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.obolibrary.org/obo/NGS_0000087">
+        <rdfs:label>username</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NGS_0000089 -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.obolibrary.org/obo/NGS_0000089">
+        <rdfs:label>Task ID</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NGS_0000092 -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.obolibrary.org/obo/NGS_0000092">
+        <rdfs:label>Run Info</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NGS_0000093 -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.obolibrary.org/obo/NGS_0000093">
+        <rdfs:label>Assembly</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NGS_0000094 -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.obolibrary.org/obo/NGS_0000094">
+        <rdfs:label>Run Stats</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NGS_0000095 -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.obolibrary.org/obo/NGS_0000095">
+        <rdfs:label>matrix</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NGS_0000096 -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.obolibrary.org/obo/NGS_0000096">
+        <rdfs:label>Run log</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NGS_0000097 -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.obolibrary.org/obo/NGS_0000097">
+        <rdfs:label>status</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/mbox -->
+
+    <owl:DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/mbox">
+        <rdfs:label xml:lang="en">mail box</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://edamontology.org/data_2527 -->
+
+    <owl:Class rdf:about="http://edamontology.org/data_2527">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000027"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NGS_0000041"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NGS_0000042"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <edamontology:created_in>beta12orEarlier</edamontology:created_in>
+        <edamontology:def>&quot;Typically a simple numerical or string value that controls the operation of a tool.&quot; [http://edamontology.org]</edamontology:def>
+        <edamontology:editor_note>Slightly narrower in the sense of changing the characteristics of a system/function.</edamontology:editor_note>
+        <edamontology:namespace>data</edamontology:namespace>
+        <edamontology:obsolete_alt_id>data:0961</edamontology:obsolete_alt_id>
+        <edamontology:obsolete_alt_id>data:1773</edamontology:obsolete_alt_id>
+        <edamontology:obsolete_alt_id>data:2029</edamontology:obsolete_alt_id>
+        <edamontology:subset>bioinformatics</edamontology:subset>
+        <edamontology:subset>data</edamontology:subset>
+        <edamontology:subset>edam</edamontology:subset>
+        <edamontology:synonym>Parameter</edamontology:synonym>
+        <edamontology:synonym>Parameter or primitive</edamontology:synonym>
+        <edamontology:synonym>Tool parameter</edamontology:synonym>
+        <edamontology:synonym>Tool-specific parameter</edamontology:synonym>
+        <edamontology:synonym>parameter</edamontology:synonym>
+        <ns1:synonym>Parameter</ns1:synonym>
+        <ns1:synonym>Parameter or primitive</ns1:synonym>
+        <ns1:synonym>Tool parameter</ns1:synonym>
+        <ns1:synonym>Tool-specific parameter</ns1:synonym>
+        <ns1:synonym>parameter</ns1:synonym>
+        <oboOther:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/swo.owl"/>
+        <efo:definition_editor>Jon Ison</efo:definition_editor>
+        <rdfs:comment xml:lang="en">&quot;Typically a simple numerical or string value that controls the operation of a tool.&quot; [http://edamontology.org]nnhttp://edamontology.org/data_2527</rdfs:comment>
+        <rdfs:label xml:lang="en">Parameter</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Parameter</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://edamontology.org/operation_0310 -->
+
+    <owl:Class rdf:about="http://edamontology.org/operation_0310">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NGS_0000006"/>
+        <edamontology:comment>For example, assemble overlapping reads from paired-end sequencers into contigs (a contiguous sequence corresponding to read overlaps). Or assemble contigs, for example ESTs and genomic DNA fragments, depending on the detected fragment overlaps.</edamontology:comment>
+        <edamontology:created_in>beta12orEarlier</edamontology:created_in>
+        <edamontology:def>&quot;Combine (align and merge) overlapping fragments of a DNA sequence to reconstruct the original sequence.&quot; [http://edamontology.org]</edamontology:def>
+        <edamontology:namespace>operation</edamontology:namespace>
+        <edamontology:subset>bioinformatics</edamontology:subset>
+        <edamontology:subset>edam</edamontology:subset>
+        <edamontology:subset>operations</edamontology:subset>
+        <oboOther:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/swo.owl"/>
+        <efo:definition_editor>Jon Ison</efo:definition_editor>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sequence assembly</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://edamontology.org/operation_0369 -->
+
+    <owl:Class rdf:about="http://edamontology.org/operation_0369">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NGS_0000007"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002233"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/SO_0000150"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002234"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/SO_0000150"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <edamontology:created_in>beta12orEarlier</edamontology:created_in>
+        <edamontology:def>&quot;Cut (remove) characters or a region from a molecular sequence.&quot; [http://edamontology.org]</edamontology:def>
+        <edamontology:namespace>operation</edamontology:namespace>
+        <edamontology:subset>bioinformatics</edamontology:subset>
+        <edamontology:subset>edam</edamontology:subset>
+        <edamontology:subset>operations</edamontology:subset>
+        <oboOther:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/swo.owl"/>
+        <efo:definition_editor>Jon Ison</efo:definition_editor>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sequence cutting</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://edamontology.org/operation_0523 -->
+
+    <owl:Class rdf:about="http://edamontology.org/operation_0523">
+        <rdfs:subClassOf rdf:resource="http://edamontology.org/operation_0310"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002233"/>
+                <owl:someValuesFrom rdf:resource="http://rdf.ebi.ac.uk/terms/biosd/Sample"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002234"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0001573"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <edamontology:comment>The final sequence will resemble the backbone sequence. Mapping assemblers are usually much faster and less memory intensive than de-novo assemblers.</edamontology:comment>
+        <edamontology:created_in>beta12orEarlier</edamontology:created_in>
+        <edamontology:def>&quot;Sequence assembly by combining fragments using an existing backbone sequence.&quot; [http://edamontology.org]</edamontology:def>
+        <edamontology:namespace>operation</edamontology:namespace>
+        <edamontology:subset>bioinformatics</edamontology:subset>
+        <edamontology:subset>edam</edamontology:subset>
+        <edamontology:subset>operations</edamontology:subset>
+        <oboOther:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/swo.owl"/>
+        <efo:definition_editor>Jon Ison</efo:definition_editor>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sequence assembly (mapping assembly)</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://edamontology.org/operation_0524 -->
+
+    <owl:Class rdf:about="http://edamontology.org/operation_0524">
+        <rdfs:subClassOf rdf:resource="http://edamontology.org/operation_0310"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002233"/>
+                <owl:someValuesFrom rdf:resource="http://rdf.ebi.ac.uk/terms/biosd/Sample"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002234"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0001573"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <edamontology:comment>De-novo assemblers are much slower and more memory intensive than mapping assemblers.</edamontology:comment>
+        <edamontology:created_in>beta12orEarlier</edamontology:created_in>
+        <edamontology:def>&quot;Sequence assembly by combining fragments into a new, previously unknown sequence.&quot; [http://edamontology.org]</edamontology:def>
+        <edamontology:namespace>operation</edamontology:namespace>
+        <edamontology:subset>bioinformatics</edamontology:subset>
+        <edamontology:subset>edam</edamontology:subset>
+        <edamontology:subset>operations</edamontology:subset>
+        <oboOther:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/swo.owl"/>
+        <efo:definition_editor>Jon Ison</efo:definition_editor>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sequence assembly (de-novo assembly)</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://edamontology.org/operation_3218 -->
+
+    <owl:Class rdf:about="http://edamontology.org/operation_3218">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NGS_0000006"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002233"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/SO_0000150"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002234"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/SO_0000150"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <oboInOwl:hasDefinition>Raw sequence data quality control.</oboInOwl:hasDefinition>
+        <oboInOwl:hasExactSynonym>Sequencing QC</oboInOwl:hasExactSynonym>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/edam#edam"/>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/edam#operations"/>
+        <created_in>1.1</created_in>
+        <rdfs:comment>Analyse raw sequence data from a sequencing pipeline and identify (and possiby fix) problems.</rdfs:comment>
+        <rdfs:label>Sequencing quality control</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000010 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/IAO_0000010">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000104"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NGS_0000023"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/IAO_0000010"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NGS_0000040"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NGS_0000052"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <oboOther:IAO_0000111 xml:lang="en">software</oboOther:IAO_0000111>
+        <oboOther:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
+        <oboOther:IAO_0000116 xml:lang="en">see sourceforge tracker discussion at http://sourceforge.net/tracker/index.php?func=detail&amp;aid=1958818&amp;group_id=177891&amp;atid=886178</oboOther:IAO_0000116>
+        <oboOther:IAO_0000117 xml:lang="en">PERSON: Alan Ruttenberg</oboOther:IAO_0000117>
+        <oboOther:IAO_0000117 xml:lang="en">PERSON: Bjoern Peters</oboOther:IAO_0000117>
+        <oboOther:IAO_0000117 xml:lang="en">PERSON: Chris Stoeckert</oboOther:IAO_0000117>
+        <oboOther:IAO_0000117 xml:lang="en">PERSON: Melanie Courtot</oboOther:IAO_0000117>
+        <oboOther:IAO_0000119 xml:lang="en">GROUP: OBI</oboOther:IAO_0000119>
+        <oboOther:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+        <rdfs:comment xml:lang="en">Software is a plan specification composed of a series of instructions that can be interpreted by or directly executed by a processing unit.nnhttp://purl.obolibrary.org/obo/IAO_0000010</rdfs:comment>
+        <rdfs:label xml:lang="en">software</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000027 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/IAO_0000027">
+        <rdfs:subClassOf rdf:resource="http://www.ifomis.org/bfo/1.1/snap#GenericallyDependentContinuant"/>
+        <oboOther:IAO_0000111 xml:lang="en">data item</oboOther:IAO_0000111>
+        <oboOther:IAO_0000112 xml:lang="en">Data items include counts of things, analyte concentrations, and statistical summaries.</oboOther:IAO_0000112>
+        <oboOther:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
+        <oboOther:IAO_0000115 xml:lang="en">An information content entity that is intended to be a truthful statement about something (modulo, e.g., measurement precision or other systematic errors) and is constructed/acquired by a method that reliably tends to produce (approximately) truthful statements.</oboOther:IAO_0000115>
+        <oboOther:IAO_0000116 xml:lang="en">2/2/2009 Alan and Bjoern discussing FACS run output data. This is a data item because it is about the cell population. Each element records an event and is typically further composed a set of measurment data items that record the fluorescent intensity stimulated by one of the lasers.</oboOther:IAO_0000116>
+        <oboOther:IAO_0000116 xml:lang="en">2009-03-16: data item deliberatly ambiguous: we merged data set and datum to be one entity, not knowing how to define singular versus plural. So data item is more general than datum.</oboOther:IAO_0000116>
+        <oboOther:IAO_0000116 xml:lang="en">2009-03-16: removed datum as alternative term as datum specifically refers to singular form, and is thus not an exact synonym.</oboOther:IAO_0000116>
+        <oboOther:IAO_0000117 xml:lang="en">PERSON: Alan Ruttenberg</oboOther:IAO_0000117>
+        <oboOther:IAO_0000117 xml:lang="en">PERSON: Chris Stoeckert</oboOther:IAO_0000117>
+        <oboOther:IAO_0000117 xml:lang="en">PERSON: Jonathan Rees</oboOther:IAO_0000117>
+        <oboOther:IAO_0000118 xml:lang="en">data</oboOther:IAO_0000118>
+        <oboOther:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+        <rdfs:label xml:lang="en">data item</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000104 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/IAO_0000104">
+        <rdfs:subClassOf rdf:resource="http://www.ifomis.org/bfo/1.1/snap#GenericallyDependentContinuant"/>
+        <oboOther:IAO_0000111 xml:lang="en">plan specification</oboOther:IAO_0000111>
+        <oboOther:IAO_0000112 xml:lang="en">To lose weight, go running daily for at least 30 minutes. To isolate plasma  from blood, centrifuge tubes at 1100-1300 rpm for 15 minutes.</oboOther:IAO_0000112>
+        <oboOther:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
+        <oboOther:IAO_0000115 xml:lang="en">a directive information entity that, when concretized, is realized in a process in which the bearer tries to achieve the objectives, in part by taking the actions specified.</oboOther:IAO_0000115>
+        <oboOther:IAO_0000116 xml:lang="en">2009-03-16: provenance: a term a plan was proposed for OBI (OBI_0000344) , edited by the PlanAndPlannedProcess branch. Original definition was &quot; a plan is a specification of a process that is realized by an actor to achieve the objective specified as part of the plan&quot;. It has been subsequently moved to IAO where the objective for which the original term was defined was satisfied with the definitionof this, different, term.</oboOther:IAO_0000116>
+        <oboOther:IAO_0000116 xml:lang="en">Alternative previous definition: a plan is a set of instructions that specify how an objective should be achieved</oboOther:IAO_0000116>
+        <oboOther:IAO_0000117 xml:lang="en">Alan Ruttenberg</oboOther:IAO_0000117>
+        <oboOther:IAO_0000119 xml:lang="en">OBI Plan and Planned Process branch</oboOther:IAO_0000119>
+        <oboOther:IAO_0000119 xml:lang="en">OBI_0000344</oboOther:IAO_0000119>
+        <oboOther:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+        <rdfs:label xml:lang="en">plan specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000591 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/IAO_0000591">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000010"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NGS_0000040"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <oboOther:IAO_0000111 xml:lang="en">software method</oboOther:IAO_0000111>
+        <oboOther:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000123"/>
+        <oboOther:IAO_0000115 xml:lang="en">A software method (also called subroutine, subprogram, procedure, method, function, or routine) is software designed to execute a specific task.</oboOther:IAO_0000115>
+        <oboOther:IAO_0000117 xml:lang="en">PERSON: Melanie Courtot</oboOther:IAO_0000117>
+        <oboOther:IAO_0000117 xml:lang="en">PERSON: Michel Dumontier</oboOther:IAO_0000117>
+        <oboOther:IAO_0000119 xml:lang="en">http://code.google.com/p/information-artifact-ontology/issues/detail?id=80</oboOther:IAO_0000119>
+        <oboOther:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+        <rdfs:label xml:lang="en">software method</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000595 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/IAO_0000595">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000010"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NGS_0000047"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NGS_0000048"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <oboOther:IAO_0000111 xml:lang="en">software script</oboOther:IAO_0000111>
+        <oboOther:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000123"/>
+        <oboOther:IAO_0000117 xml:lang="en">PERSON: Melanie Courtot</oboOther:IAO_0000117>
+        <oboOther:IAO_0000117 xml:lang="en">PERSON: Michel Dumontier</oboOther:IAO_0000117>
+        <oboOther:IAO_0000119 xml:lang="en">http://code.google.com/p/information-artifact-ontology/issues/detail?id=80</oboOther:IAO_0000119>
+        <oboOther:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+        <rdfs:comment xml:lang="en">A manual script is string or file whose instructions can be executed using a software interpreter.</rdfs:comment>
+        <rdfs:label xml:lang="en">software script</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_9606 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_9606">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Homo sapiens</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NGS_0000001 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NGS_0000001">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NGS_0000061"/>
+        <rdfs:comment xml:lang="en">Collection of the 5&apos; and 3&apos; ends of DNA or cDNA fragments. Represents the output of a Library Preparation process.</rdfs:comment>
+        <rdfs:label xml:lang="en">Library</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NGS_0000003 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NGS_0000003">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000150"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NGS_0000058"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">Reads that have suffered some processing.</rdfs:comment>
+        <rdfs:label xml:lang="en">Processed Reads</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NGS_0000004 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NGS_0000004">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0000150"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NGS_0000058"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">Raw output of a Sequencing Process.</rdfs:comment>
+        <rdfs:label xml:lang="en">Raw Reads</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NGS_0000006 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NGS_0000006">
+        <rdfs:subClassOf rdf:resource="http://www.ifomis.org/bfo/1.1/span#Process"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NGS_0000091"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000272"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0001950"/>
+                <owl:someValuesFrom rdf:resource="http://purl.org/dc/terms/Agent"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NGS_0000080"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NGS_0000081"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NGS_0000089"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NGS_0000097"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A single process execution that may occur within a NGS pipeline.</rdfs:comment>
+        <rdfs:label xml:lang="en">Next Generation Sequencing Process</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NGS_0000007 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NGS_0000007">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NGS_0000006"/>
+        <oboOther:IAO_0000115 xml:lang="en">Post Sequencing processing of the reads.</oboOther:IAO_0000115>
+        <rdfs:label xml:lang="en">Data processing</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NGS_0000008 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NGS_0000008">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NGS_0000007"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002233"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/SO_0000150"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002234"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/SO_0000150"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <oboOther:IAO_0000115 xml:lang="en">Selection of a set of reads considering a set of parameters.</oboOther:IAO_0000115>
+        <rdfs:label xml:lang="en">Filtering</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NGS_0000061 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NGS_0000061">
+        <rdfs:subClassOf rdf:resource="http://www.ifomis.org/bfo/1.1/snap#MaterialEntity"/>
+        <rdfs:comment xml:lang="en">A result output of a single process. This output may be an input for another process .</rdfs:comment>
+        <rdfs:label xml:lang="en">Message</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NGS_0000064 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NGS_0000064">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000272"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NGS_0000065"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NGS_0000066"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NGS_0000022"/>
+                <owl:someValuesFrom rdf:resource="http://edamontology.org/data_2527"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NGS_0000023"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://purl.obolibrary.org/obo/IAO_0000010"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NGS_0000063"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://purl.obolibrary.org/obo/IAO_0000591"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">Data Processing protocol</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NGS_0000065 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NGS_0000065">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NGS_0000064"/>
+        <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/NGS_0000066"/>
+        <rdfs:label xml:lang="en">Sequence cutting protocol</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NGS_0000066 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NGS_0000066">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NGS_0000064"/>
+        <rdfs:comment xml:lang="en">Resource that provides access to software, applications, or toolkits that perform alter the spatial-temporal spectral content of data.nnhttp://bioontology.org/ontologies/BiomedicalResourceOntology.owl#Filtering</rdfs:comment>
+        <rdfs:label xml:lang="en">Filtering protocol</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NGS_0000067 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NGS_0000067">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000272"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NGS_0000031"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NGS_0000084"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">DNA Extraction Protocol</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NGS_0000068 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NGS_0000068">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000272"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NGS_0000024"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NGS_0000030"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NGS_0000051"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NGS_0000057"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NGS_0000025"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NGS_0000034"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NGS_0000038"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NGS_0000040"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NGS_0000043"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#long"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NGS_0000053"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/OBI_0400103"/>
+        <rdfs:label xml:lang="en">Library Preparation Protocol</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NGS_0000069 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NGS_0000069">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000272"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NGS_0000070"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NGS_0000071"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NGS_0000022"/>
+                <owl:someValuesFrom rdf:resource="http://edamontology.org/data_2527"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NGS_0000023"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://purl.obolibrary.org/obo/IAO_0000010"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NGS_0000063"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://purl.obolibrary.org/obo/IAO_0000591"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">Sequence assembly protocol</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NGS_0000070 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NGS_0000070">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NGS_0000069"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NGS_0000046"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NGS_0000049"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#long"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/NGS_0000071"/>
+        <rdfs:label xml:lang="en">de-novo assembly protocol</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NGS_0000071 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NGS_0000071">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NGS_0000069"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NGS_0000045"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">mapping assembly protocol</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NGS_0000072 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NGS_0000072">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000272"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NGS_0000022"/>
+                <owl:someValuesFrom rdf:resource="http://edamontology.org/data_2527"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NGS_0000020"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://purl.obolibrary.org/obo/OBI_0400103"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">sequencing protocol</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NGS_0000073 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NGS_0000073">
+        <rdfs:subClassOf rdf:resource="http://www.ifomis.org/bfo/1.1/snap#Quality"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NGS_0000081"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">An index that represents the place in an ordered sequence.</rdfs:comment>
+        <rdfs:label xml:lang="en">Step</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NGS_0000074 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NGS_0000074">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NGS_0000073"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NGS_0000079"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://purl.obolibrary.org/obo/OBI_0500000"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <oboOther:IAO_0000115 xml:lang="en">Index of a sequence of worklfows used in the concretization of a pipeline.</oboOther:IAO_0000115>
+        <rdfs:label xml:lang="en">Execution step</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NGS_0000075 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NGS_0000075">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NGS_0000073"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NGS_0000077"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://purl.obolibrary.org/obo/OBI_0000272"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <oboOther:IAO_0000115 xml:lang="en">Index of a sequence of protocols performed in a workflow.</oboOther:IAO_0000115>
+        <rdfs:label xml:lang="en">NGS Workflow step</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NGS_0000088 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NGS_0000088">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000272"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NGS_0000065"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NGS_0000066"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NGS_0000022"/>
+                <owl:someValuesFrom rdf:resource="http://edamontology.org/data_2527"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NGS_0000023"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://purl.obolibrary.org/obo/IAO_0000010"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NGS_0000063"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://purl.obolibrary.org/obo/IAO_0000591"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">Sequencing quality control protocol</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NGS_0000090 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NGS_0000090">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000272"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NGS_0000022"/>
+                <owl:someValuesFrom rdf:resource="http://edamontology.org/data_2527"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NGS_0000023"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://purl.obolibrary.org/obo/IAO_0000010"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NGS_0000063"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://purl.obolibrary.org/obo/IAO_0000591"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Allele Call Protocol</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NGS_0000098 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NGS_0000098">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000435"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002233"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0001573"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002234"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0001305"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <edamontology:synonym>Allele Call</edamontology:synonym>
+        <rdfs:label>Allele call</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NGS_0000099 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NGS_0000099">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000435"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002233"/>
+                <owl:someValuesFrom rdf:resource="http://rdf.ebi.ac.uk/terms/biosd/Sample"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002234"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0001305"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Pathotyping</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NGS_0000100 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NGS_0000100">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000272"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NGS_0000022"/>
+                <owl:someValuesFrom rdf:resource="http://edamontology.org/data_2527"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NGS_0000023"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://purl.obolibrary.org/obo/IAO_0000010"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NGS_0000063"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://purl.obolibrary.org/obo/IAO_0000591"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>&apos;Pathotyping Protocol&apos;</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000011 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000011">
+        <rdfs:subClassOf rdf:resource="http://www.ifomis.org/bfo/1.1/span#Process"/>
+        <oboOther:IAO_0000111 xml:lang="en">planned process</oboOther:IAO_0000111>
+        <oboOther:IAO_0000112 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Injecting mice with a vaccine in order to test its efficacy</oboOther:IAO_0000112>
+        <oboOther:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
+        <oboOther:IAO_0000115 xml:lang="en">A processual entity that realizes a plan which is the concretization of a plan specification.</oboOther:IAO_0000115>
+        <oboOther:IAO_0000116 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&apos;Plan&apos; includes a future direction sense. That can be problematic if plans are changed during their execution. There are however implicit contingencies for protocols that an agent has in his mind that can be considered part of the plan, even if the agent didn&apos;t have them in mind before. Therefore, a planned process can diverge from what the agent would have said the plan was before executing it, by adjusting to problems encountered during execution (e.g. choosing another reagent with equivalent properties, if the originally planned one has run out.)</oboOther:IAO_0000116>
+        <oboOther:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bjoern Peters</oboOther:IAO_0000117>
+        <oboOther:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">branch derived</oboOther:IAO_0000119>
+        <oboOther:IAO_0000232 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6/11/9: Edited at workshop. Used to include: is initiated by an agent</oboOther:IAO_0000232>
+        <oboOther:IAO_0000232 xml:lang="en">This class merges the previously separated objective driven process and planned process, as they the separation proved hard to maintain. (1/22/09, branch call)</oboOther:IAO_0000232>
+        <oboOther:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+        <rdfs:label xml:lang="en">planned process</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000066 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000066">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000011"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000471"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NGS_0000015"/>
+                <owl:someValuesFrom rdf:resource="http://purl.org/dc/terms/Agent"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NGS_0000053"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NGS_0000056"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NGS_0000054"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NGS_0000055"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NGS_0000080"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <oboOther:IAO_0000111 xml:lang="en">investigation</oboOther:IAO_0000111>
+        <oboOther:IAO_0000112 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lung cancer investigation using expression profiling, a stem cell transplant investigation, biobanking is not an investigation, though it may be part of an investigation</oboOther:IAO_0000112>
+        <oboOther:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
+        <oboOther:IAO_0000115 xml:lang="en">a planned process that consists of parts: planning, study design execution, documentation and which produce conclusion(s).</oboOther:IAO_0000115>
+        <oboOther:IAO_0000117 xml:lang="en">Bjoern Peters</oboOther:IAO_0000117>
+        <oboOther:IAO_0000119 xml:lang="en">OBI branch derived</oboOther:IAO_0000119>
+        <oboOther:IAO_0000232 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Could add specific objective specification</oboOther:IAO_0000232>
+        <oboOther:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+        <oboOther:OBI_0001847 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">study</oboOther:OBI_0001847>
+        <rdfs:label xml:lang="en">investigation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000202 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000202">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">investigation agent role</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000245 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000245">
+        <rdfs:label xml:lang="en">organization</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000257 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000257">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NGS_0000006"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002233"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0000747"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002234"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0001051"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <oboOther:IAO_0000111 xml:lang="en">DNA extraction</oboOther:IAO_0000111>
+        <oboOther:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000123"/>
+        <oboOther:IAO_0000115 xml:lang="en">A DNA extraction is a nucleic acid extraction where the desired output material is DNA.</oboOther:IAO_0000115>
+        <oboOther:IAO_0000117 xml:lang="en">PlanAndPlannedProcess Branch</oboOther:IAO_0000117>
+        <oboOther:IAO_0000119 xml:lang="en">OBI branch derived</oboOther:IAO_0000119>
+        <oboOther:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+        <rdfs:label xml:lang="en">DNA extraction</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000272 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000272">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000104"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NGS_0000040"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <oboOther:IAO_0000111 xml:lang="en">protocol</oboOther:IAO_0000111>
+        <oboOther:IAO_0000112 xml:lang="en">PCR protocol, has objective specification, amplify DNA fragment of interest, and has action specification describes the amounts of experimental reagents used (e..g. buffers, dNTPS, enzyme), and the temperature and cycle time settings for running the PCR.</oboOther:IAO_0000112>
+        <oboOther:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
+        <oboOther:IAO_0000115 xml:lang="en">A plan specification which has sufficient level of detail and quantitative information to communicate it between investigation agents, so that different investigation agents will reliably be able to independently reproduce the process.</oboOther:IAO_0000115>
+        <oboOther:IAO_0000117 xml:lang="en">PlanAndPlannedProcess Branch</oboOther:IAO_0000117>
+        <oboOther:IAO_0000119 xml:lang="en">OBI branch derived + wikipedia (http://en.wikipedia.org/wiki/Protocol_%28natural_sciences%29)</oboOther:IAO_0000119>
+        <oboOther:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+        <oboOther:OBI_0001847 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">study protocol</oboOther:OBI_0001847>
+        <rdfs:label xml:lang="en">protocol</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000435 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000435">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NGS_0000006"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000471 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000471">
+        <rdfs:subClassOf rdf:resource="http://www.ifomis.org/bfo/1.1/span#Process"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NGS_0000006"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NGS_0000015"/>
+                <owl:someValuesFrom rdf:resource="http://purl.org/dc/terms/Agent"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NGS_0000076"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NGS_0000074"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <oboOther:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">study design execution</oboOther:IAO_0000111>
+        <oboOther:IAO_0000112 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">injecting a mouse with PBS solution, weighing it, and recording the weight according to a study design.</oboOther:IAO_0000112>
+        <oboOther:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
+        <oboOther:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a planned process that realizes the concretization of a study design</oboOther:IAO_0000115>
+        <oboOther:IAO_0000116 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">removed axiom has_part some (assay or &apos;data transformation&apos;) per discussion on protocol application mailing list to improve reasoner performance. The axiom is still desired.</oboOther:IAO_0000116>
+        <oboOther:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">branch derived</oboOther:IAO_0000119>
+        <oboOther:IAO_0000232 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6/11/9: edited at workshop. Used to be: study design execution is a process with the objective to generate data according to a concretized study design. The execution of a study design is part of an investigation, and minimally consists of an assay or data transformation.</oboOther:IAO_0000232>
+        <oboOther:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+        <rdfs:comment xml:lang="en">pipeline</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">study design execution</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000626 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000626">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NGS_0000006"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002233"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0001051"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002234"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0001573"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/OBI_0001950"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://purl.obolibrary.org/obo/OBI_0400103"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <oboOther:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DNA sequencing</oboOther:IAO_0000111>
+        <oboOther:IAO_0000112 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Genomic deletions of OFD1 account for 23% of oral-facial-digital type 1 syndrome after negative DNA sequencing. Thauvin-Robinet C, Franco B, Saugier-Veber P, Aral B, Gigot N, Donzel A, Van Maldergem L, Bieth E, Layet V, Mathieu M, Teebi A, Lespinasse J, Callier P, Mugneret F, Masurel-Paulet A, Gautier E, Huet F, Teyssier JR, Tosi M, Frébourg T, Faivre L.  Hum Mutat. 2008 Nov 19. PMID: 19023858</oboOther:IAO_0000112>
+        <oboOther:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000123"/>
+        <oboOther:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DNA sequencing is a sequencing process which uses deoxyribonucleic acid as input and results in a the creation of DNA sequence information artifact using a DNA sequencer instrument.</oboOther:IAO_0000115>
+        <oboOther:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Philippe Rocca-Serra</oboOther:IAO_0000117>
+        <oboOther:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OBI Branch derived</oboOther:IAO_0000119>
+        <oboOther:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+        <oboOther:OBI_0001847 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nucleotide sequencing</oboOther:OBI_0001847>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DNA sequencing</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000711 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000711">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NGS_0000006"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002233"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/OBI_0001051"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002234"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NGS_0000001"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <oboOther:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">library preparation</oboOther:IAO_0000111>
+        <oboOther:IAO_0000112 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID: 19570239. Construction and analysis of cotton (Gossypium arboreum L.) drought-related cDNA library. Zhang L, Li FG, Liu CL, Zhang CJ, Zhang XY. BMC Res Notes. 2009 Jul 2;2:120.</oboOther:IAO_0000112>
+        <oboOther:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
+        <oboOther:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">is a process which results in the creation of a library from fragments of DNA using cloning vectors or oligonucleotides with the role of adaptors.</oboOther:IAO_0000115>
+        <oboOther:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Philippe Rocca-Serra</oboOther:IAO_0000117>
+        <oboOther:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">library construction</oboOther:IAO_0000118>
+        <oboOther:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">library preparation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000747 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000747">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NGS_0000061"/>
+        <oboOther:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">material sample</oboOther:IAO_0000111>
+        <oboOther:IAO_0000112 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">blood drawn from patient to measure his systemic glucose level. A population of humans with HIV enrolled in a study taken to represent patients with HIV in general.</oboOther:IAO_0000112>
+        <oboOther:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000123"/>
+        <oboOther:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A material entity that has the material sample role</oboOther:IAO_0000115>
+        <oboOther:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OBI: workshop</oboOther:IAO_0000117>
+        <oboOther:IAO_0000118 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sample population</oboOther:IAO_0000118>
+        <oboOther:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+        <oboOther:OBI_0001847 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sample</oboOther:OBI_0001847>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">material sample</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0000968 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0000968">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">device</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0001051 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0001051">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NGS_0000061"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NGS_0000028"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NGS_0000025"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <oboOther:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DNA extract</oboOther:IAO_0000111>
+        <oboOther:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
+        <oboOther:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The output of an extraction process in which DNA molecules are purified in order to exclude DNA from organellas.</oboOther:IAO_0000115>
+        <oboOther:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Person: Jie Zheng</oboOther:IAO_0000117>
+        <oboOther:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Group: UPenn group</oboOther:IAO_0000119>
+        <oboOther:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DNA extract</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0001305 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0001305">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NGS_0000061"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NGS_0000092"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NGS_0000094"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NGS_0000095"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NGS_0000096"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Allele Matrix</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0001573 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0001573">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NGS_0000061"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NGS_0000032"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NGS_0000033"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <oboOther:IAO_0000111 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DNA sequence data</oboOther:IAO_0000111>
+        <oboOther:IAO_0000112 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The part of a FASTA file that contains the letters ACTGGGAA </oboOther:IAO_0000112>
+        <oboOther:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000120"/>
+        <oboOther:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sequence data item that is about the primary structure of DNA</oboOther:IAO_0000115>
+        <oboOther:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OBI call; Bjoern Peters</oboOther:IAO_0000117>
+        <oboOther:IAO_0000119 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OBI call; Melanie Courtout</oboOther:IAO_0000119>
+        <oboOther:IAO_0000232 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">8/29/11 call: This is added after a request from Melanie and Yu. They should review it further. This should be a child of &apos;sequence data&apos;, and as of the current definition will infer there.  </oboOther:IAO_0000232>
+        <oboOther:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DNA sequence data</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0400103 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0400103">
+        <rdfs:subClassOf rdf:resource="http://www.ifomis.org/bfo/1.1/snap#MaterialEntity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NGS_0000015"/>
+                <owl:someValuesFrom rdf:resource="http://purl.org/dc/terms/Agent"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NGS_0000040"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NGS_0000052"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NGS_0000059"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <oboOther:IAO_0000111 xml:lang="en">DNA sequencer</oboOther:IAO_0000111>
+        <oboOther:IAO_0000112 xml:lang="en">ABI 377 DNA Sequencer, ABI 310 DNA Sequencer</oboOther:IAO_0000112>
+        <oboOther:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
+        <oboOther:IAO_0000115 xml:lang="en">A DNA sequencer is an instrument that determines the order of deoxynucleotides in deoxyribonucleic acid sequences.</oboOther:IAO_0000115>
+        <oboOther:IAO_0000117 xml:lang="en">Trish Whetzel</oboOther:IAO_0000117>
+        <oboOther:IAO_0000119 xml:lang="en">MO</oboOther:IAO_0000119>
+        <oboOther:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+        <rdfs:comment xml:lang="en">A DNA sequencer is an instrument that determines the order of deoxynucleotides in deoxyribonucleic acid sequences.nntnnhttp://purl.obolibrary.org/obo/OBI_0400103</rdfs:comment>
+        <rdfs:label xml:lang="en">DNA sequencer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OBI_0500000 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0500000">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000104"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NGS_0000078"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://purl.obolibrary.org/obo/NGS_0000075"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <oboOther:IAO_0000111 xml:lang="en">study design</oboOther:IAO_0000111>
+        <oboOther:IAO_0000112 xml:lang="en">a matched pairs study design describes criteria by which subjects are identified as pairs which then undergo the same protocols, and the data generated is analyzed by comparing the differences between the paired subjects, which constitute the results of the executed study design.</oboOther:IAO_0000112>
+        <oboOther:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
+        <oboOther:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A plan specification comprised of protocols (which may specify how and what kinds of data will be gathered) that are executed as part of an investigation and is realized during a study design execution.</oboOther:IAO_0000115>
+        <oboOther:IAO_0000116 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Editor note: there is at least an implicit restriction on the kind of data transformations that can be done based on the measured data available.</oboOther:IAO_0000116>
+        <oboOther:IAO_0000117 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PERSON: Chris Stoeckert</oboOther:IAO_0000117>
+        <oboOther:IAO_0000118 xml:lang="en">experimental design</oboOther:IAO_0000118>
+        <oboOther:IAO_0000232 xml:lang="en">rediscussed at length (MC/JF/BP). 12/9/08). The definition was clarified to differentiate it from protocol.</oboOther:IAO_0000232>
+        <oboOther:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+        <rdfs:label xml:lang="en">study design</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/SO_0000149 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0000149">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NGS_0000061"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NGS_0000058"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NGS_0000032"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NGS_0000033"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NGS_0000092"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NGS_0000093"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NGS_0000094"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NGS_0000096"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <oboOther:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A contiguous sequence derived from sequence assembly. Has no gaps, but may contain N&apos;s from unavailable bases.</oboOther:IAO_0000115>
+        <oboOther:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/so.owl"/>
+        <oboOther:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SO:0000149</oboOther:IAO_id>
+        <oboOther:IAO_subset rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SOFA</oboOther:IAO_subset>
+        <oboOther:IAO_xref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://en.wikipedia.org/wiki/Contig</oboOther:IAO_xref>
+        <rdfs:comment xml:lang="en">A set of overlapping DNA segments that together represent a consensus region of DNA. Represents the output of a De-novo assembly process</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">contig</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/SO_0000150 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/SO_0000150">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NGS_0000061"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NGS_0000032"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NGS_0000033"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <oboOther:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A sequence obtained from a single sequencing experiment. Typically a read is produced when a base calling program interprets information from a chromatogram trace file produced from a sequencing machine.</oboOther:IAO_0000115>
+        <oboOther:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/so.owl"/>
+        <oboOther:IAO_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SO:0000150</oboOther:IAO_id>
+        <oboOther:IAO_subset rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SOFA</oboOther:IAO_subset>
+        <rdfs:comment xml:lang="en">A string or a file that contains a nucleotid sequence representing that read.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">read</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/dc/terms/Agent -->
+
+    <owl:Class rdf:about="http://purl.org/dc/terms/Agent">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NGS_0000085"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NGS_0000086"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/NGS_0000087"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://xmlns.com/foaf/0.1/mbox"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://rdf.ebi.ac.uk/terms/biosd/Sample -->
+
+    <owl:Class rdf:about="http://rdf.ebi.ac.uk/terms/biosd/Sample">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000747"/>
+        <rdfs:label>biosamples sample</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://rest.phyloviz.net/ontology#Isolate -->
+
+    <owl:Class rdf:about="http://rest.phyloviz.net/ontology#Isolate">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000747"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ifomis.org/bfo/1.1/snap#GenericallyDependentContinuant -->
+
+    <owl:Class rdf:about="http://www.ifomis.org/bfo/1.1/snap#GenericallyDependentContinuant"/>
+    
+
+
+    <!-- http://www.ifomis.org/bfo/1.1/snap#MaterialEntity -->
+
+    <owl:Class rdf:about="http://www.ifomis.org/bfo/1.1/snap#MaterialEntity">
+        <oboOther:IAO_0000111 xml:lang="en">material entity</oboOther:IAO_0000111>
+        <oboOther:IAO_0000115 xml:lang="en">An independent continuant  that is spatially extended whose identity is independent of that of other entities and can be maintained through time.</oboOther:IAO_0000115>
+        <oboOther:IAO_0000116 xml:lang="en">Examples: collection of random bacteria, a chair, dorsal surface of the body</oboOther:IAO_0000116>
+        <oboOther:IAO_0000116 xml:lang="en">Material entity [snap:MaterialEntity] subsumes object [snap:Object], fiat object part [snap:FiatObjectPart], and object aggregate [snap:ObjectAggregate], which assume a three level theory of granularity, which is inadequate for some domains, such as biology.</oboOther:IAO_0000116>
+        <oboOther:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+        <rdfs:label xml:lang="en">material entity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ifomis.org/bfo/1.1/snap#Quality -->
+
+    <owl:Class rdf:about="http://www.ifomis.org/bfo/1.1/snap#Quality"/>
+    
+
+
+    <!-- http://www.ifomis.org/bfo/1.1/span#Process -->
+
+    <owl:Class rdf:about="http://www.ifomis.org/bfo/1.1/span#Process">
+        <oboOther:IAO_0000111 xml:lang="en">process</oboOther:IAO_0000111>
+        <oboOther:IAO_0000112 xml:lang="en">the life of an organism</oboOther:IAO_0000112>
+        <oboOther:IAO_0000112 xml:lang="en">the process of cell-division</oboOther:IAO_0000112>
+        <oboOther:IAO_0000112 xml:lang="en">the process of sleeping</oboOther:IAO_0000112>
+        <oboOther:IAO_0000115 xml:lang="en">A processual entity  that is a maximally connected spatiotemporal whole and has bona fide beginnings and endings corresponding to real discontinuities.</oboOther:IAO_0000115>
+        <oboOther:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
+        <rdfs:label xml:lang="en">process</rdfs:label>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+
