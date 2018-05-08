@@ -38,8 +38,14 @@ services:
       - static-content:/Frontend/report-nf/
       - user_data:/INNUENDO
       - ./inputs/fastq:/INNUENDO/ftp/files
+      - ./inputs/classifications:/INNUENDO/inputs/classifications
+      - ./inputs/core_lists:/INNUENDO/inputs/core_lists
+      - ./inputs/indexes:/INNUENDO/inputs/indexes
+      - ./inputs/legacy_metadata:/INNUENDO/inputs/legacy_metadata
+      - ./inputs/legacy_profiles:/INNUENDO/inputs/legacy_profiles
       - singularity_cache:/mnt/singularity_cache
       - /Users/bgoncalves/sandbox/repositories/INNUENDO_REST_API/app/static/css:/Frontend/INNUENDO_REST_API/app/static/css
+      - /Users/bgoncalves/sandbox/repositories/INNUENDO_REST_API/app/models:/Frontend/INNUENDO_REST_API/app/models
       - /Users/bgoncalves/sandbox/repositories/INNUENDO_REST_API/app/static/controllers:/Frontend/INNUENDO_REST_API/app/static/controllers
       - /Users/bgoncalves/sandbox/repositories/INNUENDO_REST_API/app/static/img:/Frontend/INNUENDO_REST_API/app/static/img
       - /Users/bgoncalves/sandbox/repositories/INNUENDO_REST_API/app/templates:/Frontend/INNUENDO_REST_API/app/templates
@@ -48,13 +54,14 @@ services:
       - /Users/bgoncalves/sandbox/repositories/INNUENDO_REST_API/app/static/html_components:/Frontend/INNUENDO_REST_API/app/static/html_components
       - /Users/bgoncalves/sandbox/repositories/INNUENDO_REST_API/app/resources/postgres:/Frontend/INNUENDO_REST_API/app/resources/postgres
       - /Users/bgoncalves/sandbox/repositories/INNUENDO_REST_API/app/api.py:/Frontend/INNUENDO_REST_API/app/api.py
+      - /Users/bgoncalves/sandbox/repositories/INNUENDO_REST_API/mlst_profiles_to_db.py:/Frontend/INNUENDO_REST_API/mlst_profiles_to_db.py
     ports:
       - "5000:5000"
     depends_on:
       - allegro
-      #- db_innuendo
-      #- db_mlst
-    command: ["init_all"]
+      - db_innuendo
+      - db_mlst
+    command: ["init_all", "build_metadata_indexes"]
 
   # DB for the INNUENDO application.
   db_innuendo:
@@ -64,6 +71,8 @@ services:
       POSTGRES_USER: "innuendo"
       POSTGRES_PASSWORD: "innuendo_database"
       POSTGRES_DB: "innuendo"
+    volumes:
+      - ./configs/alembic_drop.sql:/docker-entrypoint-initdb.d/1-schema.sql
 
   # DB for the INNUENDO wgMLST profiles.
   db_mlst:
@@ -73,6 +82,8 @@ services:
       POSTGRES_USER: "innuendo"
       POSTGRES_PASSWORD: "innuendo_database"
       POSTGRES_DB: "mlst_database"
+    volumes:
+      - ./configs/alembic_drop.sql:/docker-entrypoint-initdb.d/1-schema.sql
 
   # DB for PHYLOViZ Online.
   db_phyloviz:
@@ -102,7 +113,7 @@ services:
   # conf files.
   controller:
     image: innuendodocker_controller:latest
-    command: ["slurmctld"]
+    command: ["slurmctld", "get_schemas"]
     container_name: slurmctld
     hostname: slurmctld
     privileged: true
@@ -116,6 +127,7 @@ services:
       - ./configs/nextflow.config:/Controller/assemblerflow/assemblerflow/nextflow.config
       - user_data:/INNUENDO
       - ./inputs/fastq:/INNUENDO/ftp/files
+      - ./inputs/schemas:/INNUENDO/inputs/schemas
       - singularity_cache:/mnt/singularity_cache
     expose:
       - "6817"

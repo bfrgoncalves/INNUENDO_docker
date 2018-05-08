@@ -165,9 +165,9 @@ RUN VERSION=2.4.5 && wget https://github.com/singularityware/singularity/release
 
 WORKDIR /Controller/INNUENDO_PROCESS_CONTROLLER
 
-RUN echo "BAH"
-
 COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
+
+COPY download_schemas.sh /Controller/INNUENDO_PROCESS_CONTROLLER/download_schemas.sh
 
 ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
 

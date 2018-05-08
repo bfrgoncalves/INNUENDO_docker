@@ -1,5 +1,7 @@
 # Created by .ignore support plugin (hsz.mobi)
 inputs/core_lists/*
+inputs/classifications/*
+inputs/indexes/*
 inputs/fastq/*
 inputs/legacy_metadata/*
 inputs/legacy_profiles/*
