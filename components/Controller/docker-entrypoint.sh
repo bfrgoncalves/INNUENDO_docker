@@ -49,10 +49,10 @@ then
         echo "---> QOS for chewBBACA already exists..."
     }
     echo "---> Updating INNUENDO Process Controller ..."
-    exec gosu root git pull &
+    #exec gosu root git pull &
 
     echo "---> Starting INNUENDO Process Controller ..."
-    exec gosu root ./run.py &
+    exec ./run.py &
 
     echo "---> Starting the Slurm Controller Daemon (slurmctld) ..."
     exec gosu slurm /usr/sbin/slurmctld -Dvvv

@@ -6,3 +6,7 @@ inputs/fastq/*
 inputs/legacy_metadata/*
 inputs/legacy_profiles/*
 inputs/schemas/*
+inputs/prodigal_training_files/*
+inputs/serotyping_files/*
+.idea
+databases/*

@@ -1,22 +1,10 @@
 version: '3'
 services:
-  # Service for the nginx web server. it requires mapping of the nginx conf
-  # to be able to access all the other processes from the browser.
-  web:
-    image: nginx:latest
-    volumes:
-      - ./configs/site.conf:/etc/nginx/conf.d/default.conf
-      - static-content:/usr/src/app
-    ports:
-      - "80:80"
-      - "10035:10035"
-    depends_on:
-      - frontend
-      #- controller
 
   # Service for the AllegroGraph
   allegro:
     build: ./components/AllegroGraph/
+    restart: on-failure
     expose:
       - "10035"
     command: ["init_all"]
@@ -32,9 +20,10 @@ services:
   frontend:
     build: ./components/Frontend/
     privileged: true
+    restart: on-failure
     volumes:
-      - ./configs/config_frontend.py:/Frontend/INNUENDO_REST_API/config.py
-      - ./configs/config_reports.js:/Frontend/report-nf/config.js
+      - ./configs/app/config_frontend.py:/Frontend/INNUENDO_REST_API/config.py
+      - ./configs/app/config_reports.js:/Frontend/report-nf/config.js
       - static-content:/Frontend/report-nf/
       - user_data:/INNUENDO
       - ./inputs/fastq:/INNUENDO/ftp/files
@@ -53,59 +42,63 @@ services:
       - /Users/bgoncalves/sandbox/repositories/INNUENDO_REST_API/app/static/ico:/Frontend/INNUENDO_REST_API/app/static/ico
       - /Users/bgoncalves/sandbox/repositories/INNUENDO_REST_API/app/static/html_components:/Frontend/INNUENDO_REST_API/app/static/html_components
       - /Users/bgoncalves/sandbox/repositories/INNUENDO_REST_API/app/resources/postgres:/Frontend/INNUENDO_REST_API/app/resources/postgres
+      - /Users/bgoncalves/sandbox/repositories/INNUENDO_REST_API/app/resources/jobs:/Frontend/INNUENDO_REST_API/app/resources/jobs
       - /Users/bgoncalves/sandbox/repositories/INNUENDO_REST_API/app/api.py:/Frontend/INNUENDO_REST_API/app/api.py
       - /Users/bgoncalves/sandbox/repositories/INNUENDO_REST_API/mlst_profiles_to_db.py:/Frontend/INNUENDO_REST_API/mlst_profiles_to_db.py
+      - /Users/bgoncalves/sandbox/repositories/INNUENDO_REST_API/app/views.py:/Frontend/INNUENDO_REST_API/app/views.py
     ports:
       - "5000:5000"
     depends_on:
-      - allegro
-      - db_innuendo
-      - db_mlst
-    command: ["init_all", "build_metadata_indexes"]
+      - "allegro"
+      - "db_innuendo"
+      - "db_mlst"
+      - "web"
+    command: ["build_allegro", "build_db", "build_metadata_indexes", "init_app"]
 
   # DB for the INNUENDO application.
   db_innuendo:
-    image: postgres
+    build: ./components/Postgres
     restart: always
     environment:
       POSTGRES_USER: "innuendo"
       POSTGRES_PASSWORD: "innuendo_database"
       POSTGRES_DB: "innuendo"
     volumes:
-      - ./configs/alembic_drop.sql:/docker-entrypoint-initdb.d/1-schema.sql
+      - ./configs/dbs/alembic_drop.sql:/docker-entrypoint-initdb.d/1-schema.sql
 
   # DB for the INNUENDO wgMLST profiles.
   db_mlst:
-    image: postgres
+    build: ./components/Postgres
     restart: always
     environment:
       POSTGRES_USER: "innuendo"
       POSTGRES_PASSWORD: "innuendo_database"
       POSTGRES_DB: "mlst_database"
     volumes:
-      - ./configs/alembic_drop.sql:/docker-entrypoint-initdb.d/1-schema.sql
+      - ./configs/dbs/alembic_drop.sql:/docker-entrypoint-initdb.d/1-schema.sql
 
   # DB for PHYLOViZ Online.
   db_phyloviz:
-    image: postgres
+    build: ./components/Postgres
     restart: always
     environment:
       POSTGRES_USER: "phyloviz"
       POSTGRES_PASSWORD: "phyloviz"
       POSTGRES_DB: "phyloviz"
     volumes:
-      - ./configs/init.sql:/docker-entrypoint-initdb.d/1-schema.sql
+      - ./configs/dbs/init.sql:/docker-entrypoint-initdb.d/1-schema.sql
 
   # Service for PHYLOViZ Online application
   phyloviz:
     build: ./components/PHYLOViZ
+    restart: on-failure
     volumes:
-      - ./configs/phyloviz_config.js:/PHYLOVIZ/Online-PhyloViZ/config.js
+      - ./configs/app/phyloviz_config.js:/PHYLOVIZ/Online-PhyloViZ/config.js
     expose:
       - "3000"
     depends_on:
-      - db_phyloviz
-      - redis
+      - "db_phyloviz"
+      - "redis"
     command: ["init_all"]
 
   # Service for the INNUENDO frontend. Requires the config files for the
@@ -118,23 +111,31 @@ services:
     hostname: slurmctld
     privileged: true
     tty: true
+    #restart: on-failure
     volumes:
       - etc_munge:/etc/munge
       - etc_slurm:/etc/slurm
       - slurm_jobdir:/data
       - var_log_slurm:/var/log/slurm
-      - ./configs/config_process.py:/Controller/INNUENDO_PROCESS_CONTROLLER/config.py
-      - ./configs/nextflow.config:/Controller/assemblerflow/assemblerflow/nextflow.config
+      - ./configs/app/config_process.py:/Controller/INNUENDO_PROCESS_CONTROLLER/config.py
+      - ./configs/nextflow/nextflow.config:/Controller/assemblerflow/assemblerflow/nextflow.config
       - user_data:/INNUENDO
       - ./inputs/fastq:/INNUENDO/ftp/files
       - ./inputs/schemas:/INNUENDO/inputs/schemas
+      - ./inputs/prodigal_training_files:/INNUENDO/inputs/prodigal_training_files
+      - ./inputs/core_lists:/INNUENDO/inputs/core_lists
+      - ./inputs/serotyping_files:/INNUENDO/inputs/serotyping_files
       - singularity_cache:/mnt/singularity_cache
+      - /Users/bgoncalves/sandbox/repositories/INNUENDO_PROCESS_CONTROLLER/job_processing/queue_processor.py:/Controller/INNUENDO_PROCESS_CONTROLLER/job_processing/queue_processor.py
+      - /Users/bgoncalves/sandbox/repositories/INNUENDO_PROCESS_CONTROLLER/job_processing/bash_scripts/nextflow_executor.sh:/Controller/INNUENDO_PROCESS_CONTROLLER/job_processing/bash_scripts/nextflow_executor.sh
     expose:
       - "6817"
       - "5001"
     depends_on:
       - "slurmdbd"
       - "allegro"
+      - "frontend"
+      - "web"
 
 
   # service with mysql database for slurm accounting
@@ -166,7 +167,7 @@ services:
     expose:
       - "6819"
     depends_on:
-      - mysql
+      - "mysql"
 
   # service for slurm computing node 1
   c1:
@@ -183,6 +184,10 @@ services:
       - singularity_cache:/mnt/singularity_cache
       - user_data:/INNUENDO
       - ./inputs/fastq:/INNUENDO/ftp/files
+      - ./inputs/schemas:/INNUENDO/inputs/schemas
+      - ./inputs/prodigal_training_files:/INNUENDO/inputs/prodigal_training_files
+      - ./inputs/core_lists:/INNUENDO/inputs/core_lists
+      - ./inputs/serotyping_files:/INNUENDO/inputs/serotyping_files
     expose:
       - "6818"
     depends_on:
@@ -203,10 +208,27 @@ services:
       - singularity_cache:/mnt/singularity_cache
       - user_data:/INNUENDO
       - ./inputs/fastq:/INNUENDO/ftp/files
+      - ./inputs/schemas:/INNUENDO/inputs/schemas
+      - ./inputs/prodigal_training_files:/INNUENDO/inputs/prodigal_training_files
+      - ./inputs/core_lists:/INNUENDO/inputs/core_lists
+      - ./inputs/serotyping_files:/INNUENDO/inputs/serotyping_files
     expose:
       - "6818"
     depends_on:
       - "controller"
+
+  # Service for the nginx web server. it requires mapping of the nginx conf
+  # to be able to access all the other processes from the browser.
+  web:
+    image: nginx:latest
+    restart: on-failure
+    volumes:
+      - ./configs/nginx/site.conf:/etc/nginx/conf.d/default.conf
+      - static-content:/usr/src/app
+    ports:
+      - "80:80"
+      - "10035:10035"
+
 
 volumes:
   static-content:

@@ -59,6 +59,49 @@ SECURITY_RECOVERABLE = True
 SECURITY_CHANGEABLE = True
 SECURITY_FLASH_MESSAGES = True
 
+# Nextflow tags available in assemblerflow
+NEXTFLOW_TAGS = [
+    "integrity_coverage",
+    "check_coverage",
+    "fastqc",
+    "trimmomatic",
+    "fastqc_trimmomatic",
+    "true_coverage",
+    "spades",
+    "process_spades",
+    "assembly_mapping",
+    "pilon",
+    "mlst",
+    "abricate",
+    "prokka",
+    "chewbbaca",
+    "seq_typing",
+    "patho_typing"
+]
+
+# Names of the software available
+USEDSOFTWARE = [
+    "INNUca",
+    "chewBBACA",
+    "PathoTyping",
+    "integrity_coverage",
+    "fastqc",
+    "trimmomatic",
+    "integrity_coverage_2",
+    "fastqc2",
+    "true_coverage",
+    "spades",
+    "process_spades",
+    "assembly_mapping",
+    "process_assembly_mapping",
+    "pilon",
+    "mlst",
+    "prokka",
+    "abricate",
+    "seq_typing",
+    "patho_typing"
+]
+
 ########## Database endpoints and migrate repositories #######################
 
 DATABASE_USER = 'innuendo'
@@ -177,38 +220,38 @@ base_metadata = {
 }
 
 wg_index_correspondece = {
-    "E.coli": "./chewbbaca_database_profiles/indexes/ecoli_wg",
-    "Yersinia": "./chewbbaca_database_profiles/indexes/yersinia_wg",
-    "Salmonella": "./chewbbaca_database_profiles/indexes/salmonella_wg"
+    "E.coli": "/INNUENDO/inputs/indexes/ecoli_wg",
+    "Yersinia": "/INNUENDO/inputs/indexes/yersinia_wg",
+    "Salmonella": "/INNUENDO/inputs/indexes/salmonella_wg"
 }
 
 core_index_correspondece = {
-    "E.coli": "./chewbbaca_database_profiles/indexes/ecoli_core",
-    "Yersinia": "./chewbbaca_database_profiles/indexes/yersinia_core",
-    "Salmonella": "./chewbbaca_database_profiles/indexes/salmonella_core"
+    "E.coli": "/INNUENDO/inputs/indexes/ecoli_core",
+    "Yersinia": "/INNUENDO/inputs/indexes/yersinia_core",
+    "Salmonella": "/INNUENDO/inputs/indexes/salmonella_core"
 }
 
 wg_headers_correspondece = {
-    "E.coli": "./chewbbaca_database_profiles/profiles_headers/ecoli_headers_wg.txt",
-    "Yersinia": "./chewbbaca_database_profiles/profiles_headers/yersinia_headers_wg.txt",
-    "Salmonella": "./chewbbaca_database_profiles/profiles_headers/salmonella_headers_wg.txt"
+    "E.coli": "/INNUENDO/inputs/core_lists/ecoli_headers_wg.txt",
+    "Yersinia": "/INNUENDO/inputs/core_lists/yersinia_headers_wg.txt",
+    "Salmonella": "/INNUENDO/inputs/core_lists/salmonella_headers_wg.txt"
 }
 core_headers_correspondece = {
-    "E.coli": "./chewbbaca_database_profiles/profiles_headers/ecoli_headers_core.txt",
-    "Yersinia": "./chewbbaca_database_profiles/profiles_headers/yersinia_headers_core.txt",
-    "Salmonella": "./chewbbaca_database_profiles/profiles_headers/salmonella_headers_core.txt"
+    "E.coli": "/INNUENDO/inputs/core_lists/ecoli_headers_core.txt",
+    "Yersinia": "/INNUENDO/inputs/core_lists/yersinia_headers_core.txt",
+    "Salmonella": "/INNUENDO/inputs/core_lists/salmonella_headers_core.txt"
 }
 
 core_increment_profile_file_correspondece = {
-    "E.coli": "./chewbbaca_database_profiles/indexes/ecoli_core_profiles.tab",
-    "Yersinia": "./chewbbaca_database_profiles/indexes/yersinia_core_profiles.tab",
-    "Salmonella": "./chewbbaca_database_profiles/indexes/salmonella_core_profiles.tab"
+    "E.coli": "/INNUENDO/inputs/indexes/ecoli_core_profiles.tab",
+    "Yersinia": "/INNUENDO/inputs/indexes/yersinia_core_profiles.tab",
+    "Salmonella": "/INNUENDO/inputs/indexes/salmonella_core_profiles.tab"
 }
 
 wg_increment_profile_file_correspondece = {
-    "E.coli": "./chewbbaca_database_profiles/indexes/ecoli_wg_profiles.tab",
-    "Yersinia": "./chewbbaca_database_profiles/indexes/yersinia_wg_profiles.tab",
-    "Salmonella": "./chewbbaca_database_profiles/indexes/salmonella_wg_profiles.tab"
+    "E.coli": "/INNUENDO/inputs/indexes/ecoli_wg_profiles.tab",
+    "Yersinia": "/INNUENDO/inputs/indexes/yersinia_wg_profiles.tab",
+    "Salmonella": "/INNUENDO/inputs/indexes/salmonella_wg_profiles.tab"
 }
 
 classification_levels = {

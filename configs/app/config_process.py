@@ -20,7 +20,7 @@ APPLICATIONS_ARRAY = [
     'PathoTyping'
 ]
 
-FILETYPES_SOFTWARE = {
+'''FILETYPES_SOFTWARE = {
     'INNUca': [
         {
             'language': 'python',
@@ -46,6 +46,79 @@ FILETYPES_SOFTWARE = {
         }
     ]
 }
+'''
+
+# Specific process resources specifications
+NEXTFLOW_RESOURCES = {
+    "integrity_coverage": {
+        "memory": r"\'2GB\'",
+        "cpus": "1"
+    },
+    "check_coverage": {
+        "memory": r"\'2GB\'",
+        "cpus": "1"
+    },
+    "fastqc": {
+        "memory": r"\'2GB\'",
+        "cpus": "2"
+    },
+    "trimmomatic": {
+        "memory": "{2.GB*task.attempt}",
+        "cpus": "2"
+    },
+    "fastqc_trimmomatic": {
+        "memory": "{2.GB*task.attempt}",
+        "cpus": "2"
+    },
+    "true_coverage": {
+        "memory": r"\'1GB\'",
+        "cpus": "2"
+    },
+    "spades": {
+        "memory": "{2.GB*task.attempt}",
+        "cpus": "2",
+        "scratch": "true"
+    },
+    "process_spades": {
+        "memory": r"\'2GB\'",
+        "cpus": "1"
+    },
+    "assembly_mapping": {
+        "memory": "{2.GB*task.attempt}",
+        "cpus": "2"
+    },
+    "pilon": {
+        "memory": "{2.GB*task.attempt}",
+        "cpus": "2"
+    },
+    "mlst": {
+        "memory": r"\'2GB\'",
+        "cpus": "1",
+        "version": "tuberfree"
+    },
+    "abricate": {
+        "memory": r"\'2GB\'",
+        "cpus": "1"
+    },
+    "prokka": {
+        "memory": r"\'2GB\'",
+        "cpus": "1"
+    },
+    "chewbbaca": {
+        "memory": r"\'2GB\'",
+        "cpus": "2",
+        "queue": r"\'chewBBACA\'"
+    },
+    "seq_typing": {
+        "memory": r"\'2GB\'",
+        "cpus": "2"
+    },
+    "patho_typing": {
+        "memory": r"\'2GB\'",
+        "cpus": "2"
+    }
+}
+
 
 SERVER_IP = 'web'
 FRONTEND_SERVER_IP = 'web'
@@ -53,7 +126,7 @@ FRONTEND_SERVER_IP = 'web'
 #######################SLURM CONF ##############
 
 DEFAULT_SLURM_CPUS = '8'
-NEXTFLOW_PROFILE = 'local'
+NEXTFLOW_PROFILE = 'desktop'
 NEXTFLOW_GENERATOR_PATH = '/Controller/assemblerflow/assemblerflow/assemblerflow.py'
 NEXTFLOW_GENERATOR_RECIPE = 'innuendo'
 FASTQPATH = "data/*_{1,2}.*"
@@ -61,7 +134,25 @@ FASTQPATH = "data/*_{1,2}.*"
 JOBS_ROOT_SET_OUTPUT = 'http://'+SERVER_IP+'/jobs/setoutput/'
 JOBS_ROOT_SET_REPORT = 'http://'+FRONTEND_SERVER_IP+'/app/api/v1.0/jobs/report/'
 
-CHEWBBACA_SCHEMAS_PATH = '/INNUENDO/input/schemas'
+CHEWBBACA_PARTITION = 'chewBBACA'
+CHEWBBACA_SCHEMAS_PATH = '/INNUENDO/inputs/schemas'
+
+CHEWBBACA_TRAINING_FILE = {
+    "E.coli": "/INNUENDO/inputs/prodigal_training_files/prodigal_training_files/Escherichia_coli.trn",
+    "Yersinia": "/INNUENDO/inputs/prodigal_training_files/prodigal_training_files/Yersinia_enterocolitica.trn"
+}
+
+CHEWBBACA_CORRESPONDENCE = {
+    "E.coli": "Escherichia coli",
+    "Yersinia": "Yersinia enterocolitica"
+}
+
+MLST_CORRESPONDENCE = {
+    "E.coli": "ecoli",
+    "Yersinia": "yersinia"
+}
+
+MLST_VERSION = "tuberfree"
 
 CHEWBBACA_CORRESPONDENCE = {
     "E.coli": "Escherichia coli"
@@ -71,13 +162,15 @@ MLST_CORRESPONDENCE = {
     "E.coli": "ecoli"
 }
 
+
 SEQ_FILE_O = {
-    "E.coli": "/mnt/singularity_cache/shared_files/Ecoli/O_type.fasta"
+    "E.coli": "/INNUENDO/inputs/serotyping_files/escherichia_coli/1_O_type.fasta"
 }
 
 SEQ_FILE_H = {
-    "E.coli": "/mnt/singularity_cache/shared_files/Ecoli/H_type.fasta"
+    "E.coli": "/INNUENDO/inputs/serotyping_files/escherichia_coli/2_H_type.fasta"
 }
+
 
 ##### DECODIFICATION OF DATABASES AND BASE METADATA FOR MLST DATABASE #########
 
@@ -112,26 +205,26 @@ base_metadata = {
 }
 
 wg_index_correspondece = {
-    "E.coli": "./chewbbaca_database_profiles/indexes/ecoli_wg.index"
+    "E.coli": "/INNUENDO/inputs/indexes/ecoli_wg.index"
 }
 
 core_index_correspondece = {
-    "E.coli": "./chewbbaca_database_profiles/indexes/ecoli_core.index"
+    "E.coli": "/INNUENDO/inputs/indexes/ecoli_core.index"
 }
 
 wg_headers_correspondece = {
-    "E.coli": "./chewbbaca_database_profiles/profiles_headers/ecoli_headers_wg.txt"
+    "E.coli": "/INNUENDO/inputs/core_lists/ecoli_headers_wg.txt"
 }
 core_headers_correspondece = {
-    "E.coli": "/home/ubuntu/innuendo/INNUENDO_PROCESS_CONTROLLER/chewBBACA_core_files/ecoli/ecoli_headers_core.txt"
+    "E.coli": "/INNUENDO/inputs/core_lists/ecoli_headers_core.txt"
 }
 
 core_increment_profile_file_correspondece = {
-    "E.coli": "./chewbbaca_database_profiles/indexes/ecoli_core_profiles.tab"
+    "E.coli": "/INNUENDO/inputs/indexes/ecoli_core_profiles.tab"
 }
 
 wg_increment_profile_file_correspondece = {
-    "E.coli": "./chewbbaca_database_profiles/indexes/ecoli_wg_profiles.tab"
+    "E.coli": "/INNUENDO/inputs/indexes/ecoli_wg_profiles.tab"
 }
 
 species_expected_genome_size = {

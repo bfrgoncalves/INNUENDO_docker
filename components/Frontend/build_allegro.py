@@ -35,7 +35,7 @@ mode = Repository.ACCESS
 my_repository = catalog.getRepository('innuendo', mode)
 my_repository.initialize()
 
-################ FILLING REPOSITORY ###################################
+################ FILLING REPOSITORY ####################################
 
 conn = my_repository.getConnection()
 
@@ -44,3 +44,13 @@ if conn.size() == 0:
     conn.addFile(path1, None, format=RDFFormat.RDFXML)
 
 print('Database triples: {count}'.format(count=conn.size()))
+
+################ ADDING NAMESPACES #####################################
+
+print("Adding Namespaces...")
+conn.setNamespace("obo", "http://purl.obolibrary.org/obo/")
+conn.setNamespace("edam", "http://edamontology.org#")
+
+print(conn.getNamespaces())
+
+print("DONE!")

@@ -66,7 +66,7 @@ RUN git clone https://github.com/bfrgoncalves/INNUENDO_PROCESS_CONTROLLER.git
 # Change to repository
 WORKDIR INNUENDO_PROCESS_CONTROLLER
 
-# Checkout to ES6 version
+# Checkout to PEP8-version
 RUN git checkout PEP8-version
 
 # Install and initialize virtual env
@@ -147,9 +147,6 @@ RUN set -x \
     && chown -R slurm:slurm /var/*/slurm* \
     && /sbin/create-munge-key
 
-COPY slurm.conf /etc/slurm/slurm.conf
-COPY slurmdbd.conf /etc/slurm/slurmdbd.conf
-
 WORKDIR /Controller
 
 ####################### Install Singularity ####################################
@@ -164,6 +161,9 @@ RUN VERSION=2.4.5 && wget https://github.com/singularityware/singularity/release
                   && make install
 
 WORKDIR /Controller/INNUENDO_PROCESS_CONTROLLER
+
+COPY slurm.conf /etc/slurm/slurm.conf
+COPY slurmdbd.conf /etc/slurm/slurmdbd.conf
 
 COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 
