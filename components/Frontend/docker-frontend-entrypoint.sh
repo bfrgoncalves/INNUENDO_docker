@@ -45,13 +45,12 @@ fi
 if [ "$4" = "init_app" ]
 then
 
-    echo "---> Pulling Frontend app ..."
-    #git pull
-
     echo "---> Launch worker  ..."
     /Frontend/INNUENDO_REST_API/worker.py &
 
     echo "---> Launch app  ..."
-    /Frontend/INNUENDO_REST_API/run.py
+    /Frontend/INNUENDO_REST_API/run.py &
+
+    tail -f /dev/null
 
 fi

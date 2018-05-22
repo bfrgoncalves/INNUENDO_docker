@@ -96,8 +96,12 @@ RUN ln -s /usr/bin/pip3.6 /usr/bin/pip3
 WORKDIR /Controller/
 RUN git clone https://github.com/ODiogoSilva/assemblerflow.git
 WORKDIR assemblerflow/
-RUN git submodule update --init --recursive
+RUN git checkout dev
+# && git submodule update --init --recursive
 RUN python3 setup.py install
+
+# Put all files inside bin executable
+RUN chmod a+x assemblerflow/bin/*
 
 ########################## Install SLURM #######################################
 

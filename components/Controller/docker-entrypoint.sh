@@ -48,8 +48,6 @@ then
     } || {
         echo "---> QOS for chewBBACA already exists..."
     }
-    echo "---> Updating INNUENDO Process Controller ..."
-    #exec gosu root git pull &
 
     echo "---> Starting INNUENDO Process Controller ..."
     exec ./run.py &

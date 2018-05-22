@@ -50,14 +50,14 @@ ADMIN_GID = '501'
 # CONFIG file for INNUENDO Job Controller
 REDIS_URL = 'redis://redis:6379'
 
-# Dependencies paths
-INNUCA_PATH = 'dependencies/INNUca/INNUca.py'
-
 # Enable security views
 SECURITY_REGISTERABLE = False
 SECURITY_RECOVERABLE = True
 SECURITY_CHANGEABLE = True
 SECURITY_FLASH_MESSAGES = True
+
+# FAST-MLST path
+FAST_MLST_PATH = "/Frontend/fast-mlst"
 
 # Nextflow tags available in assemblerflow
 NEXTFLOW_TAGS = [
@@ -210,6 +210,7 @@ metadata_to_use_yersinia = {
     'ST': 'ST'
 }
 
+# Base metadata in case no metadata for a given strain
 base_metadata = {
     "strainID": "",
     "source_Source": "",
@@ -219,46 +220,58 @@ base_metadata = {
     "ST": ""
 }
 
+# Path to the wg index file used by fast-mlst for profile search up to x
+# differences
 wg_index_correspondece = {
     "E.coli": "/INNUENDO/inputs/indexes/ecoli_wg",
     "Yersinia": "/INNUENDO/inputs/indexes/yersinia_wg",
     "Salmonella": "/INNUENDO/inputs/indexes/salmonella_wg"
 }
 
+# Path to the core index file used by fast-mlst for profile search up to x
+# differences
 core_index_correspondece = {
     "E.coli": "/INNUENDO/inputs/indexes/ecoli_core",
     "Yersinia": "/INNUENDO/inputs/indexes/yersinia_core",
     "Salmonella": "/INNUENDO/inputs/indexes/salmonella_core"
 }
 
+# Path to the list of the wg loci for each species
 wg_headers_correspondece = {
     "E.coli": "/INNUENDO/inputs/core_lists/ecoli_headers_wg.txt",
     "Yersinia": "/INNUENDO/inputs/core_lists/yersinia_headers_wg.txt",
     "Salmonella": "/INNUENDO/inputs/core_lists/salmonella_headers_wg.txt"
 }
+
+# Path to the list of the core loci for each species
 core_headers_correspondece = {
     "E.coli": "/INNUENDO/inputs/core_lists/ecoli_headers_core.txt",
     "Yersinia": "/INNUENDO/inputs/core_lists/yersinia_headers_core.txt",
     "Salmonella": "/INNUENDO/inputs/core_lists/salmonella_headers_core.txt"
 }
 
+# Location of the file with the core profiles for each species. Used to
+# contruct the search index
 core_increment_profile_file_correspondece = {
     "E.coli": "/INNUENDO/inputs/indexes/ecoli_core_profiles.tab",
     "Yersinia": "/INNUENDO/inputs/indexes/yersinia_core_profiles.tab",
     "Salmonella": "/INNUENDO/inputs/indexes/salmonella_core_profiles.tab"
 }
 
+# Location of the file with wg profiles for each species. Used to contruct the
+# search index
 wg_increment_profile_file_correspondece = {
     "E.coli": "/INNUENDO/inputs/indexes/ecoli_wg_profiles.tab",
     "Yersinia": "/INNUENDO/inputs/indexes/yersinia_wg_profiles.tab",
     "Salmonella": "/INNUENDO/inputs/indexes/salmonella_wg_profiles.tab"
 }
 
+# Classification levels for each specie. Number of profile differences
 classification_levels = {
-    "E.coli": [7, 112],
-    "Yersinia": [7, 133],
-    "Salmonella": [7, 338],
-    "Campylobacter": [4, 59]
+    "E.coli": [8, 112, 793],
+    "Yersinia": [9, 133, 1189],
+    "Salmonella": [14, 338, 997],
+    "Campylobacter": [4, 59, 292]
 }
 
 ##################  ALLEGROGRAPH CONFIGURATION  ###############################

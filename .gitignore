@@ -10,3 +10,4 @@ inputs/prodigal_training_files/*
 inputs/serotyping_files/*
 .idea
 databases/*
+docker-compose-test.yml

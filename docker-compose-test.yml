@@ -33,6 +33,23 @@ services:
       - ./inputs/legacy_metadata:/INNUENDO/inputs/legacy_metadata
       - ./inputs/legacy_profiles:/INNUENDO/inputs/legacy_profiles
       - singularity_cache:/mnt/singularity_cache
+      - /Users/bgoncalves/sandbox/repositories/INNUENDO_REST_API/app/static/css:/Frontend/INNUENDO_REST_API/app/static/css
+      - /Users/bgoncalves/sandbox/repositories/INNUENDO_REST_API/app/models:/Frontend/INNUENDO_REST_API/app/models
+      - /Users/bgoncalves/sandbox/repositories/INNUENDO_REST_API/app/static/controllers:/Frontend/INNUENDO_REST_API/app/static/controllers
+      - /Users/bgoncalves/sandbox/repositories/INNUENDO_REST_API/app/static/img:/Frontend/INNUENDO_REST_API/app/static/img
+      - /Users/bgoncalves/sandbox/repositories/INNUENDO_REST_API/app/templates:/Frontend/INNUENDO_REST_API/app/templates
+      - /Users/bgoncalves/sandbox/repositories/INNUENDO_REST_API/app/static/fonts:/Frontend/INNUENDO_REST_API/app/static/fonts
+      - /Users/bgoncalves/sandbox/repositories/INNUENDO_REST_API/app/static/ico:/Frontend/INNUENDO_REST_API/app/static/ico
+      - /Users/bgoncalves/sandbox/repositories/INNUENDO_REST_API/app/static/html_components:/Frontend/INNUENDO_REST_API/app/static/html_components
+      - /Users/bgoncalves/sandbox/repositories/INNUENDO_REST_API/app/resources/postgres:/Frontend/INNUENDO_REST_API/app/resources/postgres
+      - /Users/bgoncalves/sandbox/repositories/INNUENDO_REST_API/app/resources/jobs:/Frontend/INNUENDO_REST_API/app/resources/jobs
+      - /Users/bgoncalves/sandbox/repositories/INNUENDO_REST_API/app/resources/phyloviz:/Frontend/INNUENDO_REST_API/app/resources/phyloviz
+      - /Users/bgoncalves/sandbox/repositories/INNUENDO_REST_API/app/api.py:/Frontend/INNUENDO_REST_API/app/api.py
+      - /Users/bgoncalves/sandbox/repositories/INNUENDO_REST_API/mlst_profiles_to_db.py:/Frontend/INNUENDO_REST_API/mlst_profiles_to_db.py
+      - /Users/bgoncalves/sandbox/repositories/INNUENDO_REST_API/app/views.py:/Frontend/INNUENDO_REST_API/app/views.py
+      - /Users/bgoncalves/sandbox/repositories/INNUENDO_REST_API/job_processing/database_functions.py:/Frontend/INNUENDO_REST_API/job_processing/database_functions.py
+      - /Users/bgoncalves/sandbox/repositories/INNUENDO_REST_API/job_processing/phyloviz_functions.py:/Frontend/INNUENDO_REST_API/job_processing/phyloviz_functions.py
+      - /Users/bgoncalves/sandbox/repositories/INNUENDO_REST_API/job_processing/fast_mlst_functions.py:/Frontend/INNUENDO_REST_API/job_processing/fast_mlst_functions.py
     ports:
       - "5000:5000"
     depends_on:
@@ -113,6 +130,8 @@ services:
       - ./inputs/core_lists:/INNUENDO/inputs/core_lists
       - ./inputs/serotyping_files:/INNUENDO/inputs/serotyping_files
       - singularity_cache:/mnt/singularity_cache
+      - /Users/bgoncalves/sandbox/repositories/INNUENDO_PROCESS_CONTROLLER/job_processing/queue_processor.py:/Controller/INNUENDO_PROCESS_CONTROLLER/job_processing/queue_processor.py
+      - /Users/bgoncalves/sandbox/repositories/INNUENDO_PROCESS_CONTROLLER/job_processing/bash_scripts/nextflow_executor.sh:/Controller/INNUENDO_PROCESS_CONTROLLER/job_processing/bash_scripts/nextflow_executor.sh
     expose:
       - "6817"
       - "5001"
