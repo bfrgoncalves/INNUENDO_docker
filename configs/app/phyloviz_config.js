@@ -30,6 +30,6 @@ module.exports = {
 	maxNumberOfNodes: 10000,
 	batchSize: 200,
 	token_secret: 'phyloviz_auth_secret', //secret for autentication
-	final_root: 'http://localhost:' + String(port),
+	final_root: 'http://localhost',
     postgresHost: "db_phyloviz"
 }

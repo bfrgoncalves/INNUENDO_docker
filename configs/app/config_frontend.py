@@ -3,9 +3,9 @@ basedir = os.path.abspath(os.path.dirname("__file__"))
 
 # CURRENT ROOT
 FRONTEND_IP = 'web'
-phyloviz_root = 'http://localhost'
+phyloviz_root = 'http://web'
 
-AGRAPH_IP='web'
+AGRAPH_IP = 'web'
 
 CURRENT_ROOT = 'http://'+FRONTEND_IP+'/app'
 

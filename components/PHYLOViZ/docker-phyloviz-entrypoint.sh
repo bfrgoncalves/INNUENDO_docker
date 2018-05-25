@@ -4,8 +4,6 @@ set -e
 # Only build DB
 if [ "$1" = "init_all" ]
 then
-    echo "---> Updating PHYLOViZ Online ..."
-    #git pull
 
     echo "---> Launch redis-server  ..."
     redis-server &
@@ -15,6 +13,10 @@ then
 
     echo "---> Start pm2 for queue_worker.js  ..."
     pm2 start queue_worker.js -i 1
+
+    echo "---> Start DB if required ..."
+    sleep 10
+    curl http://web/api/db/postgres/init
 
     tail -f /dev/null
 
