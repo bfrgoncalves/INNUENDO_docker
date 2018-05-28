@@ -45,7 +45,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'INNUENDO'
+project = u'INNUENDO Platform'
 copyright = u'2018, Bruno Ribeiro-Gonçalves'
 author = u'Bruno Ribeiro-Gonçalves'
 
@@ -127,7 +127,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'INNUENDO.tex', u'INNUENDO Documentation',
+    (master_doc, 'INNUENDO.tex', u'INNUENDO Platform Documentation',
      u'Bruno Ribeiro-Gonçalves', 'manual'),
 ]
 
@@ -137,7 +137,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'innuendo', u'INNUENDO Documentation',
+    (master_doc, 'innuendo', u'INNUENDO Platform Documentation',
      [author], 1)
 ]
 
@@ -148,8 +148,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'INNUENDO', u'INNUENDO Documentation',
-     author, 'INNUENDO', 'One line description of project.',
+    (master_doc, 'INNUENDO Platform', u'INNUENDO Documentation',
+     author, 'INNUENDO Platform', 'One line description of project.',
      'Miscellaneous'),
 ]
 

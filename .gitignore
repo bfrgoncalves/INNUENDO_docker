@@ -11,3 +11,4 @@ inputs/serotyping_files/*
 .idea
 databases/*
 docker-compose-test.yml
+docs/build
