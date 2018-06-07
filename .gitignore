@@ -12,3 +12,12 @@ inputs/serotyping_files/*
 databases/*
 docker-compose-test.yml
 docs/build
+!inputs/core_lists/inside.txt
+!inputs/classifications/inside.txt
+!inputs/indexes/inside.txt
+!inputs/fastq/inside.txt
+!inputs/legacy_metadata/inside.txt
+!inputs/legacy_profiles/inside.txt
+!inputs/schemas/inside.txt
+!inputs/prodigal_training_files/inside.txt
+!inputs/serotyping_files/inside.txt

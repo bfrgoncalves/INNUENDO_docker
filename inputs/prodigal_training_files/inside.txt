@@ -1,0 +1,2 @@
+Inside this folder you will have the obtained prodigal training files used for
+allele call.
