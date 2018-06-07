@@ -235,6 +235,7 @@ services:
     volumes:
       - ./configs/nginx/site.conf:/etc/nginx/conf.d/default.conf
       - static-content:/usr/src/app
+      - ./configs/app/config_reports.js:/usr/src/app/config.js
       - flowcraft-content:/usr/src/flowcraft
     ports:
       - "80:80"
