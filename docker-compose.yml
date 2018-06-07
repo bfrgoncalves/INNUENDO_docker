@@ -238,6 +238,7 @@ services:
       - flowcraft-content:/usr/src/flowcraft
     ports:
       - "80:80"
+      - "81:81"
       - "10035:10035"
 
 
