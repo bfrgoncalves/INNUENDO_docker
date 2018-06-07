@@ -130,7 +130,7 @@ services:
       - slurm_jobdir:/data
       - var_log_slurm:/var/log/slurm
       - ./configs/app/config_process.py:/Controller/INNUENDO_PROCESS_CONTROLLER/config.py
-      - ./configs/nextflow/nextflow.config:/Controller/assemblerflow/assemblerflow/nextflow.config
+      - ./configs/nextflow/nextflow.config:/Controller/flowcraft/flowcraft/nextflow.config
       - user_data:/INNUENDO
       - ./inputs/fastq:/INNUENDO/ftp/files
       - ./inputs/schemas:/INNUENDO/inputs/schemas
