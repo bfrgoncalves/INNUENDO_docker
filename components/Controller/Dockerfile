@@ -1,9 +1,9 @@
 FROM centos:7
 MAINTAINER Bruno Gonçalves <bfgoncalves@medicina.ulisboa.pt>
 
-ARG SLURM_VERSION=17.02.10
-ARG SLURM_DOWNLOAD_MD5=89f0258430417028c9fe30c7a3a3fe34
-ARG SLURM_DOWNLOAD_URL=https://download.schedmd.com/slurm/slurm-17.02.10.tar.bz2
+ARG SLURM_VERSION=17.02.11
+ARG SLURM_DOWNLOAD_MD5=b32f4260a921d335a2d52950593f0a29
+ARG SLURM_DOWNLOAD_URL=https://download.schedmd.com/slurm/slurm-17.02.11.tar.bz2
 
 ARG GOSU_VERSION=1.10
 
@@ -94,14 +94,14 @@ RUN ln -s /usr/bin/pip3.6 /usr/bin/pip3
 
 # Install Assemblerflow
 WORKDIR /Controller/
-RUN git clone https://github.com/ODiogoSilva/assemblerflow.git
-WORKDIR assemblerflow/
+RUN git clone https://github.com/assemblerflow/flowcraft.git
+WORKDIR flowcraft/
 RUN git checkout dev
 # && git submodule update --init --recursive
 RUN python3 setup.py install
 
 # Put all files inside bin executable
-RUN chmod a+x assemblerflow/bin/*
+RUN chmod a+x flowcraft/bin/*
 
 ########################## Install SLURM #######################################
 
@@ -164,10 +164,19 @@ RUN VERSION=2.4.5 && wget https://github.com/singularityware/singularity/release
                   && make \
                   && make install
 
-WORKDIR /Controller/INNUENDO_PROCESS_CONTROLLER
+WORKDIR /Controller/
 
 COPY slurm.conf /etc/slurm/slurm.conf
 COPY slurmdbd.conf /etc/slurm/slurmdbd.conf
+
+# Install aspera
+RUN wget -qO- https://download.asperasoft.com/download/sw/connect/3.8.0/ibm-aspera-connect-3.8.0.158555-linux-g2.12-64.tar.gz | tar xvz
+RUN chmod +x ibm-aspera-connect-3.8.0.158555-linux-g2.12-64.sh
+RUN ./ibm-aspera-connect-3.8.0.158555-linux-g2.12-64.sh
+
+ENV PATH $PATH:~/.aspera/connect/bin/
+
+WORKDIR /Controller/INNUENDO_PROCESS_CONTROLLER
 
 COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 

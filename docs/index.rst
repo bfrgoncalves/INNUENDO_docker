@@ -1,6 +1,17 @@
 INNUENDO Platform
 =================
 
+**A novel cross-sectorial platform for the integration of genomics in
+surveillance of foodborne pathogens**
+
+Multinational outbreaks of foodborne pathogens cause considerable threats to
+European public health. Implementing whole genome sequencing (WGS) in routine
+surveillance and outbreak investigations is becoming a strategic goal for many
+public health authorities all over the world. With this in mind we developed
+the initiative INNUENDO, which aims to deliver a cross-sectorial framework for
+the integration of bacterial WGS in routine surveillance and epidemiologic
+investigations.
+
 **INNUENDO platform** is divided into two distinct applications that communicate
 between each other. The first one, the **INNUENDO frontend server**,
 comprises the user web interface and mechanisms to allow secure user
@@ -24,6 +35,8 @@ The documentation of the **INNUENDO Platform** follows the below structure:
 * :ref:`dependencies`
 
 * :ref:`installation`
+
+* :ref:`docker-compose`
 
 * :ref:`usage`
 
@@ -53,6 +66,14 @@ The documentation of the **INNUENDO Platform** follows the below structure:
    installation/frontend
    installation/controller
    installation/reports
+
+.. _docker-compose:
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Docker-Compose
+
+   docker-compose/docker-compose
 
 .. _usage:
 

@@ -53,7 +53,9 @@ then
     exec ./run.py &
 
     echo "---> Starting the Slurm Controller Daemon (slurmctld) ..."
-    exec gosu slurm /usr/sbin/slurmctld -Dvvv
+    exec gosu slurm /usr/sbin/slurmctld -Dvvv &
+
+    tail -f /dev/null
 
 
 fi

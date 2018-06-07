@@ -63,6 +63,8 @@ RUN cd fast-mlst && make -C src all
 # Change to final directory
 WORKDIR /Frontend/INNUENDO_REST_API
 
+RUN echo "AQUI1"
+
 # Copy entrypoint for frontend
 COPY docker-frontend-entrypoint.sh docker-frontend-entrypoint.sh
 RUN chmod +x docker-frontend-entrypoint.sh

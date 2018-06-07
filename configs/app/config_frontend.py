@@ -61,6 +61,8 @@ FAST_MLST_PATH = "/Frontend/fast-mlst"
 
 # Nextflow tags available in assemblerflow
 NEXTFLOW_TAGS = [
+    "reads_download",
+    "sistr",
     "integrity_coverage",
     "check_coverage",
     "fastqc",
@@ -81,6 +83,8 @@ NEXTFLOW_TAGS = [
 
 # Names of the software available
 USEDSOFTWARE = [
+    "reads_download",
+    "sistr",
     "INNUca",
     "chewBBACA",
     "PathoTyping",

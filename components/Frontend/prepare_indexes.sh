@@ -13,9 +13,9 @@ if [ ! -f "/INNUENDO/inputs/legacy_profiles/profiles_Yersinia.tsv" ]; then
     wget https://github.com/bfrgoncalves/INNUENDO_schemas/releases/download/v1.0/profiles_Yersinia.tsv
     wget https://github.com/bfrgoncalves/INNUENDO_schemas/releases/download/v1.0/Yersinia_enterocolitica_metadata.txt
     wget https://github.com/bfrgoncalves/INNUENDO_schemas/releases/download/v1.0/cgMLST_list_Yersinia.txt
-    wget https://github.com/bfrgoncalves/INNUENDO_schemas/releases/download/v1.0/goeBURST_cgMLST_7_133_yersinia.txt.1
+    wget https://github.com/bfrgoncalves/INNUENDO_schemas/releases/download/v1.0/goeBURST_cgMLST_9_133_1189_yersinia.txt.1
     mv Yersinia_enterocolitica_metadata.txt ../legacy_metadata/
-    mv goeBURST_cgMLST_7_133_yersinia.txt.1 ../classifications/goeBURST_cgMLST_7_133_yersinia.txt
+    mv goeBURST_cgMLST_9_133_1189_yersinia.txt.1 ../classifications/goeBURST_cgMLST_9_133_1189_yersinia.txt
 
     cd /Frontend/INNUENDO_REST_API
 
@@ -44,7 +44,7 @@ if [ ! -f "/INNUENDO/inputs/legacy_profiles/profiles_Yersinia.tsv" ]; then
     cat /INNUENDO/inputs/indexes/yersinia_wg_profiles.tab | ../fast-mlst/src/main -i /INNUENDO/inputs/indexes/yersinia_wg -b
 
     echo "---> Populating Profile Database ..."
-    flask/bin/python mlst_profiles_to_db.py -i /INNUENDO/inputs/legacy_profiles/profiles_Yersinia.tsv -c /INNUENDO/inputs/classifications/goeBURST_cgMLST_7_133_yersinia.txt -m /INNUENDO/inputs/legacy_metadata/Yersinia_enterocolitica_metadata.txt -d yersinia -p NFP
+    flask/bin/python mlst_profiles_to_db.py -i /INNUENDO/inputs/legacy_profiles/profiles_Yersinia.tsv -c /INNUENDO/inputs/classifications/goeBURST_cgMLST_9_133_1189_yersinia.txt -m /INNUENDO/inputs/legacy_metadata/Yersinia_enterocolitica_metadata.txt -d yersinia -p NFP
 
 fi
 
@@ -58,9 +58,9 @@ if [ ! -f "/INNUENDO/inputs/legacy_profiles/profiles_Salmonella.tsv" ]; then
     wget https://github.com/bfrgoncalves/INNUENDO_schemas/releases/download/v1.0/profiles_Salmonella.tsv
     wget https://github.com/bfrgoncalves/INNUENDO_schemas/releases/download/v1.0/Salmonella_enterica_metadata.txt
     wget https://github.com/bfrgoncalves/INNUENDO_schemas/releases/download/v1.0/cgMLST_list_Salmonella.txt
-    wget https://github.com/bfrgoncalves/INNUENDO_schemas/releases/download/v1.0/goeBURST_cgMLST_7_338_salmonella.txt.1
+    wget https://github.com/bfrgoncalves/INNUENDO_schemas/releases/download/v1.0/goeBURST_cgMLST_7_338_997_salmonella.txt.1
     mv Salmonella_enterica_metadata.txt ../legacy_metadata/
-    mv goeBURST_cgMLST_7_338_salmonella.txt.1 ../classifications/goeBURST_cgMLST_7_338_salmonella.txt
+    mv goeBURST_cgMLST_7_338_997_salmonella.txt.1 ../classifications/goeBURST_cgMLST_7_338_997_salmonella.txt
 
     cd /Frontend/INNUENDO_REST_API
 
@@ -89,7 +89,7 @@ if [ ! -f "/INNUENDO/inputs/legacy_profiles/profiles_Salmonella.tsv" ]; then
     cat /INNUENDO/inputs/indexes/salmonella_wg_profiles.tab | ../fast-mlst/src/main -i /INNUENDO/inputs/indexes/salmonella_wg -b
 
     echo "---> Populating Profile Database ..."
-    flask/bin/python mlst_profiles_to_db.py -i /INNUENDO/inputs/legacy_profiles/profiles_Salmonella.tsv -c /INNUENDO/inputs/classifications/goeBURST_cgMLST_7_338_salmonella.txt -m /INNUENDO/inputs/legacy_metadata/Salmonella_enterica_metadata.txt -d salmonella -p NFP
+    flask/bin/python mlst_profiles_to_db.py -i /INNUENDO/inputs/legacy_profiles/profiles_Salmonella.tsv -c /INNUENDO/inputs/classifications/goeBURST_cgMLST_7_338_997_salmonella.txt -m /INNUENDO/inputs/legacy_metadata/Salmonella_enterica_metadata.txt -d salmonella -p NFP
 
 fi
 
@@ -103,9 +103,9 @@ if [ ! -f "/INNUENDO/inputs/legacy_profiles/profiles_Ecoli.tsv" ]; then
     wget https://github.com/bfrgoncalves/INNUENDO_schemas/releases/download/v1.0/profiles_Ecoli.tsv
     wget https://github.com/bfrgoncalves/INNUENDO_schemas/releases/download/v1.0/Escherichia_coli_metadata.txt
     wget https://github.com/bfrgoncalves/INNUENDO_schemas/releases/download/v1.0/cgMLST_list_Ecoli.txt
-    wget https://github.com/bfrgoncalves/INNUENDO_schemas/releases/download/v1.0/goeBURST_FULL_7_112_ecoli.txt
+    wget https://github.com/bfrgoncalves/INNUENDO_schemas/releases/download/v1.0/goeBURST_FULL_8_112_793_ecoli.txt
     mv Escherichia_coli_metadata.txt ../legacy_metadata/
-    mv goeBURST_FULL_7_112_ecoli.txt ../classifications/goeBURST_FULL_7_112_ecoli.txt
+    mv goeBURST_FULL_8_112_793_ecoli.txt ../classifications/goeBURST_FULL_8_112_793_ecoli.txt
 
     cd /Frontend/INNUENDO_REST_API
 
@@ -134,7 +134,7 @@ if [ ! -f "/INNUENDO/inputs/legacy_profiles/profiles_Ecoli.tsv" ]; then
     cat /INNUENDO/inputs/indexes/ecoli_wg_profiles.tab | ../fast-mlst/src/main -i /INNUENDO/inputs/indexes/ecoli_wg -b
 
     echo "---> Populating Profile Database ..."
-    flask/bin/python mlst_profiles_to_db.py -i /INNUENDO/inputs/legacy_profiles/profiles_Ecoli.tsv -c /INNUENDO/inputs/classifications/goeBURST_FULL_7_112_ecoli.txt -m /INNUENDO/inputs/legacy_metadata/Escherichia_coli_metadata.txt -d ecoli -p NFP
+    flask/bin/python mlst_profiles_to_db.py -i /INNUENDO/inputs/legacy_profiles/profiles_Ecoli.tsv -c /INNUENDO/inputs/classifications/goeBURST_FULL_8_112_793_ecoli.txt -m /INNUENDO/inputs/legacy_metadata/Escherichia_coli_metadata.txt -d ecoli -p NFP
 
 fi
 
@@ -148,9 +148,9 @@ if [ ! -f "/INNUENDO/inputs/legacy_profiles/profiles_CcoliCjejuni.tsv" ]; then
     wget https://github.com/bfrgoncalves/INNUENDO_schemas/releases/download/v1.0/profiles_CcoliCjejuni.tsv
     wget https://github.com/bfrgoncalves/INNUENDO_schemas/releases/download/v1.0/Campylobacter_coli_jejuni_metadata.txt
     wget https://github.com/bfrgoncalves/INNUENDO_schemas/releases/download/v1.0/cgMLST_list_ccolicjejuni.tsv
-    wget https://github.com/bfrgoncalves/INNUENDO_schemas/releases/download/v1.0/goeBURST_cgMLST_4_59_campy.txt
+    wget https://github.com/bfrgoncalves/INNUENDO_schemas/releases/download/v1.0/goeBURST_cgMLST_4_59_292_campy.txt
     mv Campylobacter_coli_jejuni_metadata.txt ../legacy_metadata/
-    mv goeBURST_cgMLST_4_59_campy.txt ../classifications/goeBURST_cgMLST_4_59_campy.txt
+    mv goeBURST_cgMLST_4_59_292_campy.txt ../classifications/goeBURST_cgMLST_4_59_292_campy.txt
 
     cd /Frontend/INNUENDO_REST_API
 
@@ -179,6 +179,6 @@ if [ ! -f "/INNUENDO/inputs/legacy_profiles/profiles_CcoliCjejuni.tsv" ]; then
     cat /INNUENDO/inputs/indexes/campy_wg_profiles.tab | ../fast-mlst/src/main -i /INNUENDO/inputs/indexes/campy_wg -b
 
     echo "---> Populating Profile Database ..."
-    flask/bin/python mlst_profiles_to_db.py -i /INNUENDO/inputs/legacy_profiles/profiles_CcoliCjejuni.tsv -c /INNUENDO/inputs/classifications/goeBURST_cgMLST_4_59_campy.txt -m /INNUENDO/inputs/legacy_metadata/Campylobacter_coli_jejuni_metadata.txt -d campylobacter -p NFP
+    flask/bin/python mlst_profiles_to_db.py -i /INNUENDO/inputs/legacy_profiles/profiles_CcoliCjejuni.tsv -c /INNUENDO/inputs/classifications/goeBURST_cgMLST_4_59_292_campy.txt -m /INNUENDO/inputs/legacy_metadata/Campylobacter_coli_jejuni_metadata.txt -d campylobacter -p NFP
 
 fi

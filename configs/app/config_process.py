@@ -4,52 +4,16 @@ basedir = os.path.abspath(os.path.dirname("__file__"))
 # CONFIG file for INNUENDO Job Controller
 REDIS_URL = 'redis://redis:6379'
 
-# Folder for files with jobs
-JOBS_FOLDER = 'job_processing/parameters_files'
-
 # Files folder (FTP)
 FTP_FILES_FOLDER = 'ftp/files'
-
-# BLAST PATH
-BLAST_PATH = '/home/ubuntu/ncbi-blast-2.6.0+/bin/blastp'
-
-# Available applications
-APPLICATIONS_ARRAY = [
-    'INNUca',
-    'chewBBACA',
-    'PathoTyping'
-]
-
-'''FILETYPES_SOFTWARE = {
-    'INNUca': [
-        {
-            'language': 'python',
-            '-f': '.fastq',
-            'app_path': 'dependencies/INNUca/',
-            'path': 'dependencies/INNUca/INNUca.py'
-        }
-    ],
-    'chewBBACA': [
-        {
-            'language': 'python',
-            '-f': 'fasta',
-            'app_path': 'dependencies/chewBBACA/',
-            'path': 'dependencies/chewBBACA/allelecall/BBACA.py'
-        }]
-    ,
-    'PathoTyping': [
-        {
-            'language': 'python',
-            '-f': '.fastq',
-            'app_path': 'dependencies/patho_typing/',
-            'path': 'dependencies/patho_typing/patho_typing.py'
-        }
-    ]
-}
-'''
+ASPERAKEY = "~/.aspera/connect/etc/asperaweb_id_dsa.openssh"
 
 # Specific process resources specifications
 NEXTFLOW_RESOURCES = {
+    "reads_download": {
+        "memory": r"\'2GB\'",
+        "cpus": "2"
+    },
     "integrity_coverage": {
         "memory": r"\'2GB\'",
         "cpus": "1"
@@ -116,7 +80,11 @@ NEXTFLOW_RESOURCES = {
     "patho_typing": {
         "memory": r"\'2GB\'",
         "cpus": "2"
-    }
+    },
+    "sistr": {
+        "memory": r"\'2GB\'",
+        "cpus": "1"
+    },
 }
 
 
@@ -127,9 +95,10 @@ FRONTEND_SERVER_IP = 'web'
 
 DEFAULT_SLURM_CPUS = '8'
 NEXTFLOW_PROFILE = 'desktop'
-NEXTFLOW_GENERATOR_PATH = '/Controller/assemblerflow/assemblerflow/assemblerflow.py'
+NEXTFLOW_GENERATOR_PATH = '/Controller/flowcraft/flowcraft/flowcraft.py'
 NEXTFLOW_GENERATOR_RECIPE = 'innuendo'
 FASTQPATH = "data/*_{1,2}.*"
+INSPECT_ROUTE = "http://web:81/"
 
 JOBS_ROOT_SET_OUTPUT = 'http://'+SERVER_IP+'/jobs/setoutput/'
 JOBS_ROOT_SET_REPORT = 'http://'+FRONTEND_SERVER_IP+'/app/api/v1.0/jobs/report/'
