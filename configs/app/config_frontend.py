@@ -229,7 +229,8 @@ base_metadata = {
 wg_index_correspondece = {
     "E.coli": "/INNUENDO/inputs/indexes/ecoli_wg",
     "Yersinia": "/INNUENDO/inputs/indexes/yersinia_wg",
-    "Salmonella": "/INNUENDO/inputs/indexes/salmonella_wg"
+    "Salmonella": "/INNUENDO/inputs/indexes/salmonella_wg",
+    "Campylobacter": "/INNUENDO/inputs/indexes/campy_wg"
 }
 
 # Path to the core index file used by fast-mlst for profile search up to x
@@ -237,21 +238,24 @@ wg_index_correspondece = {
 core_index_correspondece = {
     "E.coli": "/INNUENDO/inputs/indexes/ecoli_core",
     "Yersinia": "/INNUENDO/inputs/indexes/yersinia_core",
-    "Salmonella": "/INNUENDO/inputs/indexes/salmonella_core"
+    "Salmonella": "/INNUENDO/inputs/indexes/salmonella_core",
+    "Campylobacter": "/INNUENDO/inputs/indexes/campy_core"
 }
 
 # Path to the list of the wg loci for each species
 wg_headers_correspondece = {
     "E.coli": "/INNUENDO/inputs/core_lists/ecoli_headers_wg.txt",
     "Yersinia": "/INNUENDO/inputs/core_lists/yersinia_headers_wg.txt",
-    "Salmonella": "/INNUENDO/inputs/core_lists/salmonella_headers_wg.txt"
+    "Salmonella": "/INNUENDO/inputs/core_lists/salmonella_headers_wg.txt",
+    "Campylobacter": "/INNUENDO/inputs/core_lists/campy_headers_wg.txt"
 }
 
 # Path to the list of the core loci for each species
 core_headers_correspondece = {
     "E.coli": "/INNUENDO/inputs/core_lists/ecoli_headers_core.txt",
     "Yersinia": "/INNUENDO/inputs/core_lists/yersinia_headers_core.txt",
-    "Salmonella": "/INNUENDO/inputs/core_lists/salmonella_headers_core.txt"
+    "Salmonella": "/INNUENDO/inputs/core_lists/salmonella_headers_core.txt",
+    "Campylobacter": "/INNUENDO/inputs/core_lists/campy_headers_core.txt"
 }
 
 # Location of the file with the core profiles for each species. Used to
@@ -259,7 +263,8 @@ core_headers_correspondece = {
 core_increment_profile_file_correspondece = {
     "E.coli": "/INNUENDO/inputs/indexes/ecoli_core_profiles.tab",
     "Yersinia": "/INNUENDO/inputs/indexes/yersinia_core_profiles.tab",
-    "Salmonella": "/INNUENDO/inputs/indexes/salmonella_core_profiles.tab"
+    "Salmonella": "/INNUENDO/inputs/indexes/salmonella_core_profiles.tab",
+    "Campylobacter": "/INNUENDO/inputs/indexes/campy_core_profiles.tab"
 }
 
 # Location of the file with wg profiles for each species. Used to contruct the
@@ -267,7 +272,8 @@ core_increment_profile_file_correspondece = {
 wg_increment_profile_file_correspondece = {
     "E.coli": "/INNUENDO/inputs/indexes/ecoli_wg_profiles.tab",
     "Yersinia": "/INNUENDO/inputs/indexes/yersinia_wg_profiles.tab",
-    "Salmonella": "/INNUENDO/inputs/indexes/salmonella_wg_profiles.tab"
+    "Salmonella": "/INNUENDO/inputs/indexes/salmonella_wg_profiles.tab",
+    "Campylobacter": "/INNUENDO/inputs/indexes/campy_wg_profiles.tab"
 }
 
 # Classification levels for each specie. Number of profile differences
