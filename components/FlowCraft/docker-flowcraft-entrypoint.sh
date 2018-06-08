@@ -2,6 +2,7 @@
 
 if [ "$1" = "init_all" ]
 then
+    git pull
     redis-server &
     cd flowcraft-webapp
     yarn install

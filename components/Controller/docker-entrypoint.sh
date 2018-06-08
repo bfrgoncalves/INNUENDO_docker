@@ -49,6 +49,9 @@ then
         echo "---> QOS for chewBBACA already exists..."
     }
 
+    echo "---> Updating repository  ..."
+    git pull
+
     echo "---> Starting INNUENDO Process Controller ..."
     exec ./run.py &
 

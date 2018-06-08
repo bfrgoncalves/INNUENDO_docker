@@ -84,18 +84,21 @@ if [ ! -d "/INNUENDO/inputs/schemas/ccoli_cjejuni_Py3" ]; then
     find /INNUENDO/inputs/schemas/ccoli_cjejuni_Py3/*.fasta > listGenes.txt
 fi
 
+count_p=$(ls /INNUENDO/inputs/prodigal_training_files | wc -l)
+
 # Get Prodigal training files
-if [ -z "$(ls -A /INNUENDO/inputs/prodigal_training_files)" ]; then
+if [ $count_p -eq 1 ]; then
 
     echo "---> Downloading prodigal training file  ..."
     cd /INNUENDO/inputs/prodigal_training_files
     git clone https://github.com/mickaelsilva/prodigal_training_files.git
-    find /INNUENDO/inputs/schemas/schema_Salmonella_Py3/*.fasta > listGenes.txt
 
 fi
 
+count_s=$(ls /INNUENDO/inputs/serotyping_files | wc -l)
+
 # Get Serotyping files
-if [ -z "$(ls -A /INNUENDO/inputs/serotyping_files)" ]; then
+if [ $count_s -eq 1 ]; then
 
     echo "---> Downloading serotyping files  ..."
     cd /INNUENDO/inputs/serotyping_files
