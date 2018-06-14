@@ -5,7 +5,9 @@ In the INNUENDO Platform, protocols are the basic unit for running processes.
 They are the building blocks to construct Workflows, which can then be
 applied to strains in our projects.
 
-Protocols are composed of a **Type**, a classification of the **used Software**,
+**Protocol creation is responsibility of the INNUENDO platform administrators.**
+
+Protocols are composed of a **Type**, the name of the **used Software**,
 a **Nextflow Tag**, **Parameters**, and a **Name**. Each protocol name *MUST*
 be unique.
 
@@ -59,7 +61,8 @@ Nextflow Tags
 Nextflow Tags are the specific names that `FlowCraft <https://github.com/assemblerflow/flowcraft>`_ requires to build
 Nextflow pipelines based on the available software at the INNUENDO Platform.
 
-Below you have all the available Nextflow Tags for the INNUENDO Platform:
+Below you have all the available Nextflow Tags retrieved from FLowCraft that
+can be used in the INNUENDO Platform:
 
 ::
 
@@ -132,4 +135,10 @@ Protocol Name
 ^^^^^^^^^^^^^
 
 The protocol name is the identifier that will appear when choosing protocols
-to apply to a Workflow. Each protocol name **MUST** be unique.
+to apply to a Workflow. Each protocol name **MUST** be unique. Also, try to
+make a reference for the nextflow tag used in the protocol name in order to
+establish a better organization regarding available protocols.
+
+For more information regarding **FlowCraft**, checkout this link:
+https://assemblerflow.readthedocs.io/en/dev/index.html
+

@@ -88,6 +88,8 @@ The documentation of the **INNUENDO Platform** follows the below structure:
 
 .. toctree::
    :maxdepth: 1
-   :caption: Troubleshooting
+   :caption: Admins: Troubleshooting and Backup
 
-   troubleshooting/test
+   troubleshooting/backups
+   troubleshooting/inspecting_logs
+   troubleshooting/troubleshooting

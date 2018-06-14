@@ -9,7 +9,7 @@ function makeid(length)
     return text;
 }
 
-var port = '3000';
+var port = '80';
 
 module.exports = {
 	db: 'phyloviz',
