@@ -76,4 +76,30 @@ PHYLOViZ Online submission not being running. Enter the machine with the
 frontend server installed and check if the `worker.py` process is running. If
 not, start the process.
 
+6- PHYLOViZ Online application not showing
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Check if the PHYLOViZ Online services are running. To do that, go to the
+machine were PHYLOViZ Online is installed, go to its source code folder and
+type `pm2 list`. If all services (app.js and queue_worker.js) are not
+running, launch them by typing:
+
+::
+
+    # For the app.js
+    pm2 start app.js
+
+    # For the queue_worker.js
+    pm2 start queue_worker.js
+
+You can always change the memory and cpus allocated to the processes by running:
+
+::
+
+    # Restart app.js with 2 cpu allocated and 8GB of memory
+    pm2 restart app.js -i 2 --node-args="--max-old-space-size=8192"
+
+    # Restart queue_worker.js with 2 cpu allocated and 8GB of memory
+    pm2 restart queue_worker.js -i 2 --node-args="--max-old-space-size=8192"
+
 
