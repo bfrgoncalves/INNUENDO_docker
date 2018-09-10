@@ -132,11 +132,15 @@ MLST_VERSION = "tuberfree"
 
 
 SEQ_FILE_O = {
-    "E.coli": "/INNUENDO/inputs/serotyping_files/escherichia_coli/1_O_type.fasta"
+    "v1": {
+        "E.coli": "/INNUENDO/inputs/serotyping_files/escherichia_coli/1_O_type.fasta"
+    }
 }
 
 SEQ_FILE_H = {
-    "E.coli": "/INNUENDO/inputs/serotyping_files/escherichia_coli/2_H_type.fasta"
+    "v1": {
+        "E.coli": "/INNUENDO/inputs/serotyping_files/escherichia_coli/2_H_type.fasta"
+    }
 }
 
 
@@ -173,44 +177,56 @@ base_metadata = {
 }
 
 wg_index_correspondece = {
-    "E.coli": "/INNUENDO/inputs/indexes/ecoli_wg.index",
-    "Yersinia": "/INNUENDO/inputs/indexes/yersinia_wg",
-    "Salmonella": "/INNUENDO/inputs/indexes/salmonella_wg",
-    "Campylobacter": "/INNUENDO/inputs/indexes/campy_wg"
+    "v1": {
+        "E.coli": "/INNUENDO/inputs/indexes/ecoli_wg.index",
+        "Yersinia": "/INNUENDO/inputs/indexes/yersinia_wg",
+        "Salmonella": "/INNUENDO/inputs/indexes/salmonella_wg",
+        "Campylobacter": "/INNUENDO/inputs/indexes/campy_wg"
+    }
 }
 
 core_index_correspondece = {
-    "E.coli": "/INNUENDO/inputs/indexes/ecoli_core.index",
-    "Yersinia": "/INNUENDO/inputs/indexes/yersinia_core",
-    "Salmonella": "/INNUENDO/inputs/indexes/salmonella_core",
-    "Campylobacter": "/INNUENDO/inputs/indexes/campy_core"
+    "v1": {
+        "E.coli": "/INNUENDO/inputs/indexes/ecoli_core.index",
+        "Yersinia": "/INNUENDO/inputs/indexes/yersinia_core",
+        "Salmonella": "/INNUENDO/inputs/indexes/salmonella_core",
+        "Campylobacter": "/INNUENDO/inputs/indexes/campy_core"
+    }
 }
 
 wg_headers_correspondece = {
-    "E.coli": "/INNUENDO/inputs/core_lists/ecoli_headers_wg.txt",
-    "Yersinia": "/INNUENDO/inputs/core_lists/yersinia_headers_wg.txt",
-    "Salmonella": "/INNUENDO/inputs/core_lists/salmonella_headers_wg.txt",
-    "Campylobacter": "/INNUENDO/inputs/core_lists/campy_headers_wg.txt"
+    "v1": {
+        "E.coli": "/INNUENDO/inputs/core_lists/ecoli_headers_wg.txt",
+        "Yersinia": "/INNUENDO/inputs/core_lists/yersinia_headers_wg.txt",
+        "Salmonella": "/INNUENDO/inputs/core_lists/salmonella_headers_wg.txt",
+        "Campylobacter": "/INNUENDO/inputs/core_lists/campy_headers_wg.txt"
+    }
 }
 core_headers_correspondece = {
-    "E.coli": "/INNUENDO/inputs/core_lists/ecoli_headers_core.txt",
-    "Yersinia": "/INNUENDO/inputs/core_lists/yersinia_headers_core.txt",
-    "Salmonella": "/INNUENDO/inputs/core_lists/salmonella_headers_core.txt",
-    "Campylobacter": "/INNUENDO/inputs/core_lists/campy_headers_core.txt"
+    "v1": {
+        "E.coli": "/INNUENDO/inputs/core_lists/ecoli_headers_core.txt",
+        "Yersinia": "/INNUENDO/inputs/core_lists/yersinia_headers_core.txt",
+        "Salmonella": "/INNUENDO/inputs/core_lists/salmonella_headers_core.txt",
+        "Campylobacter": "/INNUENDO/inputs/core_lists/campy_headers_core.txt"
+    }
 }
 
 core_increment_profile_file_correspondece = {
-    "E.coli": "/INNUENDO/inputs/indexes/ecoli_core_profiles.tab",
-    "Yersinia": "/INNUENDO/inputs/indexes/yersinia_core_profiles.tab",
-    "Salmonella": "/INNUENDO/inputs/indexes/salmonella_core_profiles.tab",
-    "Campylobacter": "/INNUENDO/inputs/indexes/campy_core_profiles.tab"
+    "v1": {
+        "E.coli": "/INNUENDO/inputs/indexes/ecoli_core_profiles.tab",
+        "Yersinia": "/INNUENDO/inputs/indexes/yersinia_core_profiles.tab",
+        "Salmonella": "/INNUENDO/inputs/indexes/salmonella_core_profiles.tab",
+        "Campylobacter": "/INNUENDO/inputs/indexes/campy_core_profiles.tab"
+    }
 }
 
 wg_increment_profile_file_correspondece = {
-    "E.coli": "/INNUENDO/inputs/indexes/ecoli_wg_profiles.tab",
-    "Yersinia": "/INNUENDO/inputs/indexes/yersinia_wg_profiles.tab",
-    "Salmonella": "/INNUENDO/inputs/indexes/salmonella_wg_profiles.tab",
-    "Campylobacter": "/INNUENDO/inputs/indexes/campy_wg_profiles.tab"
+    "v1": {
+        "E.coli": "/INNUENDO/inputs/indexes/ecoli_wg_profiles.tab",
+        "Yersinia": "/INNUENDO/inputs/indexes/yersinia_wg_profiles.tab",
+        "Salmonella": "/INNUENDO/inputs/indexes/salmonella_wg_profiles.tab",
+        "Campylobacter": "/INNUENDO/inputs/indexes/campy_wg_profiles.tab"
+    }
 }
 
 species_expected_genome_size = {

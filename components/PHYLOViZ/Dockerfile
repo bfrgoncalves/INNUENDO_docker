@@ -22,7 +22,7 @@ WORKDIR /PHYLOVIZ/
 RUN git clone --depth=1 -b phyloviz2.0 https://github.com/bfrgoncalves/Online-PhyloViZ.git && cd Online-PhyloViZ && npm install
 
 # Install pm2
-RUN npm install pm2 -g
+RUN npm install pm2@2.4.0 -g
 
 # Set final workdir
 WORKDIR /PHYLOVIZ/Online-PhyloViZ

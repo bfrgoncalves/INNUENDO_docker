@@ -50,6 +50,7 @@ RUN set -ex; \
 	export GNUPGHOME="$(mktemp -d)"; \
 	gpg --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; \
 	gpg --export "$key" > /etc/apt/trusted.gpg.d/postgres.gpg; \
+	command -v gpgconf > /dev/null && gpgconf --kill all; \
 	rm -rf "$GNUPGHOME"; \
 	apt-key list
 

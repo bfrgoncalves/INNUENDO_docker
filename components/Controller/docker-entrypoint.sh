@@ -25,7 +25,9 @@ then
     }
     echo "-- Database is now active ..."
 
-    exec gosu slurm /usr/sbin/slurmdbd -Dvvv
+    exec gosu slurm /usr/sbin/slurmdbd > /var/log/slurm/slurmdbd.out &
+
+    tail -f /dev/null
 fi
 
 if [ "$1" = "slurmctld" ]
@@ -50,13 +52,13 @@ then
     }
 
     echo "---> Updating repository  ..."
-    git pull
+    #git pull
 
     echo "---> Starting INNUENDO Process Controller ..."
     exec ./run.py &
 
     echo "---> Starting the Slurm Controller Daemon (slurmctld) ..."
-    exec gosu slurm /usr/sbin/slurmctld -Dvvv &
+    exec gosu slurm /usr/sbin/slurmctld > /var/log/slurm/slurmctld.out &
 
     tail -f /dev/null
 
@@ -72,13 +74,15 @@ then
 
     until 2>/dev/null >/dev/tcp/slurmctld/6817
     do
-        echo "-- slurmctld is not available.  Sleeping ..."
+        #echo "-- slurmctld is not available.  Sleeping ..."
         sleep 2
     done
     echo "-- slurmctld is now active ..."
 
     echo "---> Starting the Slurm Node Daemon (slurmd) ..."
-    exec /usr/sbin/slurmd -Dvvv
+    exec /usr/sbin/slurmd > /var/log/slurm/slurmd.out &
+
+    tail -f /dev/null
 fi
 
 exec "$@"

@@ -4,10 +4,10 @@
 cd /Controller/inputs/schemas/
 
 # Get Salmonella enterica schema
-if [ ! -d "/INNUENDO/inputs/schemas/schema_Salmonella_Py3" ]; then
+if [ ! -d "/INNUENDO/inputs/v1/schemas/schema_Salmonella_Py3" ]; then
 
     echo "---> Downloading Salmonella enterica schema  ..."
-    cd /INNUENDO/inputs/schemas/
+    cd /INNUENDO/inputs/v1/schemas/
     wget https://github.com/bfrgoncalves/INNUENDO_schemas/releases/download/v1.0/Salmonella_schema.tar.gz
 
     echo "---> Extracting Salmonella enterica schema  ..."
@@ -15,20 +15,20 @@ if [ ! -d "/INNUENDO/inputs/schemas/schema_Salmonella_Py3" ]; then
     rm -rf Salmonella_schema.tar.gz
 
     echo "---> Parsing bad formatted alleles  ..."
-    cd /INNUENDO/inputs/schemas/schema_Salmonella_Py3
+    cd /INNUENDO/inputs/v1/schemas/schema_Salmonella_Py3
     grep -P "[\x80-\xFF]" *.fasta | cut -f1 -d":" > bad_files.txt
     for i in `cat bad_files.txt`; do echo $i; cat ${i} | tr -d '\200-\377' > ${i}.mod; done
     for i in `ls *.mod`; do mv $i ${i%.mod}; done
 
-    find /INNUENDO/inputs/schemas/schema_Salmonella_Py3/*.fasta > listGenes.txt
+    find /INNUENDO/inputs/v1/schemas/schema_Salmonella_Py3/*.fasta > listGenes.txt
 
 fi
 
 # Get Yersinia enterocolitica schema
-if [ ! -d "/INNUENDO/inputs/schemas/schema_Yenterocolitica_Py3" ]; then
+if [ ! -d "/INNUENDO/inputs/v1/schemas/schema_Yenterocolitica_Py3" ]; then
 
     echo "---> Downloading Yersinia enterocolitica schema  ..."
-    cd /INNUENDO/inputs/schemas/
+    cd /INNUENDO/inputs/v1/schemas/
     wget https://github.com/bfrgoncalves/INNUENDO_schemas/releases/download/v1.0/Yenterocolitica_schema.tar.gz
 
     echo "---> Extracting Yersinia enterocolitica schema  ..."
@@ -36,7 +36,7 @@ if [ ! -d "/INNUENDO/inputs/schemas/schema_Yenterocolitica_Py3" ]; then
     rm -rf Yenterocolitica_schema.tar.gz
 
     echo "---> Parsing bad formatted alleles  ..."
-    cd /INNUENDO/inputs/schemas/schema_Yenterocolitica_Py3
+    cd /INNUENDO/inputs/v1/schemas/schema_Yenterocolitica_Py3
     grep -P "[\x80-\xFF]" *.fasta | cut -f1 -d":" > bad_files.txt
     for i in `cat bad_files.txt`; do echo $i; cat ${i} | tr -d '\200-\377' > ${i}.mod; done
     for i in `ls *.mod`; do mv $i ${i%.mod}; done
@@ -45,10 +45,10 @@ if [ ! -d "/INNUENDO/inputs/schemas/schema_Yenterocolitica_Py3" ]; then
 fi
 
 # Get Escherichia coli schema
-if [ ! -d "/INNUENDO/inputs/schemas/schema_ecoli_Py3" ]; then
+if [ ! -d "/INNUENDO/inputs/v1/schemas/schema_ecoli_Py3" ]; then
 
     echo "---> Downloading Escherichia coli schema  ..."
-    cd /INNUENDO/inputs/schemas/
+    cd /INNUENDO/inputs/v1/schemas/
     wget https://github.com/bfrgoncalves/INNUENDO_schemas/releases/download/v1.0/Ecoli_schema.tar.gz
 
     echo "---> Extracting Escherichia coli schema  ..."
@@ -56,19 +56,19 @@ if [ ! -d "/INNUENDO/inputs/schemas/schema_ecoli_Py3" ]; then
     rm -rf Ecoli_schema.tar.gz
 
     echo "---> Parsing bad formatted alleles  ..."
-    cd /INNUENDO/inputs/schemas/schema_ecoli_Py3
+    cd /INNUENDO/inputs/v1/schemas/schema_ecoli_Py3
     grep -P "[\x80-\xFF]" *.fasta | cut -f1 -d":" > bad_files.txt
     for i in `cat bad_files.txt`; do echo $i; cat ${i} | tr -d '\200-\377' > ${i}.mod; done
     for i in `ls *.mod`; do mv $i ${i%.mod}; done
 
-    find /INNUENDO/inputs/schemas/schema_ecoli_Py3/*.fasta > listGenes.txt
+    find /INNUENDO/inputs/v1/schemas/schema_ecoli_Py3/*.fasta > listGenes.txt
 fi
 
 # Get Campylobacter jejuni/coli schema
-if [ ! -d "/INNUENDO/inputs/schemas/ccoli_cjejuni_Py3" ]; then
+if [ ! -d "/INNUENDO/inputs/v1/schemas/ccoli_cjejuni_Py3" ]; then
 
     echo "---> Downloading Campylobacter jejuni/coli schema  ..."
-    cd /INNUENDO/inputs/schemas/
+    cd /INNUENDO/inputs/v1/schemas/
     wget https://github.com/bfrgoncalves/INNUENDO_schemas/releases/download/v1.0/ccolicjejuni.tar.gz
 
     echo "---> Extracting Campylobacter jejuni/coli schema  ..."
@@ -76,12 +76,12 @@ if [ ! -d "/INNUENDO/inputs/schemas/ccoli_cjejuni_Py3" ]; then
     rm -rf ccolicjejuni.tar.gz
 
     echo "---> Parsing bad formatted alleles  ..."
-    cd /INNUENDO/inputs/schemas/ccoli_cjejuni_Py3
+    cd /INNUENDO/inputs/v1/schemas/ccoli_cjejuni_Py3
     grep -P "[\x80-\xFF]" *.fasta | cut -f1 -d":" > bad_files.txt
     for i in `cat bad_files.txt`; do echo $i; cat ${i} | tr -d '\200-\377' > ${i}.mod; done
     for i in `ls *.mod`; do mv $i ${i%.mod}; done
 
-    find /INNUENDO/inputs/schemas/ccoli_cjejuni_Py3/*.fasta > listGenes.txt
+    find /INNUENDO/inputs/v1/schemas/ccoli_cjejuni_Py3/*.fasta > listGenes.txt
 fi
 
 count_p=$(ls /INNUENDO/inputs/prodigal_training_files | wc -l)
@@ -90,7 +90,7 @@ count_p=$(ls /INNUENDO/inputs/prodigal_training_files | wc -l)
 if [ $count_p -eq 1 ]; then
 
     echo "---> Downloading prodigal training file  ..."
-    cd /INNUENDO/inputs/prodigal_training_files
+    cd /INNUENDO/inputs/v1/prodigal_training_files
     git clone https://github.com/mickaelsilva/prodigal_training_files.git
 
 fi

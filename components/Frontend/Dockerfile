@@ -18,7 +18,7 @@ WORKDIR /Frontend/
 WORKDIR INNUENDO_REST_API
 
 # Checkout to ES6 version
-RUN git checkout ES6-version
+# RUN git checkout ES6-version
 
 # Install and initialize virtual env
 RUN pip install virtualenv
@@ -62,8 +62,6 @@ RUN cd fast-mlst && make -C src all
 
 # Change to final directory
 WORKDIR /Frontend/INNUENDO_REST_API
-
-RUN echo "AQUI1"
 
 # Copy entrypoint for frontend
 COPY docker-frontend-entrypoint.sh docker-frontend-entrypoint.sh

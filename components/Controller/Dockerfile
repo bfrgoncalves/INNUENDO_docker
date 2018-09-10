@@ -92,16 +92,6 @@ ENV PYTHONPATH="/Controller/INNUENDO_PROCESS_CONTROLLER/agraph-6.2.1-client-pyth
 RUN ln -s /usr/bin/python3.6 /usr/bin/python3
 RUN ln -s /usr/bin/pip3.6 /usr/bin/pip3
 
-# Install Assemblerflow
-WORKDIR /Controller/
-RUN git clone https://github.com/assemblerflow/flowcraft.git
-WORKDIR flowcraft/
-RUN git checkout dev
-# && git submodule update --init --recursive
-RUN python3 setup.py install
-
-# Put all files inside bin executable
-RUN chmod a+x flowcraft/bin/*
 
 ########################## Install SLURM #######################################
 
@@ -176,6 +166,19 @@ RUN ./ibm-aspera-connect-3.8.0.158555-linux-g2.12-64.sh
 
 ENV PATH $PATH:~/.aspera/connect/bin/
 
+# Install Assemblerflow
+RUN echo "AQUI1"
+WORKDIR /Controller/
+RUN git clone https://github.com/assemblerflow/flowcraft.git
+WORKDIR flowcraft/
+RUN git pull
+RUN git checkout reports
+# && git submodule update --init --recursive
+RUN python3 setup.py install
+
+# Put all files inside bin executable
+RUN chmod a+x flowcraft/bin/*
+
 WORKDIR /Controller/INNUENDO_PROCESS_CONTROLLER
 
 COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
@@ -185,3 +188,4 @@ COPY download_schemas.sh /Controller/INNUENDO_PROCESS_CONTROLLER/download_schema
 ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
 
 CMD ["slurmdbd"]
+

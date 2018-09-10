@@ -20,6 +20,9 @@ JOBS_IP = 'web'
 # JOBS ROOT
 JOBS_ROOT = 'http://'+JOBS_IP+'/jobs/'
 
+# INSPECT ROUTE
+INSPECT_ROUTE = "http://localhost:81/"
+
 # OUTPUT PROCESS URL
 OUTPUT_URL = CURRENT_ROOT + 'api/v1.0/ngsonto/projects/<int:id>/pipelines/<int:id2>/processes/<int:id3>/outputs/'
 
@@ -29,7 +32,8 @@ FILES_ROOT = 'http://'+JOBS_IP+'/jobs/fastqs/'
 # DOWNLOAD ROOT
 DOWNLOADS_ROOT = 'http://'+JOBS_IP+'/jobs/download/'
 
-REPORTS_URL = "/reportsApp/"
+#REPORTS_URL = "/reportsApp/"
+REPORTS_URL = "http://localhost/reports"
 
 # user storages
 USER_STORAGES = ["evira_storage/users", "thl_storage/users"]
@@ -79,31 +83,6 @@ NEXTFLOW_TAGS = [
     "sistr",
     # "trimmomatic",
     # "prokka",
-]
-
-# Names of the software available
-USEDSOFTWARE = [
-    "reads_download",
-    "seq_typing",
-    "patho_typing",
-    "integrity_coverage",
-    "fastqc",
-    "true_coverage",
-    "fastqc2",
-    "integrity_coverage_2",
-    "spades",
-    "process_spades",
-    "assembly_mapping",
-    "pilon",
-    "mlst",
-    "sistr",
-    "chewBBACA",
-    "abricate",
-    # "PathoTyping",
-    # "prokka",
-    # "INNUca",
-    # "trimmomatic",
-    # "process_assembly_mapping",
 ]
 
 ########## Database endpoints and migrate repositories #######################
@@ -196,16 +175,7 @@ allele_classes_to_ignore = {
     'ASM': '0'
 }
 
-metadata_to_use = {
-    'Uberstrain': 'strainID',
-    'Source Type': 'source_Source',
-    'Country': 'Location',
-    'Serotype': 'Serotype',
-    'Simple Patho': 'Pathotyping',
-    'ST(Achtman 7 Gene)': 'ST'
-}
-
-metadata_to_use_yersinia = {
+metadata_to_use_all = {
     'FILE': 'strainID',
     'Source': 'source_Source',
     'Country': 'Location',
@@ -227,53 +197,65 @@ base_metadata = {
 # Path to the wg index file used by fast-mlst for profile search up to x
 # differences
 wg_index_correspondece = {
-    "E.coli": "/INNUENDO/inputs/indexes/ecoli_wg",
-    "Yersinia": "/INNUENDO/inputs/indexes/yersinia_wg",
-    "Salmonella": "/INNUENDO/inputs/indexes/salmonella_wg",
-    "Campylobacter": "/INNUENDO/inputs/indexes/campy_wg"
+    "v1": {
+        "E.coli": "/INNUENDO/inputs/indexes/ecoli_wg",
+        "Yersinia": "/INNUENDO/inputs/indexes/yersinia_wg",
+        "Salmonella": "/INNUENDO/inputs/indexes/salmonella_wg",
+        "Campylobacter": "/INNUENDO/inputs/indexes/campy_wg"
+    }
 }
 
 # Path to the core index file used by fast-mlst for profile search up to x
 # differences
 core_index_correspondece = {
-    "E.coli": "/INNUENDO/inputs/indexes/ecoli_core",
-    "Yersinia": "/INNUENDO/inputs/indexes/yersinia_core",
-    "Salmonella": "/INNUENDO/inputs/indexes/salmonella_core",
-    "Campylobacter": "/INNUENDO/inputs/indexes/campy_core"
+    "v1": {
+        "E.coli": "/INNUENDO/inputs/indexes/ecoli_core",
+        "Yersinia": "/INNUENDO/inputs/indexes/yersinia_core",
+        "Salmonella": "/INNUENDO/inputs/indexes/salmonella_core",
+        "Campylobacter": "/INNUENDO/inputs/indexes/campy_core"
+    }
 }
 
 # Path to the list of the wg loci for each species
 wg_headers_correspondece = {
-    "E.coli": "/INNUENDO/inputs/core_lists/ecoli_headers_wg.txt",
-    "Yersinia": "/INNUENDO/inputs/core_lists/yersinia_headers_wg.txt",
-    "Salmonella": "/INNUENDO/inputs/core_lists/salmonella_headers_wg.txt",
-    "Campylobacter": "/INNUENDO/inputs/core_lists/campy_headers_wg.txt"
+    "v1": {
+        "E.coli": "/INNUENDO/inputs/core_lists/ecoli_headers_wg.txt",
+        "Yersinia": "/INNUENDO/inputs/core_lists/yersinia_headers_wg.txt",
+        "Salmonella": "/INNUENDO/inputs/core_lists/salmonella_headers_wg.txt",
+        "Campylobacter": "/INNUENDO/inputs/core_lists/campy_headers_wg.txt"
+    }
 }
 
 # Path to the list of the core loci for each species
 core_headers_correspondece = {
-    "E.coli": "/INNUENDO/inputs/core_lists/ecoli_headers_core.txt",
-    "Yersinia": "/INNUENDO/inputs/core_lists/yersinia_headers_core.txt",
-    "Salmonella": "/INNUENDO/inputs/core_lists/salmonella_headers_core.txt",
-    "Campylobacter": "/INNUENDO/inputs/core_lists/campy_headers_core.txt"
+    "v1": {
+        "E.coli": "/INNUENDO/inputs/core_lists/ecoli_headers_core.txt",
+        "Yersinia": "/INNUENDO/inputs/core_lists/yersinia_headers_core.txt",
+        "Salmonella": "/INNUENDO/inputs/core_lists/salmonella_headers_core.txt",
+        "Campylobacter": "/INNUENDO/inputs/core_lists/campy_headers_core.txt"
+    }
 }
 
 # Location of the file with the core profiles for each species. Used to
 # contruct the search index
 core_increment_profile_file_correspondece = {
-    "E.coli": "/INNUENDO/inputs/indexes/ecoli_core_profiles.tab",
-    "Yersinia": "/INNUENDO/inputs/indexes/yersinia_core_profiles.tab",
-    "Salmonella": "/INNUENDO/inputs/indexes/salmonella_core_profiles.tab",
-    "Campylobacter": "/INNUENDO/inputs/indexes/campy_core_profiles.tab"
+    "v1": {
+        "E.coli": "/INNUENDO/inputs/indexes/ecoli_core_profiles.tab",
+        "Yersinia": "/INNUENDO/inputs/indexes/yersinia_core_profiles.tab",
+        "Salmonella": "/INNUENDO/inputs/indexes/salmonella_core_profiles.tab",
+        "Campylobacter": "/INNUENDO/inputs/indexes/campy_core_profiles.tab"
+    }
 }
 
 # Location of the file with wg profiles for each species. Used to contruct the
 # search index
 wg_increment_profile_file_correspondece = {
-    "E.coli": "/INNUENDO/inputs/indexes/ecoli_wg_profiles.tab",
-    "Yersinia": "/INNUENDO/inputs/indexes/yersinia_wg_profiles.tab",
-    "Salmonella": "/INNUENDO/inputs/indexes/salmonella_wg_profiles.tab",
-    "Campylobacter": "/INNUENDO/inputs/indexes/campy_wg_profiles.tab"
+    "v1": {
+        "E.coli": "/INNUENDO/inputs/indexes/ecoli_wg_profiles.tab",
+        "Yersinia": "/INNUENDO/inputs/indexes/yersinia_wg_profiles.tab",
+        "Salmonella": "/INNUENDO/inputs/indexes/salmonella_wg_profiles.tab",
+        "Campylobacter": "/INNUENDO/inputs/indexes/campy_wg_profiles.tab"
+    }
 }
 
 # Classification levels for each specie. Number of profile differences
