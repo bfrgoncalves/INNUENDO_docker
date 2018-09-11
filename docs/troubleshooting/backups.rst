@@ -48,11 +48,25 @@ postgreSQL service.
     # Replace <database_user> and <database_name> by the database owner and database name.
     psql -U <database_user> <database_name> < output_file.db
 
+The INNUENDO Platform also provides a script for automatic backup of
+postgreSQL databases located inside the **build_files** directory inside
+**INNUENDO_REST_API**.
+
+::
+
+    # Parameters
+    # mode: [backup, build]
+    # database: database_name
+    # postgresUser: Postgres username and owner of database
+    # postgresPass: Postgres password
+    # fileLocation: Location of output or input file (depening on the mode
+    backup_dbs.sh <mode> <database> <postgresUser> <postgresPass> <fileLocation>
+
 Backing up AllegroGraph database
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The AllegroGraph database is a different type of database. Is not a
-relational database. Instead, it stores relationships between objects in a
+relational database. Instead, it stores relationships between objects in the
 form of a graph. It is used on the INNUENDO Platform as the backbone to get
 track of relationships between, projects, strains, workflows, processes and
 their outputs.
@@ -83,6 +97,25 @@ from the Export option. At the end you should get the repository restored.
 
 .. image:: ../images/import_allegro.png
 
+In addition to the previous steps, the INNUENDO Platform provides a
+programmatic way to backup and restore the AllegroGraph database using the
+script **build_allegro.py** located at the **build_files** directory inside
+**INNUENDO_REST_API**.
+
+::
+
+    # Parameters
+    # mode: [backup, build]
+    # fileLocation: Location of the output or input file
+    #
+    # Steps
+    # Copy build_allegro.py to INNUENDO_REST_API since it requires to be run
+    on that location.
+    cp <INNUENDO_REST_API_location>/build_files/build_allegro.py <INNUENDO_REST_API_location>/
+    # Add AllegroGraph client to the PYTHONPATH
+    export PYTHONPATH="<INNUENDO_REST_API_LOCATION>/agraph-6.2.1-client-python/src"
+    # Run the script
+    flask/bin/python build_allegro.py <mode> <fileLocation>
 
 Backing up Nextflow runs Data
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
