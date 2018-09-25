@@ -65,7 +65,7 @@ The documentation of the **INNUENDO Platform** follows the below structure:
    installation/slurm
    installation/frontend
    installation/controller
-   installation/reports
+   installation/flowcraft
 
 .. _docker-compose:
 

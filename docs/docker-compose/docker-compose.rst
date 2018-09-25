@@ -329,17 +329,17 @@ module to work in cooperation with the frontend and the workflow managers.
     AllegroGraph user password. default: innuendo_allegro
 
 
-Reports Server
-^^^^^^^^^^^^^^
+Flowcraft Configuration
+^^^^^^^^^^^^^^^^^^^^^^
 
-The Reports application has one configuration file located at
-``configs/app/config_reports.js`` that has a set of variables required for this
+The Flowcraft webapp application has two configuration files located at
+``configs/flowcraft`` that has a set of variables required for this
 module to work in cooperation with the frontend.
 
-**Below defaults are for the docker-compose version.**
+**Below are the defaults for the docker-compose version.**
 
 ``reportsRoute``
-    Route location to fetch for reports. default: \http://localhost/
+    Route location to fetch for reports. default: \http://localhost/reports
 
 
 Running the INNUENDO Platform

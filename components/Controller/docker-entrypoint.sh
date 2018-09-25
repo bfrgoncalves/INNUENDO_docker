@@ -1,13 +1,6 @@
 #!/bin/bash
 set -e
 
-if [ "$2" = "get_schemas" ]
-then
-    echo "---> Preparing chewbbaca schemas ..."
-    /Controller/INNUENDO_PROCESS_CONTROLLER/download_schemas.sh
-
-fi
-
 if [ "$1" = "slurmdbd" ]
 then
     echo "---> Starting the MUNGE Authentication service (munged) ..."

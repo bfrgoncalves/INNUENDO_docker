@@ -35,6 +35,7 @@ CORS_ORIGIN_ALLOW_ALL = True
 INSTALLED_APPS = [
     'afinspect',
     'frontend',
+    'afreport',
     'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -133,4 +134,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT='/FlowCraft_inspect/flowcraft-webapp/frontend'
+STATIC_ROOT = '/FlowCraft_inspect/flowcraft-webapp/flowcraft-webapp/frontend'

@@ -9,9 +9,7 @@ then
     python3 manage.py makemigrations
     python3 manage.py migrate
     yarn run build
-    echo "static"
-    python3 manage.py collectstatic
-    python3 manage.py runserver 0.0.0.0:81 &
+    python3 manage.py runserver 0.0.0.0:6000 &
 
     tail -f /dev/null
 fi

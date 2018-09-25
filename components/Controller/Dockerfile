@@ -66,9 +66,6 @@ RUN git clone https://github.com/bfrgoncalves/INNUENDO_PROCESS_CONTROLLER.git
 # Change to repository
 WORKDIR INNUENDO_PROCESS_CONTROLLER
 
-# Checkout to PEP8-version
-RUN git checkout PEP8-version
-
 # Install and initialize virtual env
 RUN pip install virtualenv
 RUN virtualenv flask
@@ -167,12 +164,11 @@ RUN ./ibm-aspera-connect-3.8.0.158555-linux-g2.12-64.sh
 ENV PATH $PATH:~/.aspera/connect/bin/
 
 # Install Assemblerflow
-RUN echo "AQUI1"
 WORKDIR /Controller/
 RUN git clone https://github.com/assemblerflow/flowcraft.git
 WORKDIR flowcraft/
 RUN git pull
-RUN git checkout reports
+RUN git checkout dev
 # && git submodule update --init --recursive
 RUN python3 setup.py install
 
@@ -181,9 +177,12 @@ RUN chmod a+x flowcraft/bin/*
 
 WORKDIR /Controller/INNUENDO_PROCESS_CONTROLLER
 
-COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
+COPY get_profiles_and_training.sh executables/get_profiles_and_training.sh
+ENV PATH="/Controller/INNUENDO_PROCESS_CONTROLLER/executables:${PATH}"
 
-COPY download_schemas.sh /Controller/INNUENDO_PROCESS_CONTROLLER/download_schemas.sh
+RUN chmod a+x executables/get_profiles_and_training.sh
+
+COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 
 ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
 

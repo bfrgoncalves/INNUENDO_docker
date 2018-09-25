@@ -27,13 +27,15 @@ RUN make install
 
 # Clone flowcraft-webapp
 WORKDIR /FlowCraft_inspect/
-RUN git clone https://github.com/assemblerflow/flowcraft-webapp.git && cd flowcraft-webapp && git checkout set_port
+RUN git clone https://github.com/assemblerflow/flowcraft-webapp.git && cd flowcraft-webapp
 
 ENV LC_ALL C.UTF-8
 ENV LANG C.UTF-8
 
 # Set final workdir
 WORKDIR /FlowCraft_inspect/flowcraft-webapp
+COPY Pipfile.lock /FlowCraft_inspect/flowcraft-webapp/Pipfile.lock
+
 RUN pipenv install --system --deploy --ignore-pipfile
 
 RUN cd flowcraft-webapp && yarn install --network-timeout 1000000 && exit

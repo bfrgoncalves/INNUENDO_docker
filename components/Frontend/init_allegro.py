@@ -1,16 +1,9 @@
-#!flask/bin/python
-
 from config import AG_HOST, AG_PORT, AG_USER, AG_PASSWORD
 from franz.openrdf.sail.allegrographserver import AllegroGraphServer
 from franz.openrdf.repository.repository import Repository
 from franz.openrdf.rio.rdfformat import RDFFormat
 from franz.openrdf.rio.rdfxmlwriter import RDFXMLWriter
 import sys
-import time
-
-print("mode: " + sys.argv[1])
-file_path = "/INNUENDO/backups/"+ sys.argv[2]
-print("file name:" + file_path)
 
 ################ CONNECTING TO ALLEGROGRAPH ############################
 
@@ -45,22 +38,11 @@ my_repository.initialize()
 
 conn = my_repository.getConnection()
 
-if sys.argv[1] == "backup":
-    outputFile2 = file_path
-    # outputFile2 = None
-    if sys.argv[2] == "":
-        print("Please specify a valid output file")
-    else:
-        rdfxmlfWriter = RDFXMLWriter(outputFile2)
-        conn.export(rdfxmlfWriter, 'null')
-
 ################ FILLING REPOSITORY ####################################
 
-if sys.argv[1] == "build":
-    if conn.size() == 0:
-        if len(sys.argv[2]) > 0:
-            path1 = file_path
-            conn.addFile(path1, None, format=RDFFormat.RDFXML)
+if conn.size() == 0:
+    path1 = "ngsonto2017_july_innuendo_latest.owl"
+    conn.addFile(path1, None, format=RDFFormat.RDFXML)
 
 print('Database triples: {count}'.format(count=conn.size()))
 

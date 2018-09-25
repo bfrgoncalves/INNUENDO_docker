@@ -8,6 +8,7 @@ inputs/legacy_profiles/*
 inputs/schemas/*
 inputs/prodigal_training_files/*
 inputs/serotyping_files/*
+inputs/backups/*
 .idea
 databases/*
 docker-compose-test.yml
@@ -21,3 +22,4 @@ docs/build
 !inputs/schemas/inside.txt
 !inputs/prodigal_training_files/inside.txt
 !inputs/serotyping_files/inside.txt
+!inputs/backups/inside.txt

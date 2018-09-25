@@ -15,8 +15,8 @@ then
     pm2 start queue_worker.js -i 1
 
     echo "---> Start DB if required ..."
-    sleep 10
-    curl http://web/api/db/postgres/init
+    sleep 20
+    curl http://web:82/api/db/postgres/init
 
     tail -f /dev/null
 

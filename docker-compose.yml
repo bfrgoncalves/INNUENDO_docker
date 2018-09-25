@@ -23,15 +23,14 @@ services:
     restart: on-failure
     volumes:
       - ./configs/app/config_frontend.py:/Frontend/INNUENDO_REST_API/config.py
-      - ./configs/app/config_reports.js:/Frontend/report-nf/config.js
-      - static-content:/Frontend/report-nf/
       - user_data:/INNUENDO
       - ./inputs/fastq:/INNUENDO/ftp/files
-      - ./inputs/classifications:/INNUENDO/inputs/classifications
-      - ./inputs/core_lists:/INNUENDO/inputs/core_lists
-      - ./inputs/indexes:/INNUENDO/inputs/indexes
-      - ./inputs/legacy_metadata:/INNUENDO/inputs/legacy_metadata
-      - ./inputs/legacy_profiles:/INNUENDO/inputs/legacy_profiles
+      - ./inputs/backups:/INNUENDO/backups
+      - ./inputs/v1/classifications:/INNUENDO/inputs/v1/classifications
+      - ./inputs/v1/core_lists:/INNUENDO/inputs/v1/core_lists
+      - ./inputs/v1/indexes:/INNUENDO/inputs/v1/indexes
+      - ./inputs/v1/legacy_metadata:/INNUENDO/inputs/v1/legacy_metadata
+      - ./inputs/v1/legacy_profiles:/INNUENDO/inputs/v1/legacy_profiles
       - singularity_cache:/mnt/singularity_cache
     ports:
       - "5000:5000"
@@ -40,7 +39,7 @@ services:
       - "db_innuendo"
       - "db_mlst"
       - "web"
-    command: ["build_allegro", "build_db", "build_metadata_indexes", "init_app"]
+    command: ["init_allegro", "build_db", "init_app"]
 
   # DB for the INNUENDO application.
   db_innuendo:
@@ -93,13 +92,15 @@ services:
     volumes:
       - ./configs/app/phyloviz_config.js:/PHYLOVIZ/Online-PhyloViZ/config.js
     expose:
-      - "3000"
+      - "80"
     depends_on:
       - "db_phyloviz"
       - "redis"
+      - "web"
     command: ["init_all"]
 
-  # Service for FlowCraft inspect application
+  # Service for FlowCraft web application. Used for the inspect and report
+  # system
   flowcraft:
     build: ./components/FlowCraft
     restart: on-failure
@@ -107,7 +108,7 @@ services:
       - "8000"
     volumes:
       - ./configs/flowcraft/config_flowcraft.py:/FlowCraft_inspect/flowcraft-webapp/flowcraft-webapp/flowcraftapp/settings.py
-      - flowcraft-content:/FlowCraft_inspect/flowcraft-webapp/flowcraft-webapp/frontend
+      - ./configs/flowcraft/config.json:/FlowCraft_inspect/flowcraft-webapp/flowcraft-webapp/frontend/config.json
     depends_on:
       - "db_flowcraft"
       - "web"
@@ -133,9 +134,9 @@ services:
       - ./configs/nextflow/nextflow.config:/Controller/flowcraft/flowcraft/nextflow.config
       - user_data:/INNUENDO
       - ./inputs/fastq:/INNUENDO/ftp/files
-      - ./inputs/schemas:/INNUENDO/inputs/schemas
+      - ./inputs/v1/schemas:/INNUENDO/inputs/v1/schemas
       - ./inputs/prodigal_training_files:/INNUENDO/inputs/prodigal_training_files
-      - ./inputs/core_lists:/INNUENDO/inputs/core_lists
+      - ./inputs/v1/core_lists:/INNUENDO/inputs/v1/core_lists
       - ./inputs/serotyping_files:/INNUENDO/inputs/serotyping_files
       - singularity_cache:/mnt/singularity_cache
     expose:
@@ -194,9 +195,9 @@ services:
       - singularity_cache:/mnt/singularity_cache
       - user_data:/INNUENDO
       - ./inputs/fastq:/INNUENDO/ftp/files
-      - ./inputs/schemas:/INNUENDO/inputs/schemas
+      - ./inputs/v1/schemas:/INNUENDO/inputs/v1/schemas
       - ./inputs/prodigal_training_files:/INNUENDO/inputs/prodigal_training_files
-      - ./inputs/core_lists:/INNUENDO/inputs/core_lists
+      - ./inputs/v1/core_lists:/INNUENDO/inputs/v1/core_lists
       - ./inputs/serotyping_files:/INNUENDO/inputs/serotyping_files
     expose:
       - "6818"
@@ -218,9 +219,9 @@ services:
       - singularity_cache:/mnt/singularity_cache
       - user_data:/INNUENDO
       - ./inputs/fastq:/INNUENDO/ftp/files
-      - ./inputs/schemas:/INNUENDO/inputs/schemas
+      - ./inputs/v1/schemas:/INNUENDO/inputs/v1/schemas
       - ./inputs/prodigal_training_files:/INNUENDO/inputs/prodigal_training_files
-      - ./inputs/core_lists:/INNUENDO/inputs/core_lists
+      - ./inputs/v1/core_lists:/INNUENDO/inputs/v1/core_lists
       - ./inputs/serotyping_files:/INNUENDO/inputs/serotyping_files
     expose:
       - "6818"
@@ -239,7 +240,7 @@ services:
       - flowcraft-content:/usr/src/flowcraft
     ports:
       - "80:80"
-      - "81:81"
+      - "82:82"
       - "10035:10035"
 
 

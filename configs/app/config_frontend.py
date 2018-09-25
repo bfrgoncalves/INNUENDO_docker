@@ -3,7 +3,7 @@ basedir = os.path.abspath(os.path.dirname("__file__"))
 
 # CURRENT ROOT
 FRONTEND_IP = 'web'
-phyloviz_root = 'http://web'
+phyloviz_root = 'http://web:82'
 
 AGRAPH_IP = 'web'
 
@@ -21,7 +21,7 @@ JOBS_IP = 'web'
 JOBS_ROOT = 'http://'+JOBS_IP+'/jobs/'
 
 # INSPECT ROUTE
-INSPECT_ROUTE = "http://localhost:81/"
+INSPECT_ROUTE = "http://localhost/"
 
 # OUTPUT PROCESS URL
 OUTPUT_URL = CURRENT_ROOT + 'api/v1.0/ngsonto/projects/<int:id>/pipelines/<int:id2>/processes/<int:id3>/outputs/'
@@ -198,10 +198,10 @@ base_metadata = {
 # differences
 wg_index_correspondece = {
     "v1": {
-        "E.coli": "/INNUENDO/inputs/indexes/ecoli_wg",
-        "Yersinia": "/INNUENDO/inputs/indexes/yersinia_wg",
-        "Salmonella": "/INNUENDO/inputs/indexes/salmonella_wg",
-        "Campylobacter": "/INNUENDO/inputs/indexes/campy_wg"
+        "E.coli": "/INNUENDO/inputs/v1/indexes/ecoli_wg",
+        "Yersinia": "/INNUENDO/inputs/v1/indexes/yersinia_wg",
+        "Salmonella": "/INNUENDO/inputs/v1/indexes/salmonella_wg",
+        "Campylobacter": "/INNUENDO/inputs/v1/indexes/campy_wg"
     }
 }
 
@@ -209,30 +209,30 @@ wg_index_correspondece = {
 # differences
 core_index_correspondece = {
     "v1": {
-        "E.coli": "/INNUENDO/inputs/indexes/ecoli_core",
-        "Yersinia": "/INNUENDO/inputs/indexes/yersinia_core",
-        "Salmonella": "/INNUENDO/inputs/indexes/salmonella_core",
-        "Campylobacter": "/INNUENDO/inputs/indexes/campy_core"
+        "E.coli": "/INNUENDO/inputs/v1/indexes/ecoli_core",
+        "Yersinia": "/INNUENDO/inputs/v1/indexes/yersinia_core",
+        "Salmonella": "/INNUENDO/inputs/v1/indexes/salmonella_core",
+        "Campylobacter": "/INNUENDO/inputs/v1/indexes/campy_core"
     }
 }
 
 # Path to the list of the wg loci for each species
 wg_headers_correspondece = {
     "v1": {
-        "E.coli": "/INNUENDO/inputs/core_lists/ecoli_headers_wg.txt",
-        "Yersinia": "/INNUENDO/inputs/core_lists/yersinia_headers_wg.txt",
-        "Salmonella": "/INNUENDO/inputs/core_lists/salmonella_headers_wg.txt",
-        "Campylobacter": "/INNUENDO/inputs/core_lists/campy_headers_wg.txt"
+        "E.coli": "/INNUENDO/inputs/v1/core_lists/ecoli_headers_wg.txt",
+        "Yersinia": "/INNUENDO/inputs/v1/core_lists/yersinia_headers_wg.txt",
+        "Salmonella": "/INNUENDO/inputs/v1/core_lists/salmonella_headers_wg.txt",
+        "Campylobacter": "/INNUENDO/inputs/v1/core_lists/campy_headers_wg.txt"
     }
 }
 
 # Path to the list of the core loci for each species
 core_headers_correspondece = {
     "v1": {
-        "E.coli": "/INNUENDO/inputs/core_lists/ecoli_headers_core.txt",
-        "Yersinia": "/INNUENDO/inputs/core_lists/yersinia_headers_core.txt",
-        "Salmonella": "/INNUENDO/inputs/core_lists/salmonella_headers_core.txt",
-        "Campylobacter": "/INNUENDO/inputs/core_lists/campy_headers_core.txt"
+        "E.coli": "/INNUENDO/inputs/v1/core_lists/ecoli_headers_core.txt",
+        "Yersinia": "/INNUENDO/inputs/v1/core_lists/yersinia_headers_core.txt",
+        "Salmonella": "/INNUENDO/inputs/v1/core_lists/salmonella_headers_core.txt",
+        "Campylobacter": "/INNUENDO/inputs/v1/core_lists/campy_headers_core.txt"
     }
 }
 
@@ -240,10 +240,10 @@ core_headers_correspondece = {
 # contruct the search index
 core_increment_profile_file_correspondece = {
     "v1": {
-        "E.coli": "/INNUENDO/inputs/indexes/ecoli_core_profiles.tab",
-        "Yersinia": "/INNUENDO/inputs/indexes/yersinia_core_profiles.tab",
-        "Salmonella": "/INNUENDO/inputs/indexes/salmonella_core_profiles.tab",
-        "Campylobacter": "/INNUENDO/inputs/indexes/campy_core_profiles.tab"
+        "E.coli": "/INNUENDO/inputs/v1/indexes/ecoli_core_profiles.tab",
+        "Yersinia": "/INNUENDO/inputs/v1/indexes/yersinia_core_profiles.tab",
+        "Salmonella": "/INNUENDO/inputs/v1/indexes/salmonella_core_profiles.tab",
+        "Campylobacter": "/INNUENDO/inputs/v1/indexes/campy_core_profiles.tab"
     }
 }
 
@@ -251,10 +251,10 @@ core_increment_profile_file_correspondece = {
 # search index
 wg_increment_profile_file_correspondece = {
     "v1": {
-        "E.coli": "/INNUENDO/inputs/indexes/ecoli_wg_profiles.tab",
-        "Yersinia": "/INNUENDO/inputs/indexes/yersinia_wg_profiles.tab",
-        "Salmonella": "/INNUENDO/inputs/indexes/salmonella_wg_profiles.tab",
-        "Campylobacter": "/INNUENDO/inputs/indexes/campy_wg_profiles.tab"
+        "E.coli": "/INNUENDO/inputs/v1/indexes/ecoli_wg_profiles.tab",
+        "Yersinia": "/INNUENDO/inputs/v1/indexes/yersinia_wg_profiles.tab",
+        "Salmonella": "/INNUENDO/inputs/v1/indexes/salmonella_wg_profiles.tab",
+        "Campylobacter": "/INNUENDO/inputs/v1/indexes/campy_wg_profiles.tab"
     }
 }
 

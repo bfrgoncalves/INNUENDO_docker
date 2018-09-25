@@ -48,13 +48,6 @@ WORKDIR app/
 # Install bower dependencies
 RUN bower install --allow-root && bower install bootstrap-select --allow-root
 
-# Install reports dependencies
-WORKDIR /Frontend/
-RUN git clone https://github.com/ODiogoSilva/report-nf.git
-WORKDIR report-nf
-RUN git checkout sim-test
-RUN bower install --allow-root
-
 # Install FAST-MLST dependency
 WORKDIR /Frontend/
 RUN git clone https://github.com/B-UMMI/fast-mlst.git
@@ -62,21 +55,31 @@ RUN cd fast-mlst && make -C src all
 
 # Change to final directory
 WORKDIR /Frontend/INNUENDO_REST_API
+# Copy allegro database builder to image
+COPY init_allegro.py init_allegro.py
+
+# Copy allegro database structure
+COPY ngsonto2017_july_innuendo_latest.owl ngsonto2017_july_innuendo_latest.owl
+
+WORKDIR /Frontend/INNUENDO_REST_API/executables
+WORKDIR /Frontend/INNUENDO_REST_API
+
+# Move executables to docker image
+COPY build_allegro.py build_allegro.py
+COPY populate_dbs.sh executables/populate_dbs.sh
+COPY build_indexes.sh executables/build_indexes.sh
+COPY backup_dbs.sh executables/backup_dbs.sh
+RUN chmod +x executables/build_indexes.sh
+RUN chmod +x executables/populate_dbs.sh
+RUN chmod +x build_allegro.py
+RUN chmod +x executables/backup_dbs.sh
+
+ENV PATH="/Frontend/INNUENDO_REST_API/:${PATH}"
+ENV PATH="/Frontend/INNUENDO_REST_API/executables:${PATH}"
 
 # Copy entrypoint for frontend
 COPY docker-frontend-entrypoint.sh docker-frontend-entrypoint.sh
 RUN chmod +x docker-frontend-entrypoint.sh
-
-# Copy allegro database builder to image
-COPY build_allegro.py build_allegro.py
-RUN chmod +x build_allegro.py
-
-# Copy database builder and index file
-COPY prepare_indexes.sh prepare_indexes.sh
-RUN chmod +x prepare_indexes.sh
-
-# Copy allegro database structure
-COPY ngsonto2017_july_innuendo_latest.owl ngsonto2017_july_innuendo_latest.owl
 
 ENTRYPOINT ["/Frontend/INNUENDO_REST_API/docker-frontend-entrypoint.sh"]
 

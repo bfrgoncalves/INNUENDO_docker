@@ -1,17 +1,17 @@
 #!/bin/bash
 set -e
 
+
 # Only build allegro DB
-if [ "$1" = "build_allegro" ]
+if [ "$1" = "init_allegro" ]
 then
     echo "---> Building DB for allegro ..."
 
     echo "---> Init allegro db  ..."
-    flask/bin/python build_allegro.py
+    flask/bin/python init_allegro.py
 
 fi
 
-# Only build DB
 if [ "$2" = "build_db" ]
 then
     echo "---> Building DB for frontend ..."
@@ -32,17 +32,8 @@ then
 
 fi
 
-# Prepare mlst metadata and indexes
-if [ "$3" = "build_metadata_indexes" ]
-then
-    echo "---> Populating metadata DB and constructing indexes ..."
-    /Frontend/INNUENDO_REST_API/prepare_indexes.sh
-
-fi
-
-
 # build DBs and launch frontend
-if [ "$4" = "init_app" ]
+if [ "$3" = "init_app" ]
 then
 
     echo "---> Updating repository  ..."
