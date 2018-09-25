@@ -369,22 +369,38 @@ The last command will build all the required images first and then it will
 launch all the containers that will communicate between each other by a
 docker network that is built by default with docker-compose.
 
-The application will also download all the required files for the platform to
-work correctly, such as:
+Downloading legacy data and building profile databases
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* chewBBACA schemas
-* Legacy strain metadata (for each species)
-* Legacy strain profiles (for each species)
-* Serotyping files
+The application provides a script to download all the required files to
+perform comparisons with some already publicly available strains. This is
+made through the download of the following data available `here <https://zenodo.org/communities/innuendo>`_:
 
-And will build the required databases:
+    * chewBBACA schemas
+    * Legacy strain metadata (for each species)
+    * Legacy strain profiles (for each species)
+    * Serotyping files
+    * Prodigal training files
 
-* Species wgMLST databases with metadata
-* Frontend postgreSQL database and tables
+These data will be available under ``./inputs`` and will be mapped to the
+docker containers running the application.
 
-The above steps will only be made at **FIRST RUN** of the INNUENDO Platform.
+The script also build the required files for a rapid comparison between
+profiles using `fast-mlst <https://github.com/B-UMMI/fast-mlst>`_ and
+populates the ``mlst_database``.
 
-These steps might take up to 1-2h depending on the available internet
+To run the script, type the following command:
+
+::
+
+    # Enter repository directory
+    cd <innuendo_docker_directory>
+
+    # Run script to get legacy input files
+    ./get_inputs.sh
+
+
+These steps might take up to 1h depending on the available internet
 connection and the host machine.
 
 Mapping data into the Docker containers

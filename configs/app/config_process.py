@@ -98,7 +98,7 @@ NEXTFLOW_PROFILE = 'desktop'
 NEXTFLOW_GENERATOR_PATH = '/Controller/flowcraft/flowcraft/flowcraft.py'
 NEXTFLOW_GENERATOR_RECIPE = 'innuendo'
 FASTQPATH = "data/*_{1,2}.*"
-INSPECT_ROUTE = "http://web:81/"
+INSPECT_ROUTE = "http://web/"
 
 JOBS_ROOT_SET_OUTPUT = 'http://'+SERVER_IP+'/jobs/setoutput/'
 JOBS_ROOT_SET_REPORT = 'http://'+FRONTEND_SERVER_IP+'/app/api/v1.0/jobs/report/'
