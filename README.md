@@ -16,7 +16,7 @@ component individually.
 
 ## Installation
 
-Check the [documentation](https://innuendo.readthedocs.io/en/latest/docker-compose/docker-compose.html#installation) on how to install the required dependencies.
+Check the [documentation](https://innuendo.readthedocs.io/en/latest/docker-compose/docker-compose.html#running-the-innuendo-platform) on how to install the required dependencies.
 
 ## Usage
 
