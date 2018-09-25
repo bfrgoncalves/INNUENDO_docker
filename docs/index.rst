@@ -60,11 +60,10 @@ The documentation of the **INNUENDO Platform** follows the below structure:
    installation/allegrograph
    installation/postgres
    installation/ldap
-   installation/flowcraft
-   installation/nextflow
    installation/slurm
    installation/frontend
    installation/controller
+   installation/nextflow
    installation/flowcraft
 
 .. _docker-compose:

@@ -65,5 +65,3 @@ application.
 ::
 
     ./run.py
-
-Enjoy!

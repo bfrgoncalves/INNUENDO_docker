@@ -97,5 +97,3 @@ INNUENDO_REST_API application.
     cd /path/to/INNUENDO_REST_API
     ./worker.py &
     ./run.py
-
-Enjoy!

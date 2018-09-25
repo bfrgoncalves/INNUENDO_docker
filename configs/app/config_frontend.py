@@ -32,7 +32,6 @@ FILES_ROOT = 'http://'+JOBS_IP+'/jobs/fastqs/'
 # DOWNLOAD ROOT
 DOWNLOADS_ROOT = 'http://'+JOBS_IP+'/jobs/download/'
 
-#REPORTS_URL = "/reportsApp/"
 REPORTS_URL = "http://localhost/reports"
 
 # user storages

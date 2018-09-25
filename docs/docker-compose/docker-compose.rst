@@ -98,7 +98,7 @@ files required for the Platform to work.
 **NOTE:** Modifying these files might lead to corruption of the application.
 Proceed with care.
 
-Each file and their components are described bellow.
+Each file belonging to each component is described bellow.
 
 
 Frontend Server
@@ -113,30 +113,20 @@ module to work in cooperation with the process controller.
 ``FRONTEND_IP``
     IP address of the machine, default: web
 ``phyloviz_root``
-    Root address of PHYLOViZ Online. default: \http://web
+    Root address of PHYLOViZ Online. default: \http://web:82
 ``AGRAPH_IP``
     AllegroGraph server IP adress. default: web
 ``CURRENT_ROOT``
     Current address of the frontend application.
     default: \http://'+FRONTEND_IP+'/app
-``FILES_ENTRY_POINT``
-    Files route location. default: \https://'+FRONTEND_IP+'/app'
-``LDAP_IP``
-    LDAP IP address. default: openldap
 ``JOBS_IP``
     INNUENDO Process Controller IP address. default: web
 ``JOBS_ROOT``
     Job submission route. default: \http://'+JOBS_IP+'/jobs/'
-``OUTPUT_URL``
-    NGSOnto output url. default: CURRENT_ROOT + 'api/v1.0/ngsonto/projects/<int:id>/pipelines/<int:id2>/processes/<int:id3>/outputs/'
 ``FILES_ROOT``
     Route to get information about fastq files. default:\http://'+JOBS_IP+'/jobs/fastqs/'
-``DOWNLOADS_ROOT``
-    Route used to download job information. default:\http://'+JOBS_IP+'/jobs/download/'
 ``REPORTS_URL``
-    Reports application route. default: "/reportsApp/"
-``USER_STORAGES``
-    Available storage locations.
+    Reports application route. default: "\http://localhost/reports"
 ``SECRET_KEY``
     Secret key for flask-security hash.
 ``SECURITY_PASSWORD_HASH``
@@ -169,8 +159,6 @@ module to work in cooperation with the process controller.
 ``NEXTFLOW_TAGS``
     Currently available FlowCraft tags. More information on FlowCraft
     documentation.
-``USEDSOFTWARE``
-    Names for the currently supported software in the Platform.
 ``DATABASE_USER``
     User owner of the postgreSQL database. default: innuendo
 ``DATABASE_PASS``
@@ -185,16 +173,6 @@ module to work in cooperation with the process controller.
     Location to store and update database files. default: os.path.join(basedir, 'db_repository')
 ``SQLALCHEMY_TRACK_MODIFICATIONS``
     Track database modification. default: True
-``MAIL_SERVER``
-    Mail server. default: smtp.gmail.com
-``MAIL_PORT``
-    Port to access email server. default: 465
-``MAIL_USE_SSL``
-    Use secure connection. default: True
-``MAIL_USERNAME``
-    Sender email.
-``MAIL_PASSWORD``
-    Sender password.
 ``WTF_CSRF_ENABLED``
     Enable CSRF. default: False
 ``app_route``
@@ -264,6 +242,8 @@ module to work in cooperation with the frontend and the workflow managers.
 
 ``REDIS_URL``
     Redis queue URL. default: redis://redis:6379
+``ASPERAKEY``
+    Aspera key location. default: ~/.aspera/connect/etc/asperaweb_id_dsa.openssh
 ``FTP_FILES_FOLDER``
     Location of the files folder in relation to the user home
     directory. default: ftp/files
@@ -281,7 +261,7 @@ module to work in cooperation with the frontend and the workflow managers.
     default: desktop
 ``NEXTFLOW_GENERATOR_PATH``
     Location of the FlowCraft software executable. default:
-    /Controller/assemblerflow/assemblerflow/assemblerflow.py
+    /Controller/flowcraft/flowcraft/flowcraft.py
 ``NEXTFLOW_GENERATOR_RECIPE``
     FlowCraft recipe to use. It defines the set of processes that can be used
     and their relationships. default: innuendo
@@ -330,7 +310,7 @@ module to work in cooperation with the frontend and the workflow managers.
 
 
 Flowcraft Configuration
-^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
 
 The Flowcraft webapp application has two configuration files located at
 ``configs/flowcraft`` that has a set of variables required for this
@@ -434,15 +414,13 @@ Below is described the directives used to launch a service in docker-compose.
          : are the location of those files in the container.
         volumes:
           - ./configs/app/config_frontend.py:/Frontend/INNUENDO_REST_API/config.py
-          - ./configs/app/config_reports.js:/Frontend/report-nf/config.js
-          - static-content:/Frontend/report-nf/
           - user_data:/INNUENDO
           - ./inputs/fastq:/INNUENDO/ftp/files
-          - ./inputs/classifications:/INNUENDO/inputs/classifications
-          - ./inputs/core_lists:/INNUENDO/inputs/core_lists
-          - ./inputs/indexes:/INNUENDO/inputs/indexes
-          - ./inputs/legacy_metadata:/INNUENDO/inputs/legacy_metadata
-          - ./inputs/legacy_profiles:/INNUENDO/inputs/legacy_profiles
+          - ./inputs/v1/classifications:/INNUENDO/inputs/v1/classifications
+          - ./inputs/v1/core_lists:/INNUENDO/inputs/v1/core_lists
+          - ./inputs/v1/indexes:/INNUENDO/inputs/v1/indexes
+          - ./inputs/v1/legacy_metadata:/INNUENDO/inputs/v1/legacy_metadata
+          - ./inputs/v1/legacy_profiles:/INNUENDO/inputs/v1/legacy_profiles
           - singularity_cache:/mnt/singularity_cache
         # Ports mapping between container and host
         ports:
@@ -454,12 +432,71 @@ Below is described the directives used to launch a service in docker-compose.
           - "db_mlst"
           - "web"
         # Arguments to give to the docker-entrypoint.sh
-        command: ["build_allegro", "build_db", "build_metadata_indexes", "init_app"]
+        command: ["init_allegro", "build_db", "init_app"]
 
 As seen above, the files can be mapped with the volumes directive.
 
 **Fastq files from the user must be placed into the** ``inputs/fastq``
 **folder to be linked with the INNUENDO Platform docker version.**
+
+
+Backing up/ Build data
+----------------------
+
+We provide a series of scripts to backup/build all the required databases
+used in the docker-compose version of the INNUENDO Platform. These files are
+located at inside the images and need to be triggered after the application
+is running. This is made using the ``docker exec`` command on an already
+running container.
+
+Backing up/ Build postgreSQL databases
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+There are four postgreSQL databases used in the INNUENDO Platform that can
+be backed up: ``innuendo``, ``mlst_database``, ``assemblerflow``, and
+``phyloviz``.
+
+All databases backups can be made using a single command for each database.
+
+::
+
+    # Execute script on frontend container to backup database
+    # Information on database, username and pass are located in the
+    # docker-compose.yml file
+    docker exec innuendo_docker_frontend_1 backup_dbs.sh backup <database> <username> <pass> <backup_file_name>
+
+The build command to restore a database to a given backup state is very
+similar to the above.
+
+::
+
+    # Execute script on frontend container to build database
+    docker exec innuendo_docker_frontend_1 backup_dbs.sh build <database> <username> <pass> <backup_file_name>
+
+
+Backing up/ Build AllegroGraph databases
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Other database type used in the INNUENDO Platform is a triplestore and it is
+also required for the application to retrive to a given state if required.
+
+To backup AllegroGraph, it is only required to run a single command
+
+::
+
+    # Execute script on frontend container to backup allegrograph
+    # Information on database, username and pass are located in the
+    # docker-compose.yml file
+    docker exec innuendo_docker_frontend_1 build_allegro.py backup <backup_file_name>
+
+The build command is similar to the above and is required to move the
+application to a given state.
+
+
+::
+
+    # Execute script on frontend container to backup allegrograph
+    docker exec innuendo_docker_frontend_1 build_allegro.py build <backup_file_name>
 
 
 Customizing Entrypoints
@@ -474,6 +511,7 @@ and a Dockerfile.
 
 By modifying the commands inside the ``entrypoint.sh`` you can change the
 default behaviour when the container for that component launches.
+
 
 Useful docker commands
 ----------------------
