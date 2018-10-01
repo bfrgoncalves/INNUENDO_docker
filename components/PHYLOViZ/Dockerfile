@@ -27,6 +27,10 @@ RUN npm install pm2@2.4.0 -g
 # Set final workdir
 WORKDIR /PHYLOVIZ/Online-PhyloViZ
 
+RUN apt-get remove -y nodejs
+RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
+RUN apt-get update && apt-get install -y nodejs
+
 # Copy entrypoint for phyloviz
 COPY docker-phyloviz-entrypoint.sh docker-phyloviz-entrypoint.sh
 RUN chmod +x docker-phyloviz-entrypoint.sh

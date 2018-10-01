@@ -34,7 +34,12 @@ ENV LANG C.UTF-8
 
 # Set final workdir
 WORKDIR /FlowCraft_inspect/flowcraft-webapp
+
+# FIx hiredis hash
 COPY Pipfile.lock /FlowCraft_inspect/flowcraft-webapp/Pipfile.lock
+
+# Set webpack version
+COPY package.json /FlowCraft_inspect/flowcraft-webapp/flowcraft-webapp
 
 RUN pipenv install --system --deploy --ignore-pipfile
 
