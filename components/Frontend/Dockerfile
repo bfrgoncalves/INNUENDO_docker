@@ -10,6 +10,7 @@ RUN apt-get update && apt-get install -y git python-pip postgresql \
                         libcurl4-openssl-dev python-dev libsasl2-dev \
                         libldap2-dev libssl-dev wget curl build-essential
 
+
 # Get INNUENDO_REST_API repository
 RUN git clone https://github.com/bfrgoncalves/INNUENDO_REST_API.git
 
