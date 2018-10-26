@@ -47,6 +47,15 @@ NEXTFLOW_RESOURCES = {
         "memory": r"\'2GB\'",
         "cpus": "1"
     },
+    "skesa": {
+        "memory": "{2.GB*task.attempt}",
+        "cpus": "2",
+        "scratch": "true"
+    },
+    "process_skesa": {
+        "memory": r"\'2GB\'",
+        "cpus": "1"
+    },
     "assembly_mapping": {
         "memory": "{2.GB*task.attempt}",
         "cpus": "2"
@@ -132,15 +141,11 @@ MLST_VERSION = "tuberfree"
 
 
 SEQ_FILE_O = {
-    "v1": {
-        "E.coli": "/INNUENDO/inputs/serotyping_files/escherichia_coli/1_O_type.fasta"
-    }
+    "E.coli": "/INNUENDO/inputs/serotyping_files/escherichia_coli/1_O_type.fasta"
 }
 
 SEQ_FILE_H = {
-    "v1": {
-        "E.coli": "/INNUENDO/inputs/serotyping_files/escherichia_coli/2_H_type.fasta"
-    }
+    "E.coli": "/INNUENDO/inputs/serotyping_files/escherichia_coli/2_H_type.fasta"
 }
 
 

@@ -92,3 +92,11 @@ The documentation of the **INNUENDO Platform** follows the below structure:
    troubleshooting/backups
    troubleshooting/inspecting_logs
    troubleshooting/troubleshooting
+
+.. _api:
+
+.. toctree::
+   :maxdepth: 1
+   :caption: REST API
+
+   api/rest
