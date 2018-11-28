@@ -27,12 +27,6 @@ get clone https://github.com/bfrgoncalves/INNUENDO_docker.git
 # Enter the repository directory
 cd INNUENDO_docker
 
-# Build the slurm controller image required in several containers
-docker build -t innuendodocker_controller ./components/Controller
-
-# Build the other images (Might need to re-do this step in case of network problems)
-docker-compose build
-
 # Run the docker-compose application
 docker-compose up
 
