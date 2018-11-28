@@ -3,7 +3,7 @@ services:
 
   # Service for the AllegroGraph
   allegro:
-    build: ./components/AllegroGraph/
+    image: bfrgoncalves/innuendo_docker_allegro:1.0.0
     restart: on-failure
     expose:
       - "10035"
@@ -17,8 +17,9 @@ services:
 
   # Service for the INNUENDO frontend. Requires the config files for the
   # application and mapping of the fastq files
+  # bfrgoncalves/innuendo_docker_frontend:1.0.0
   frontend:
-    build: ./components/Frontend/
+    image: bfrgoncalves/innuendo_docker_frontend:1.0.0
     privileged: true
     restart: on-failure
     volumes:
@@ -43,7 +44,7 @@ services:
 
   # DB for the INNUENDO application.
   db_innuendo:
-    build: ./components/Postgres
+    image: bfrgoncalves/innuendo_docker_db_innuendo:1.0.0
     restart: always
     environment:
       POSTGRES_USER: "innuendo"
@@ -54,7 +55,7 @@ services:
 
   # DB for the INNUENDO application.
   db_flowcraft:
-    build: ./components/Postgres
+    image: bfrgoncalves/innuendo_docker_db_flowcraft:1.0.0
     restart: always
     volumes:
       - ./configs/flowcraft/config_flowcraft.py:/FlowCraft_inspect/flowcraft-webapp/flowcraft-webapp/flowcraftapp/settings.py
@@ -65,7 +66,7 @@ services:
 
   # DB for the INNUENDO wgMLST profiles.
   db_mlst:
-    build: ./components/Postgres
+    image: bfrgoncalves/innuendo_docker_db_mlst:1.0.0
     restart: always
     environment:
       POSTGRES_USER: "innuendo"
@@ -76,7 +77,7 @@ services:
 
   # DB for PHYLOViZ Online.
   db_phyloviz:
-    build: ./components/Postgres
+    image: bfrgoncalves/innuendo_docker_db_phyloviz:1.0.0
     restart: always
     environment:
       POSTGRES_USER: "phyloviz"
@@ -86,8 +87,9 @@ services:
       - ./configs/dbs/init.sql:/docker-entrypoint-initdb.d/1-schema.sql
 
   # Service for PHYLOViZ Online application
+  # bfrgoncalves/phylovizonline_docker:1.0.0
   phyloviz:
-    build: ./components/PHYLOViZ
+    image: bfrgoncalves/phylovizonline_docker:1.0.0
     restart: on-failure
     volumes:
       - ./configs/app/phyloviz_config.js:/PHYLOVIZ/Online-PhyloViZ/config.js
@@ -102,7 +104,7 @@ services:
   # Service for FlowCraft web application. Used for the inspect and report
   # system
   flowcraft:
-    build: ./components/FlowCraft
+    image: bfrgoncalves/innuendo_docker_flowcraft:1.0.0
     restart: on-failure
     expose:
       - "8000"
@@ -118,7 +120,7 @@ services:
   # application and mapping of the fastq files. It also requires the slurm
   # conf files.
   controller:
-    image: innuendodocker_controller:latest
+    image: bfrgoncalves/innuendo_docker_controller:1.0.0
     command: ["slurmctld", "get_schemas"]
     container_name: slurmctld
     hostname: slurmctld
@@ -165,7 +167,7 @@ services:
 
   # service for the the SLURM dbd.
   slurmdbd:
-    image: innuendodocker_controller
+    image: bfrgoncalves/innuendo_docker_controller:1.0.0
     command: ["slurmdbd"]
     container_name: slurmdbd
     hostname: slurmdbd
@@ -182,7 +184,7 @@ services:
 
   # service for slurm computing node 1
   c1:
-    image: innuendodocker_controller:latest
+    image: bfrgoncalves/innuendo_docker_controller:1.0.0
     command: ["slurmd"]
     hostname: c1
     container_name: c1
@@ -206,7 +208,7 @@ services:
 
   # service for slurm computing node 2
   c2:
-    image: innuendodocker_controller:latest
+    image: bfrgoncalves/innuendo_docker_controller:1.0.0
     command: ["slurmd"]
     hostname: c2
     container_name: c2

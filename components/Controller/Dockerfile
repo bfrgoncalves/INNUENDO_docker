@@ -152,7 +152,7 @@ RUN VERSION=2.4.5 && wget https://github.com/singularityware/singularity/release
                   && make install
 
 WORKDIR /Controller/
-
+RUN echo "AQUI2"
 COPY slurm.conf /etc/slurm/slurm.conf
 COPY slurmdbd.conf /etc/slurm/slurmdbd.conf
 

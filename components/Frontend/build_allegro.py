@@ -57,10 +57,12 @@ if sys.argv[1] == "backup":
 ################ FILLING REPOSITORY ####################################
 
 if sys.argv[1] == "build":
-    if conn.size() == 0:
-        if len(sys.argv[2]) > 0:
-            path1 = file_path
-            conn.addFile(path1, None, format=RDFFormat.RDFXML)
+    if conn.size() != 0:
+        print("Overwriting previous store")
+
+    if len(sys.argv[2]) > 0:
+        path1 = file_path
+        conn.addFile(path1, None, format=RDFFormat.RDFXML)
 
 print('Database triples: {count}'.format(count=conn.size()))
 

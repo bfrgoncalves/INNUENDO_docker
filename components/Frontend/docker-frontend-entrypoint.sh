@@ -37,7 +37,7 @@ if [ "$3" = "init_app" ]
 then
 
     echo "---> Updating repository  ..."
-    git pull
+    #git pull
 
     echo "---> Launch worker  ..."
     /Frontend/INNUENDO_REST_API/worker.py &
