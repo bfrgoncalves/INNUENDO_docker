@@ -27,7 +27,7 @@ RUN virtualenv flask
 
 # Install repository dependencies
 RUN flask/bin/pip install -r requirements.txt
-RUN flask/bin/pip install rq future
+RUN flask/bin/pip install redis==2.10.6 rq==0.12.0 future
 
 # Get allegro client
 RUN wget https://github.com/bfrgoncalves/INNUENDO_files/releases/download/1.0.0/agraph-6.2.1-client-python.tar.gz
