@@ -328,9 +328,9 @@ Running the INNUENDO Platform
 Retrieving the docker-compose version
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To launch the docker-compose version of the INNUENDO Platform, first we will
-need to get the INNUENDO_docker repository from github which has all the
-required Dockerfiles and folder structure to communicate between the
+To launch the docker-compose version of the INNUENDO Platform, first need to get
+ the INNUENDO_docker repository from github that has all the
+required Dockerfiles and structures for communication between the
 containers and the user file system.
 
 ::
@@ -340,34 +340,19 @@ containers and the user file system.
 Launching the application
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-After retrieving the repository from github, the first step is to build a
-special docker-image that will be used on three diferent INNUENDO
-Platform containers (slurmcltd, c1 and c2). To do that, run the following
-commands.
+Running the INNUENDO Platform is very simple. You can lauch it with a single command.
 
 ::
 
     # Access the INNUENDO docker repository
-    cd /path/to/INNUENDO_docker
-
-    #Build controller image
-    docker build -t innuendodocker_controller ./components/Controller
-
-
-After the anove step, the INNUENDO Platform docker version can be run in a
-single command.
-
-::
-
-    # Access the INNUENDO docker repository
-    cd /path/to/INNUENDO_docker
+    cd </path/to/INNUENDO_docker>
 
     # Launch the application
     docker-compose up
 
-The last command will build all the required images first and then it will
-launch all the containers that will communicate between each other by a
-docker network that is built by default with docker-compose.
+The last command will pull all the required images first then it will
+launch all the Docker containers. They will will communicate between each other
+by a docker network that is built by default with docker-compose.
 
 Downloading legacy data and building profile databases
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -394,7 +379,7 @@ To run the script, type the following command:
 ::
 
     # Enter repository directory
-    cd <innuendo_docker_directory>
+    cd <innuendo_docker_directory>/build_files
 
     # Run script to get legacy input files
     ./get_inputs.sh
