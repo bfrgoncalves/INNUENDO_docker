@@ -61,6 +61,7 @@ RUN wget -qO- https://get.nextflow.io | bash
 RUN mv nextflow /usr/local/bin
 
 # Get INNUENDO_REST_API repository
+RUN echo "GET INNUENDO"
 RUN git clone https://github.com/bfrgoncalves/INNUENDO_PROCESS_CONTROLLER.git
 
 # Change to repository
@@ -152,7 +153,7 @@ RUN VERSION=2.4.5 && wget https://github.com/singularityware/singularity/release
                   && make install
 
 WORKDIR /Controller/
-RUN echo "AQUI2"
+
 COPY slurm.conf /etc/slurm/slurm.conf
 COPY slurmdbd.conf /etc/slurm/slurmdbd.conf
 
