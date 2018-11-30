@@ -23,4 +23,4 @@ docs/build
 !inputs/prodigal_training_files/inside.txt
 !inputs/serotyping_files/inside.txt
 !inputs/backups/inside.txt
-!inputs/backups/initial/*
+!inputs/backups/initial/initial_compose_mlst
