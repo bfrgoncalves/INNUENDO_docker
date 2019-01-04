@@ -81,6 +81,7 @@ The documentation of the **INNUENDO Platform** follows the below structure:
    :caption: Usage
 
    usage/set-species
+   usage/set-legacy
    usage/set-protocols
    usage/set-workflows
 

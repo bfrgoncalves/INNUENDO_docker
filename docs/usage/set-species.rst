@@ -9,11 +9,14 @@ INNUENDO Project was to develop analysis strategies from 4 target species:
 species upon some configuration. In this example we are going to exemplify on
 how to add **speciesA**.
 
+**NOTE: Most of the modifications required are in the INNUENDO_REST_API application.**
+
 1 - Add a new database model
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Each species in the INNUENDO Platform has a dedicated wgMLST profile database.
-As so, a new model for it needs to be added inside the `app/models/models.py` file.
+As so, a new model for it needs to be added inside the `app/models/models.py` file
+of the `INNUENDO_REST_API` app.
 
 ::
 
@@ -54,8 +57,9 @@ automatically on start.
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The model needs then to be imported to be used by the application. This can be
-made by importing it at `app/app_configuration.py`. The `species_correspondece`
-dictionary needs also to be updated to allow association of the models with a key.
+made by importing it at `app/app_configuration.py` of the `INNUENDO_REST_API` app.
+The `species_correspondece` dictionary needs also to be updated to allow
+association of the models with a key.
 
 ::
 
@@ -76,6 +80,8 @@ dictionary needs also to be updated to allow association of the models with a ke
 The `config.py` files need also to be updated in order for the application to
 know which species should use, the classification levels,
 and which files use for wgMLST database.
+These modifications are required on both `INNUENDO_REST_API` and
+`INNUENDO_PROCESS_CONTROLLER`.
 
 **Updating config.py on INNUENDO_REST_API application**
 
@@ -271,4 +277,7 @@ and which files use for wgMLST database.
         "Campylobacter": "1.6",
         "SpeciesA": "GenomeSize"
     }
+
+To know on how to create the required legacy database files, check the
+*Set legacy database* section.
 
