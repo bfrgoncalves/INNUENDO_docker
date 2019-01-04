@@ -156,12 +156,21 @@ LOGIN_EMAIL = "innuendo@innuendo.com"
 
 ########DECODIFICATION OF DATABASES AND BASE METADATA FOR MLST DATABASE #######
 
+# List with all the available species
 ALL_SPECIES = [
     "E.coli",
     "Yersinia",
     "Campylobacter",
     "Salmonella"
 ]
+
+# Association between species ID in the platform with the species name
+SPECIES_CORRESPONDENCE = {
+    "E.coli": "Escherichia coli",
+    "Yersinia": "Yersinia enterocolitica",
+    "Salmonella": "Salmonella enterica",
+    "Campylobacter": "Campylobacter jejuni"
+};
 
 
 allele_classes_to_ignore = {

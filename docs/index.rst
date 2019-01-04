@@ -80,6 +80,7 @@ The documentation of the **INNUENDO Platform** follows the below structure:
    :maxdepth: 1
    :caption: Usage
 
+   usage/set-species
    usage/set-protocols
    usage/set-workflows
 
