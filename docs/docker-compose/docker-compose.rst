@@ -388,6 +388,28 @@ To run the script, type the following command:
 These steps might take up to 1h depending on the available internet
 connection and the host machine.
 
+Loading data from a pre-defined backup
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+We offer an option to load a predefined set of protocols and workflows, together
+with test projects and strains. Currently, this option is only available for
+machines with **above 8 cpus and 8gb of RAM**. This is due to the backup expecting
+at least those resources for at least one of the predefined protocols.
+
+To load the predefined data, do the following:
+
+::
+
+    # Enter the build_files directory
+    cd <innuendo_docker_directory>/build_files
+
+    # Run the script to load the data
+    ./init_8cpu_components.sh
+
+**NOTE:** The above script will delete ALL data available in the AllegroGraph
+database and INNUENDO general database. It will then replaced by the predefined
+data.
+
 Mapping data into the Docker containers
 ---------------------------------------
 
