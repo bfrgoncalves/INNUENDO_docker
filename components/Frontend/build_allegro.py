@@ -66,6 +66,19 @@ if sys.argv[1] == "build":
 
 print('Database triples: {count}'.format(count=conn.size()))
 
+################ EMPTY REPOSITORY ####################################
+
+if sys.argv[1] == "remove":
+    if conn.size() != 0:
+        print("Overwriting previous store")
+
+    if sys.argv[2] == "true":
+        conn.clear()
+
+    print('Triples removed!')
+
+print('Database triples: {count}'.format(count=conn.size()))
+
 ################ ADDING NAMESPACES #####################################
 
 print("Adding Namespaces...")

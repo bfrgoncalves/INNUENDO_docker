@@ -32,6 +32,7 @@ services:
       - ./inputs/v1/indexes:/INNUENDO/inputs/v1/indexes
       - ./inputs/v1/legacy_metadata:/INNUENDO/inputs/v1/legacy_metadata
       - ./inputs/v1/legacy_profiles:/INNUENDO/inputs/v1/legacy_profiles
+      - ./components/Frontend/build_allegro.py:/Frontend/INNUENDO_REST_API/build_allegro.py
       - singularity_cache:/mnt/singularity_cache
     ports:
       - "5000:5000"

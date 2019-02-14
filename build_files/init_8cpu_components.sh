@@ -25,9 +25,16 @@ Requires:
 # The bellow backup data is available at ./inputs/backups/initial
 # Have infomration on protocols, workflows, and test projects
 
+# Delete database already available and create new schema
+docker exec -it innuendo_docker_db_innuendo_1 psql -U innuendo innuendo -c 'DROP SCHEMA public CASCADE'
+docker exec -it innuendo_docker_db_innuendo_1 psql -U innuendo innuendo -c 'CREATE SCHEMA public'
+
 # Build innuendo general database with protocols and workflows compatible with
 # 8 cpu machines
 docker exec innuendo_docker_frontend_1 backup_dbs.sh build innuendo innuendo innuendo_database initial/initial_compose_general
+
+# Remove already defined triples from allegrograph db
+docker exec -it innuendo_docker_frontend_1 build_allegro.py remove true
 
 # Populate Allegrograph with the data for the protocols and workflows compatible
 # with 8 cpu machines
