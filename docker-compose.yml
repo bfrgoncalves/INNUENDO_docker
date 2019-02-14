@@ -130,6 +130,7 @@ services:
     volumes:
       - etc_munge:/etc/munge
       - etc_slurm:/etc/slurm
+      - ./components/Controller/slurm.conf:/etc/slurm/slurm.conf
       - slurm_jobdir:/data
       - var_log_slurm:/var/log/slurm
       - ./configs/app/config_process.py:/Controller/INNUENDO_PROCESS_CONTROLLER/config.py
@@ -175,6 +176,7 @@ services:
     volumes:
       - etc_munge:/etc/munge
       - etc_slurm:/etc/slurm
+      - ./components/Controller/slurm.conf:/etc/slurm/slurm.conf
       - var_log_slurm:/var/log/slurm
       - singularity_cache:/mnt/singularity_cache
     expose:
@@ -192,6 +194,7 @@ services:
     volumes:
       - etc_munge:/etc/munge
       - etc_slurm:/etc/slurm
+      - ./components/Controller/slurm.conf:/etc/slurm/slurm.conf
       - slurm_jobdir:/data
       - var_log_slurm:/var/log/slurm
       - singularity_cache:/mnt/singularity_cache
@@ -216,6 +219,7 @@ services:
     volumes:
       - etc_munge:/etc/munge
       - etc_slurm:/etc/slurm
+      - ./components/Controller/slurm.conf:/etc/slurm/slurm.conf
       - slurm_jobdir:/data
       - var_log_slurm:/var/log/slurm
       - singularity_cache:/mnt/singularity_cache
