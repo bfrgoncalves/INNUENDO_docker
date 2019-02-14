@@ -106,6 +106,9 @@ DEFAULT_SLURM_CPUS = '8'
 NEXTFLOW_PROFILE = 'desktop'
 NEXTFLOW_GENERATOR_PATH = '/Controller/flowcraft/flowcraft/flowcraft.py'
 NEXTFLOW_GENERATOR_RECIPE = 'innuendo'
+NEXTFLOW_PARTITION = 'nextflow'
+NEXTFLOW_JOB_MEM_PER_CPU = '1500'
+
 FASTQPATH = "data/*_{1,2}.*"
 INSPECT_ROUTE = "http://web/"
 
